@@ -65,20 +65,21 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
 .lang button[aria-pressed="true"]{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
 
 /* intro */
-.intro{padding-top:120px;padding-bottom:96px}
+.intro{padding-top:64px;padding-bottom:52px}
+@media (min-width:1100px){.intro{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);column-gap:72px;align-items:end}.intro p{margin-top:0;max-width:26em;padding-bottom:6px}}
 .intro h1{font-family:var(--serif);font-weight:400;font-size:34px;font-size:clamp(25px,3.1vw,42px);line-height:1.28;max-width:21em;letter-spacing:-.005em}
 :root:not([data-lang="en"]) .intro h1{font-size:30px;font-size:clamp(22px,2.6vw,36px);line-height:1.5;max-width:19em;letter-spacing:.01em}
 .intro p{margin-top:28px;color:var(--mute);max-width:34em}
 .intro p a{color:var(--ink);border-bottom:1px solid var(--line)}
 
 /* section labels */
-.lab{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:12px;margin-bottom:40px;font-size:13px}
+.lab{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:12px;margin-bottom:32px;font-size:13px}
 .lab .c{color:var(--mute)}
 
 /* selected work: two columns, right one dropped */
 .tiles{display:grid;grid-template-columns:1fr 1fr;column-gap:48px}
 .col{display:flex;flex-direction:column;gap:88px}
-.col.r{padding-top:180px}
+.col.r{padding-top:120px}
 .tile{display:block}
 .tile figure{background:var(--tile)}
 .tile img{width:100%;transition:opacity .25s}
@@ -288,11 +289,11 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
     <div class="lab"><span><span class="l-zh">精选</span><span class="l-en">Selected</span></span><span class="c"><span class="l-zh">点开看内页</span><span class="l-en">Open a project to see the inside pages</span></span></div>
     <div class="tiles"><div class="col l">
       <a class="tile" style="order:0" href="#/p/catalogue" data-go="p/catalogue">
-        <figure><img src="img/w/cat-1.jpg" width="1600" height="900" alt="运动瑜伽服英文产品目录" data-alt-en="Activewear catalogue in English" decoding="async"></figure>
+        <figure><img src="img/c/cat-1.jpg" width="1200" height="675" alt="运动瑜伽服英文产品目录" data-alt-en="Activewear catalogue in English" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">运动瑜伽服英文产品目录</span><span class="l-en">Activewear catalogue in English</span></span></span><span class="mt"><span><span class="l-zh">产品画册</span><span class="l-en">Catalogue</span></span></span></span>
       </a>
       <a class="tile" style="order:2" href="#/p/booth" data-go="p/booth">
-        <figure><img src="img/w/booth-1.jpg" width="1600" height="1200" alt="展台与标识" data-alt-en="Booth and signage" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/w/booth-2.jpg" width="1600" height="1200" alt="展台与标识" data-alt-en="Booth and signage" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">展台与标识</span><span class="l-en">Booth and signage</span></span></span><span class="mt"><span><span class="l-zh">展会与空间</span><span class="l-en">Exhibition and space</span></span></span></span>
       </a>
       <a class="tile tall" style="order:4" href="#/p/sonic-state" data-go="p/sonic-state">
@@ -322,7 +323,7 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
     <div class="lab"><span><span><span class="l-zh">画册与印刷</span><span class="l-en">Print</span></span></span><span class="c"><span><span class="l-zh">6 个项目</span><span class="l-en">6 projects</span></span><span class="rnav"><button type="button" class="rp" aria-label="Previous / 上一组" disabled>&#8592;</button><button type="button" class="rn" aria-label="Next / 下一组">&#8594;</button></span></span></div>
     <div class="cards" tabindex="0">
       <a class="card" href="#/p/catalogue" data-go="p/catalogue">
-        <figure><img src="img/w/cat-1.jpg" width="1600" height="900" alt="运动瑜伽服英文产品目录" data-alt-en="Activewear catalogue in English" decoding="async"></figure>
+        <figure><img src="img/c/cat-1.jpg" width="1200" height="675" alt="运动瑜伽服英文产品目录" data-alt-en="Activewear catalogue in English" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">运动瑜伽服英文产品目录</span><span class="l-en">Activewear catalogue in English</span></span></span><span class="mt"><span><span class="l-zh">产品画册 · 6 张</span><span class="l-en">Catalogue · 6 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/reptile-catalogue" data-go="p/reptile-catalogue">
@@ -338,11 +339,11 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         <span class="cap"><span class="tt"><span><span class="l-zh">服装主题英文研究报告</span><span class="l-en">Fashion research report in English</span></span></span><span class="mt"><span><span class="l-zh">报告排版 · 8 张</span><span class="l-en">Report layout · 8 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/booth" data-go="p/booth">
-        <figure><img src="img/w/booth-1.jpg" width="1600" height="1200" alt="展台与标识" data-alt-en="Booth and signage" loading="lazy" decoding="async"></figure>
-        <span class="cap"><span class="tt"><span><span class="l-zh">展台与标识</span><span class="l-en">Booth and signage</span></span></span><span class="mt"><span><span class="l-zh">展会与空间 · 5 张</span><span class="l-en">Exhibition and space · 5 images</span></span></span></span>
+        <figure><img src="img/w/booth-2.jpg" width="1600" height="1200" alt="展台与标识" data-alt-en="Booth and signage" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">展台与标识</span><span class="l-en">Booth and signage</span></span></span><span class="mt"><span><span class="l-zh">展会与空间 · 4 张</span><span class="l-en">Exhibition and space · 4 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/tech-docs" data-go="p/tech-docs">
-        <figure><img src="img/w/manual-1.jpg" width="773" height="1091" alt="说明书和试验报告英译" data-alt-en="Manual and test report translation" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/manual-1.jpg" width="773" height="1091" alt="说明书和试验报告英译" data-alt-en="Manual and test report translation" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">说明书和试验报告英译</span><span class="l-en">Manual and test report translation</span></span></span><span class="mt"><span><span class="l-zh">技术文件 · 4 张</span><span class="l-en">Technical documents · 4 images</span></span></span></span>
       </a></div>
   </section>
@@ -366,7 +367,7 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         <span class="cap"><span class="tt"><span><span class="l-zh">销售数据分析 PPT</span><span class="l-en">Sales data analysis deck</span></span></span><span class="mt"><span><span class="l-zh">数据汇报 · 6 张</span><span class="l-en">Data deck · 6 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/medical-deck" data-go="p/medical-deck">
-        <figure><img src="img/w/med-01.jpg" width="1600" height="901" alt="医学科普 PPT" data-alt-en="Medical explainer deck" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/med-01.jpg" width="1054" height="594" alt="医学科普 PPT" data-alt-en="Medical explainer deck" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">医学科普 PPT</span><span class="l-en">Medical explainer deck</span></span></span><span class="mt"><span><span class="l-zh">科普 PPT · 7 张</span><span class="l-en">Explainer deck · 7 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/courseware" data-go="p/courseware">
@@ -417,7 +418,7 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         <span class="cap"><span class="tt"><span><span class="l-zh">Billion Baby 首个系列与品牌 logo</span><span class="l-en">Billion Baby: first drop &amp; logo</span></span></span><span class="mt"><span><span class="l-zh">品牌与服装开发 · 8 张</span><span class="l-en">Brand and apparel development · 8 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/tech-packs" data-go="p/tech-packs">
-        <figure><img src="img/w/vyra-1.jpg" width="1200" height="1500" alt="运动服 tech pack 和打样" data-alt-en="Activewear tech packs and sampling" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/vyra-4.jpg" width="1200" height="675" alt="运动服 tech pack 和打样" data-alt-en="Activewear tech packs and sampling" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">运动服 tech pack 和打样</span><span class="l-en">Activewear tech packs and sampling</span></span></span><span class="mt"><span><span class="l-zh">服装开发 · 6 张</span><span class="l-en">Apparel development · 6 images</span></span></span></span>
       </a></div>
     <p class="more"><span class="l-zh">服装开发文件也能做：tech pack、BOM 和 POM、图案定位、打样意见。</span><span class="l-en">I also prepare apparel development files: tech packs, BOM and POM, print placement and sample comments.</span></p>
@@ -554,8 +555,8 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         </div>
       </header>
       <div class="gal" data-gal>
-        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/booth-1.jpg" width="1600" height="1200" alt="展台效果图" data-alt-en="Booth rendering" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">展台效果图</span><span class="l-en">Booth rendering</span></span></figcaption></figure><figure class="gs"><img src="img/w/booth-2.jpg" width="1600" height="1200" alt="展台正面" data-alt-en="Booth, front view" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">展台正面</span><span class="l-en">Booth, front view</span></span></figcaption></figure><figure class="gs"><img src="img/w/booth-3.jpg" width="1200" height="1200" alt="产品渲染" data-alt-en="Product render" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">产品渲染</span><span class="l-en">Product render</span></span></figcaption></figure><figure class="gs"><img src="img/w/sign-1.jpg" width="1379" height="957" alt="前台背景墙" data-alt-en="Reception wall" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">前台背景墙</span><span class="l-en">Reception wall</span></span></figcaption></figure><figure class="gs"><img src="img/w/sign-2.jpg" width="1462" height="781" alt="门口立面" data-alt-en="Entrance elevation" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">门口立面</span><span class="l-en">Entrance elevation</span></span></figcaption></figure></div>
-        <div class="gbar"><span class="gc"><b class="gi">1</b> / 5</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 5" aria-current="true"><img src="img/t/booth-1.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 5"><img src="img/t/booth-2.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 5"><img src="img/t/booth-3.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 5"><img src="img/t/sign-1.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 5"><img src="img/t/sign-2.jpg" alt="" loading="lazy" decoding="async"></button></div>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/booth-2.jpg" width="1600" height="1200" alt="展台正面" data-alt-en="Booth, front view" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">展台正面</span><span class="l-en">Booth, front view</span></span></figcaption></figure><figure class="gs"><img src="img/w/booth-3.jpg" width="1200" height="1200" alt="产品渲染" data-alt-en="Product render" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">产品渲染</span><span class="l-en">Product render</span></span></figcaption></figure><figure class="gs"><img src="img/w/sign-1.jpg" width="1379" height="957" alt="前台背景墙" data-alt-en="Reception wall" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">前台背景墙</span><span class="l-en">Reception wall</span></span></figcaption></figure><figure class="gs"><img src="img/w/sign-2.jpg" width="1462" height="781" alt="门口立面" data-alt-en="Entrance elevation" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">门口立面</span><span class="l-en">Entrance elevation</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 4</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 4" aria-current="true"><img src="img/t/booth-2.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 4"><img src="img/t/booth-3.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 4"><img src="img/t/sign-1.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 4"><img src="img/t/sign-2.jpg" alt="" loading="lazy" decoding="async"></button></div>
       </div>
       <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
     </div>
