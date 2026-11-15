@@ -333,6 +333,26 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
   .rv-on .rv{opacity:1;transform:none;transition:none}
   .card img,.tile img,.card figure,.tile figure,.nav a::after,.cap .tt::after,.cap .tt>span{transition:none}
 }
+
+/* v19: before/after, turnaround, mobile contact */
+.ba-tag{position:absolute;left:10px;top:10px;z-index:2;font-size:11px;letter-spacing:.04em;line-height:1;padding:6px 8px;background:rgba(28,28,27,.82);color:#f4f2ee;border-radius:2px;pointer-events:none}
+.gs.ba img{box-shadow:none}
+.lead-time{margin-top:18px;font-size:15px;color:var(--ink)}
+.fab{display:none}
+@media (max-width:820px){
+  .fab{display:block;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60}
+  .fab-b{font:inherit;font-size:14px;padding:11px 16px;border:0;border-radius:999px;background:#1c1c1b;color:#f4f2ee;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer}
+  .fab-p{position:absolute;right:0;bottom:calc(100% + 10px);width:220px;padding:16px;background:var(--bg,#f4f2ee);color:var(--ink);border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.14)}
+  .fab-p[hidden]{display:none}
+  .fab-k{margin:0;font-size:12px;color:var(--mute)}
+  .fab-id{margin:4px 0 12px;font-family:var(--serif);font-size:24px}
+  .fab-a{display:flex;flex-direction:column;gap:8px;font-size:14px}
+  .fab-c{font:inherit;padding:9px 12px;border:1px solid var(--ink);background:none;color:var(--ink);cursor:pointer}
+  .fab-m{text-align:center;color:var(--mute);border-bottom:0}
+  .fab.off{opacity:0;pointer-events:none;transform:translateY(8px)}
+  .fab{transition:opacity .2s,transform .2s}
+  footer{padding-bottom:72px}
+}
 </style>
 <style>body{margin:0}</style>
 </head>
@@ -388,7 +408,7 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
 
   <section class="wrap allh band b2" id="all">
     <div class="shd"><span class="no">02</span><h2 class="st"><span class="l-zh">全部作品</span><span class="l-en">All work</span></h2><span class="c"></span></div>
-    <p><span class="l-zh">21 个项目，按类型分组。交付过的项目有 200 多个，客户名称不公开，想看同类样例可以问我。</span><span class="l-en">21 projects, grouped by type, out of more than 200 delivered. Client names aren't published; ask me if you'd like more samples of a particular kind.</span></p>
+    <p><span class="l-zh">21 个项目，按类型分组。交付过的项目有 200 多个，客户名称不公开，想看同类样例可以问我。这里展示的都是客户确认过稿的终稿，标「改前 / 改后」的作品附了客户给的原稿。</span><span class="l-en">21 projects, grouped by type, out of more than 200 delivered. Client names aren't published; ask me if you'd like more samples of a particular kind. Everything shown here is final work the client signed off; projects marked “Before / after” also show the original the client sent.</span></p>
   </section>
 
   <section class="wrap cat band b2" id="print" data-row>
@@ -416,8 +436,8 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         <span class="cap"><span class="tt"><span><span class="l-zh">展台与标识</span><span class="l-en">Booth and signage</span></span></span><span class="mt"><span><span class="l-zh">展会与空间 · 4 张</span><span class="l-en">Exhibition and space · 4 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/tech-docs" data-go="p/tech-docs">
-        <figure><img src="img/c/manual-1.jpg?v=1115" width="773" height="1091" alt="说明书和试验报告英译" data-alt-en="Manual and test report translation" loading="lazy" decoding="async"></figure>
-        <span class="cap"><span class="tt"><span><span class="l-zh">说明书和试验报告英译</span><span class="l-en">Manual and test report translation</span></span></span><span class="mt"><span><span class="l-zh">技术文件 · 4 张</span><span class="l-en">Technical documents · 4 images</span></span></span></span>
+        <figure><span class="ba-tag"><span class="l-zh">改前 / 改后</span><span class="l-en">Before / after</span></span><img src="img/c/manual-1.jpg?v=1115" width="773" height="1091" alt="说明书和试验报告英译" data-alt-en="Manual and test report translation" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">说明书和试验报告英译</span><span class="l-en">Manual and test report translation</span></span></span><span class="mt"><span><span class="l-zh">技术文件 · 5 张</span><span class="l-en">Technical documents · 5 images</span></span></span></span>
       </a></div>
   </section>
   <section class="wrap cat band b2" id="slides" data-row>
@@ -429,8 +449,8 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         <span class="cap"><span class="tt"><span><span class="l-zh">学校课件和课程汇报</span><span class="l-en">School lessons and programme reports</span></span></span><span class="mt"><span><span class="l-zh">教学课件 · 10 张</span><span class="l-en">Teaching · 10 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/bank-report" data-go="p/bank-report">
-        <figure><img src="img/c/bank-01.jpg?v=1115c" width="1600" height="900" alt="银行网点服务与营销汇报" data-alt-en="Bank branch service and sales report" loading="lazy" decoding="async"></figure>
-        <span class="cap"><span class="tt"><span><span class="l-zh">银行网点服务与营销汇报</span><span class="l-en">Bank branch service and sales report</span></span></span><span class="mt"><span><span class="l-zh">汇报 PPT · 9 张</span><span class="l-en">Report deck · 9 images</span></span></span></span>
+        <figure><span class="ba-tag"><span class="l-zh">改前 / 改后</span><span class="l-en">Before / after</span></span><img src="img/c/bank-01.jpg?v=1115c" width="1600" height="900" alt="银行网点服务与营销汇报" data-alt-en="Bank branch service and sales report" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">银行网点服务与营销汇报</span><span class="l-en">Bank branch service and sales report</span></span></span><span class="mt"><span><span class="l-zh">汇报 PPT · 10 张</span><span class="l-en">Report deck · 10 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/pharma-report" data-go="p/pharma-report">
         <figure><img src="img/c/pharma-01.jpg?v=1115c" width="1600" height="900" alt="区域市场整合汇报" data-alt-en="Regional market integration report" loading="lazy" decoding="async"></figure>
@@ -462,8 +482,8 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         <span class="cap"><span class="tt"><span><span class="l-zh">控制系统整套电气图</span><span class="l-en">Control system drawing set</span></span></span><span class="mt"><span><span class="l-zh">电气图纸 · 7 张</span><span class="l-en">Electrical drawings · 7 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/sketch-cad" data-go="p/sketch-cad">
-        <figure><img src="img/c/cad-sketch.jpg?v=1115c" width="1280" height="1707" alt="手绘草图转 CAD" data-alt-en="Hand sketch to CAD" loading="lazy" decoding="async"></figure>
-        <span class="cap"><span class="tt"><span><span class="l-zh">手绘草图转 CAD</span><span class="l-en">Hand sketch to CAD</span></span></span><span class="mt"><span><span class="l-zh">电气图纸 · 5 张</span><span class="l-en">Electrical drawings · 5 images</span></span></span></span>
+        <figure><span class="ba-tag"><span class="l-zh">改前 / 改后</span><span class="l-en">Before / after</span></span><img src="img/c/cad-sketch.jpg?v=1115c" width="1280" height="1707" alt="手绘草图转 CAD" data-alt-en="Hand sketch to CAD" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">手绘草图转 CAD</span><span class="l-en">Hand sketch to CAD</span></span></span><span class="mt"><span><span class="l-zh">电气图纸 · 6 张</span><span class="l-en">Electrical drawings · 6 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/process" data-go="p/process">
         <figure><img src="img/c/dwg-water.jpg?v=1115c" width="1600" height="1131" alt="工艺流程图和 P&amp;ID" data-alt-en="Process flow diagrams and P&amp;IDs" loading="lazy" decoding="async"></figure>
@@ -533,6 +553,7 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
             <li><span><span class="l-zh">样稿阶段可调整方向；样稿确认后含 2 轮修改，错字和参数修正不计次数，超出另计。</span><span class="l-en">The direction can still change at the proof stage. Once the proof is approved, 2 rounds of revisions are included. Typos and data corrections don't count as a round. Anything beyond that is quoted separately.</span></span></li>
             <li><span><span class="l-zh">交终稿；你确认后付尾款，付清后交可编辑源文件。</span><span class="l-en">I deliver the final files. After you approve them and pay the balance, you receive the editable source files.</span></span></li>
           </ol>
+          <p class="lead-time"><span class="l-zh">交付周期一般 2 到 3 天，复杂项目一周以内。</span><span class="l-en">Turnaround is usually 2 to 3 days; complex projects take up to a week.</span></p>
           <p class="note"><span class="l-zh">不含产品拍摄、印刷和寄送、图纸的工程审核和签字盖章，以及需另外购买的商用字体和图片授权。</span><span class="l-en">Not included: product photography, printing and shipping, engineering review, signing or stamping of drawings, and any commercial font or image licences that need to be bought.</span></p>
         </div>
       </div>
@@ -546,9 +567,19 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
       <ul>
         <li><span class="k"><span class="l-zh">微信</span><span class="l-en">WeChat</span></span><span>ainstuz</span></li>
         <li class="c-wa"><span class="k">WhatsApp</span><a href="https://wa.me/8613350278787" target="_blank" rel="noopener">+86 133 5027 8787</a></li>
+        <li class="c-ig"><span class="k">Instagram</span><a href="https://www.instagram.com/foldlightstudio/" target="_blank" rel="noopener">@foldlightstudio</a></li>
       </ul>
     </div>
   </section>
+</div>
+
+<div class="fab" id="fab">
+  <button type="button" class="fab-b" aria-expanded="false" aria-controls="fab-p"><span class="l-zh">微信咨询</span><span class="l-en">Contact</span></button>
+  <div class="fab-p" id="fab-p" hidden>
+    <p class="fab-k"><span class="l-zh">微信号</span><span class="l-en">WeChat ID</span></p>
+    <p class="fab-id">ainstuz</p>
+    <div class="fab-a"><button type="button" class="fab-c"><span class="l-zh">复制微信号</span><span class="l-en">Copy ID</span></button><a href="#contact" class="fab-m"><span class="l-zh">其他联系方式</span><span class="l-en">More ways</span></a></div>
+  </div>
 </div>
 
   <article class="view proj" id="p-catalogue" data-view="p/catalogue" hidden>
@@ -647,8 +678,8 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         </div>
       </header>
       <div class="gal" data-gal>
-        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/manual-1.jpg?v=1115" width="773" height="1091" alt="说明书封面" data-alt-en="Manual cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">说明书封面</span><span class="l-en">Manual cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/trep-01.jpg?v=1115" width="1131" height="1600" alt="试验报告封面" data-alt-en="Test report cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">试验报告封面</span><span class="l-en">Test report cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/trep-05.jpg" width="1131" height="1600" alt="试验记录表" data-alt-en="Test record table" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">试验记录表</span><span class="l-en">Test record table</span></span></figcaption></figure><figure class="gs"><img src="img/w/trep-09.jpg" width="1131" height="1600" alt="试验记录表" data-alt-en="Test record table" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">试验记录表</span><span class="l-en">Test record table</span></span></figcaption></figure></div>
-        <div class="gbar"><span class="gc"><b class="gi">1</b> / 4</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 4" aria-current="true"><img src="img/t/manual-1.jpg?v=1115" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 4"><img src="img/t/trep-01.jpg?v=1115" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 4"><img src="img/t/trep-05.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 4"><img src="img/t/trep-09.jpg" alt="" loading="lazy" decoding="async"></button></div>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs ba"><img src="img/w/ba-trep.jpg" width="2000" height="1498" alt="改前改后：中文原件到英文版" data-alt-en="Before and after: Chinese original to English version" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">改前改后：中文原件到英文版</span><span class="l-en">Before and after: Chinese original to English version</span></span></figcaption></figure><figure class="gs"><img src="img/w/manual-1.jpg?v=1115" width="773" height="1091" alt="说明书封面" data-alt-en="Manual cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">说明书封面</span><span class="l-en">Manual cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/trep-01.jpg?v=1115" width="1131" height="1600" alt="试验报告封面" data-alt-en="Test report cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">试验报告封面</span><span class="l-en">Test report cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/trep-05.jpg" width="1131" height="1600" alt="试验记录表" data-alt-en="Test record table" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">试验记录表</span><span class="l-en">Test record table</span></span></figcaption></figure><figure class="gs"><img src="img/w/trep-09.jpg" width="1131" height="1600" alt="试验记录表" data-alt-en="Test record table" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">试验记录表</span><span class="l-en">Test record table</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 5</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 5" aria-current="true"><img src="img/t/ba-trep.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 5"><img src="img/t/manual-1.jpg?v=1115" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 5"><img src="img/t/trep-01.jpg?v=1115" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 5"><img src="img/t/trep-05.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 5"><img src="img/t/trep-09.jpg" alt="" loading="lazy" decoding="async"></button></div>
       </div>
       <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
     </div>
@@ -681,8 +712,8 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         </div>
       </header>
       <div class="gal" data-gal>
-        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/bank-01.jpg" width="1600" height="900" alt="封面" data-alt-en="Cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">封面</span><span class="l-en">Cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-03.jpg" width="1600" height="900" alt="服务规范化" data-alt-en="Service standards" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">服务规范化</span><span class="l-en">Service standards</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-04.jpg" width="1600" height="900" alt="案例：识别骗局" data-alt-en="Case: spotting a scam" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">案例：识别骗局</span><span class="l-en">Case: spotting a scam</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-07.jpg" width="1600" height="900" alt="服务精细化" data-alt-en="Service detail" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">服务精细化</span><span class="l-en">Service detail</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-10.jpg" width="1600" height="900" alt="服务价值化" data-alt-en="Service value" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">服务价值化</span><span class="l-en">Service value</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-12.jpg" width="1600" height="900" alt="服务价值化：案例" data-alt-en="Service value: cases" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">服务价值化：案例</span><span class="l-en">Service value: cases</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-14.jpg" width="1600" height="900" alt="结语：成绩" data-alt-en="Results" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">结语：成绩</span><span class="l-en">Results</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-15.jpg" width="1600" height="900" alt="结尾页" data-alt-en="Closing slide" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">结尾页</span><span class="l-en">Closing slide</span></span></figcaption></figure><figure class="gs"><img src="img/w/plan-1.jpg" width="644" height="762" alt="另一份：设备大修策划汇报" data-alt-en="Another deck: equipment overhaul plan" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">另一份：设备大修策划汇报</span><span class="l-en">Another deck: equipment overhaul plan</span></span></figcaption></figure></div>
-        <div class="gbar"><span class="gc"><b class="gi">1</b> / 9</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 9" aria-current="true"><img src="img/t/bank-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 9"><img src="img/t/bank-03.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 9"><img src="img/t/bank-04.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 9"><img src="img/t/bank-07.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 9"><img src="img/t/bank-10.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 9"><img src="img/t/bank-12.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="6" aria-label="7 / 9"><img src="img/t/bank-14.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="7" aria-label="8 / 9"><img src="img/t/bank-15.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="8" aria-label="9 / 9"><img src="img/t/plan-1.jpg" alt="" loading="lazy" decoding="async"></button></div>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs ba"><img src="img/w/ba-bank.jpg" width="2000" height="639" alt="改前改后：客户原稿到新版" data-alt-en="Before and after: the client's draft to the new version" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">改前改后：客户原稿到新版</span><span class="l-en">Before and after: the client's draft to the new version</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-01.jpg" width="1600" height="900" alt="封面" data-alt-en="Cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">封面</span><span class="l-en">Cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-03.jpg" width="1600" height="900" alt="服务规范化" data-alt-en="Service standards" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">服务规范化</span><span class="l-en">Service standards</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-04.jpg" width="1600" height="900" alt="案例：识别骗局" data-alt-en="Case: spotting a scam" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">案例：识别骗局</span><span class="l-en">Case: spotting a scam</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-07.jpg" width="1600" height="900" alt="服务精细化" data-alt-en="Service detail" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">服务精细化</span><span class="l-en">Service detail</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-10.jpg" width="1600" height="900" alt="服务价值化" data-alt-en="Service value" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">服务价值化</span><span class="l-en">Service value</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-12.jpg" width="1600" height="900" alt="服务价值化：案例" data-alt-en="Service value: cases" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">服务价值化：案例</span><span class="l-en">Service value: cases</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-14.jpg" width="1600" height="900" alt="结语：成绩" data-alt-en="Results" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">结语：成绩</span><span class="l-en">Results</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-15.jpg" width="1600" height="900" alt="结尾页" data-alt-en="Closing slide" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">结尾页</span><span class="l-en">Closing slide</span></span></figcaption></figure><figure class="gs"><img src="img/w/plan-1.jpg" width="644" height="762" alt="另一份：设备大修策划汇报" data-alt-en="Another deck: equipment overhaul plan" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">另一份：设备大修策划汇报</span><span class="l-en">Another deck: equipment overhaul plan</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 10</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 10" aria-current="true"><img src="img/t/ba-bank.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 10"><img src="img/t/bank-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 10"><img src="img/t/bank-03.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 10"><img src="img/t/bank-04.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 10"><img src="img/t/bank-07.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 10"><img src="img/t/bank-10.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="6" aria-label="7 / 10"><img src="img/t/bank-12.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="7" aria-label="8 / 10"><img src="img/t/bank-14.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="8" aria-label="9 / 10"><img src="img/t/bank-15.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="9" aria-label="10 / 10"><img src="img/t/plan-1.jpg" alt="" loading="lazy" decoding="async"></button></div>
       </div>
       <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
     </div>
@@ -800,8 +831,8 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         </div>
       </header>
       <div class="gal" data-gal>
-        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/cad-sketch.jpg" width="1280" height="1707" alt="客户的手绘草图" data-alt-en="The client&#x27;s sketch" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">客户的手绘草图</span><span class="l-en">The client's sketch</span></span></figcaption></figure><figure class="gs"><img src="img/w/cad-01.jpg" width="2000" height="1415" alt="1# 主变原理图" data-alt-en="Main transformer 1" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">1# 主变原理图</span><span class="l-en">Main transformer 1</span></span></figcaption></figure><figure class="gs"><img src="img/w/cad-03.jpg" width="2000" height="1415" alt="2# 主变电流电压" data-alt-en="Transformer 2 current and voltage" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">2# 主变电流电压</span><span class="l-en">Transformer 2 current and voltage</span></span></figcaption></figure><figure class="gs"><img src="img/w/cad-06.jpg" width="2000" height="1415" alt="PT 并列原理图" data-alt-en="PT paralleling" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">PT 并列原理图</span><span class="l-en">PT paralleling</span></span></figcaption></figure><figure class="gs"><img src="img/w/cad-08.jpg" width="2000" height="1415" alt="2# 主变原理图" data-alt-en="Main transformer 2" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">2# 主变原理图</span><span class="l-en">Main transformer 2</span></span></figcaption></figure></div>
-        <div class="gbar"><span class="gc"><b class="gi">1</b> / 5</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 5" aria-current="true"><img src="img/t/cad-sketch.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 5"><img src="img/t/cad-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 5"><img src="img/t/cad-03.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 5"><img src="img/t/cad-06.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 5"><img src="img/t/cad-08.jpg" alt="" loading="lazy" decoding="async"></button></div>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs ba"><img src="img/w/ba-cad.jpg" width="2000" height="1019" alt="改前改后：手绘草图到 PT 并列原理图" data-alt-en="Before and after: hand sketch to PT paralleling drawing" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">改前改后：手绘草图到 PT 并列原理图</span><span class="l-en">Before and after: hand sketch to PT paralleling drawing</span></span></figcaption></figure><figure class="gs"><img src="img/w/cad-sketch.jpg" width="1280" height="1707" alt="客户的手绘草图" data-alt-en="The client&#x27;s sketch" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">客户的手绘草图</span><span class="l-en">The client's sketch</span></span></figcaption></figure><figure class="gs"><img src="img/w/cad-01.jpg" width="2000" height="1415" alt="1# 主变原理图" data-alt-en="Main transformer 1" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">1# 主变原理图</span><span class="l-en">Main transformer 1</span></span></figcaption></figure><figure class="gs"><img src="img/w/cad-03.jpg" width="2000" height="1415" alt="2# 主变电流电压" data-alt-en="Transformer 2 current and voltage" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">2# 主变电流电压</span><span class="l-en">Transformer 2 current and voltage</span></span></figcaption></figure><figure class="gs"><img src="img/w/cad-06.jpg" width="2000" height="1415" alt="PT 并列原理图" data-alt-en="PT paralleling" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">PT 并列原理图</span><span class="l-en">PT paralleling</span></span></figcaption></figure><figure class="gs"><img src="img/w/cad-08.jpg" width="2000" height="1415" alt="2# 主变原理图" data-alt-en="Main transformer 2" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">2# 主变原理图</span><span class="l-en">Main transformer 2</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 6</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 6" aria-current="true"><img src="img/t/ba-cad.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 6"><img src="img/t/cad-sketch.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 6"><img src="img/t/cad-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 6"><img src="img/t/cad-03.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 6"><img src="img/t/cad-06.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 6"><img src="img/t/cad-08.jpg" alt="" loading="lazy" decoding="async"></button></div>
       </div>
       <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
     </div>
@@ -1085,8 +1116,8 @@ var STUDIO_NAME_ZH = '叠光工作室';
   if(fine)[].forEach.call(document.querySelectorAll('.home a.card,.home a.tile'),function(a){
     var id=(a.getAttribute('data-go')||'').replace(/^p\//,'');
     var v=document.querySelector('[data-view="p/'+id+'"]');if(!v)return;
-    var im=v.querySelectorAll('.gs img');if(im.length<2)return;
-    var src=im[1].getAttribute('src'),fig=a.querySelector('figure'),done=false;
+    var ba=v.querySelector('.gs.ba img'),im=v.querySelectorAll('.gs img');if(!ba&&im.length<2)return;
+    var src=(ba||im[1]).getAttribute('src'),fig=a.querySelector('figure'),done=false;
     a.addEventListener('mouseenter',function(){
       if(done)return;done=true;
       var x=new Image();x.className='alt';x.alt='';x.setAttribute('aria-hidden','true');x.decoding='async';
@@ -1104,6 +1135,27 @@ var STUDIO_NAME_ZH = '叠光工作室';
     var sweep=function(){els.forEach(function(e){if(!e.classList.contains('in')&&e.getBoundingClientRect().top<innerHeight)e.classList.add('in')})};
     setTimeout(sweep,50);var st=0;window.addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(sweep,120)},{passive:true});window.addEventListener('hashchange',function(){setTimeout(sweep,400)});
   }
+})();
+</script>
+
+<script>
+/* v19: mobile WeChat button */
+(function(){
+  var f=document.getElementById('fab');if(!f)return;
+  var b=f.querySelector('.fab-b'),p=document.getElementById('fab-p'),c=f.querySelector('.fab-c');
+  function set(o){p.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false')}
+  b.addEventListener('click',function(e){e.stopPropagation();set(p.hidden)});
+  document.addEventListener('click',function(e){if(!f.contains(e.target))set(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+  f.querySelector('.fab-m').addEventListener('click',function(){set(false)});
+  c.addEventListener('click',function(){
+    var done=function(){var t=c.innerHTML;c.textContent=document.documentElement.getAttribute('data-lang')==='en'?'Copied':'已复制';setTimeout(function(){c.innerHTML=t},1600)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText('ainstuz').then(done,done)}
+    else{var t=document.createElement('textarea');t.value='ainstuz';document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(e){}t.remove();done()}
+  });
+  /* hide while the contact section is on screen */
+  var ct=document.getElementById('contact');
+  if(ct&&'IntersectionObserver' in window)new IntersectionObserver(function(es){es.forEach(function(e){f.classList.toggle('off',e.isIntersecting);if(e.isIntersecting)set(false)})},{threshold:.15}).observe(ct);
 })();
 </script>
 </body>
