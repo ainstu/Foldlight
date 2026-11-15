@@ -24,6 +24,7 @@
     lang=/^zh/i.test(nav)?'zh':'en';
   }
   document.documentElement.setAttribute('data-lang',lang);
+  if(/^#[a-z]+$/.test(location.hash))document.documentElement.style.scrollBehavior='auto';
   document.documentElement.lang=lang==='en'?'en':'zh-CN';
 })();
 </script>
@@ -1055,7 +1056,7 @@ var STUDIO_NAME_ZH = '叠光工作室';
     if(top)top.classList.toggle('sc',window.scrollY>8);
     var cur='';
     if(home&&!home.hidden){
-      var off=(top?top.offsetHeight:70)+60;
+      var off=(top?top.offsetHeight:70)+Math.min(160,window.innerHeight*.25);
       ids.forEach(function(id){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top-off<=0)cur=id});
       if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)cur='contact';
     }
@@ -1064,6 +1065,13 @@ var STUDIO_NAME_ZH = '叠光工作室';
   function ask(){if(!raf)raf=requestAnimationFrame(spy)}
   window.addEventListener('scroll',ask,{passive:true});window.addEventListener('resize',ask);window.addEventListener('hashchange',function(){setTimeout(spy,60)});
   spy();
+  /* first load on #section: land instantly under the sticky bar, re-align after images load */
+  if(root.style.scrollBehavior==='auto'){
+    var h=location.hash.slice(1),tg=document.getElementById(h);
+    var land=function(){if(tg&&home&&!home.hidden)tg.scrollIntoView({behavior:'auto',block:'start'});spy()};
+    land();
+    window.addEventListener('load',function(){land();setTimeout(function(){land();root.style.scrollBehavior=''},300)});
+  }
   /* smooth scroll for in-page jumps (runs before the older handler) */
   document.addEventListener('click',function(ev){
     var a=ev.target.closest&&ev.target.closest('[data-jump]');if(!a||!home||home.hidden)return;
