@@ -423,11 +423,11 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
   <section class="wrap sel band b1" id="selected">
     <div class="shd"><span class="no">01</span><h2 class="st"><span class="l-zh">精选</span><span class="l-en">Selected</span></h2><span class="c"><span class="l-zh">点开看内页</span><span class="l-en">Open a project to see the inside pages</span></span></div>
     <div class="tiles"><div class="col l">
-      <a class="tile" style="order:0" href="#/p/sketch-cad" data-go="p/sketch-cad">
+      <a class="tile" style="order:0" href="#/p/sketch-cad" data-go="p/sketch-cad" data-noalt>
         <figure><img src="img/w/ba-cad.jpg" width="2000" height="1019" alt="手绘草图转 CAD" data-alt-en="Hand sketch to CAD" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">手绘草图转 CAD</span><span class="l-en">Hand sketch to CAD</span></span></span><span class="mt"><span><span class="l-zh">电气图纸 · 改前 / 改后</span><span class="l-en">Electrical drawing · before / after</span></span></span></span>
       </a>
-      <a class="tile tall" style="order:2" href="#/p/bank-report" data-go="p/bank-report">
+      <a class="tile tall" style="order:2" href="#/p/bank-report" data-go="p/bank-report" data-noalt>
         <figure><img src="img/w/ba-bank-m.jpg" width="1200" height="1555" alt="银行网点服务与营销汇报" data-alt-en="Bank branch service and sales report" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">银行网点服务与营销汇报</span><span class="l-en">Bank branch service and sales report</span></span></span><span class="mt"><span><span class="l-zh">汇报 PPT · 改前 / 改后</span><span class="l-en">Report deck · before / after</span></span></span></span>
       </a>
@@ -1162,6 +1162,7 @@ var STUDIO_NAME_ZH = '叠光工作室';
   /* second image on hover */
   var fine=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   if(fine)[].forEach.call(document.querySelectorAll('.home a.card,.home a.tile'),function(a){
+    if(a.hasAttribute('data-noalt'))return;
     var id=(a.getAttribute('data-go')||'').replace(/^p\//,'');
     var v=document.querySelector('[data-view="p/'+id+'"]');if(!v)return;
     var ba=v.querySelector('.gs.ba img'),im=v.querySelectorAll('.gs img');if(!ba&&im.length<2)return;
