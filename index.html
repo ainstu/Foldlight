@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<title>叠光工作室｜Foldlight Studio 作品</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Catalogues, manuals, technical drawings, slides and translation in Chinese and English. 中英双语画册、说明书、技术图纸、PPT 和翻译。">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@500;600&display=swap">
+<script>
+(function(){
+  var lang=null;
+  try{lang=localStorage.getItem('ac-lang')}catch(e){}
+  if(lang!=='zh'&&lang!=='en'){
+    var nav=(navigator.languages&&navigator.languages[0])||navigator.language||'zh';
+    lang=/^zh/i.test(nav)?'zh':'en';
+  }
+  document.documentElement.setAttribute('data-lang',lang);
+  document.documentElement.lang=lang==='en'?'en':'zh-CN';
+})();
+</script>
+<style>
+:root{
+  --bg:#f5f4f0;--ink:#151515;--mute:#6e6b65;--line:#d9d6cf;--tile:#e9e7e1;
+  --serif:"Bodoni Moda","Noto Serif SC","Songti SC",serif;
+  --sans:"Inter","Noto Sans SC","PingFang SC",system-ui,sans-serif;
+  --gut:40px;color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121211;--ink:#ebe8e2;--mute:#9b978f;--line:#2d2c29;--tile:#1c1c1a;color-scheme:dark;
+}}
+:root[data-theme="dark"]{--bg:#121211;--ink:#ebe8e2;--mute:#9b978f;--line:#2d2c29;--tile:#1c1c1a;color-scheme:dark}
+:root[data-lang="en"] .l-zh,:root:not([data-lang="en"]) .l-en{display:none!important}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+figure{margin:0}
+ul,ol{list-style:none;margin:0;padding:0}
+h1,h2,h3,p{margin:0;font-weight:inherit}
+.wrap{max-width:1440px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gut);
+  padding-left:max(var(--gut),env(safe-area-inset-left));padding-right:max(var(--gut),env(safe-area-inset-right))}
+.logo-light{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo-dark{display:none}:root:not([data-theme="light"]) .logo-light{display:block}}
+:root[data-theme="dark"] .logo-dark{display:none}:root[data-theme="dark"] .logo-light{display:block}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* header */
+.top{position:sticky;top:0;z-index:5;background:var(--bg)}
+.mast{display:flex;align-items:center;height:68px;gap:28px}
+.brand{display:flex;align-items:center;gap:14px;white-space:nowrap}
+.brand img{width:auto;height:24px}
+.brand .tag{font-size:12px;line-height:1.2;letter-spacing:.02em;color:var(--mute);padding-left:14px;border-left:1px solid var(--line)}
+[id]{scroll-margin-top:72px}
+.nav{display:flex;gap:26px;margin-left:auto;font-size:14px;white-space:nowrap;min-width:0;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{color:var(--mute)}
+.nav a:hover,.nav a[aria-current="true"]{color:var(--ink)}
+.lang{display:flex;align-items:center;gap:4px;font-size:13px;color:var(--mute)}
+.lang button{font:inherit;color:inherit;background:none;border:0;padding:4px 2px;cursor:pointer}
+.lang button[aria-pressed="true"]{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+
+/* intro */
+.intro{padding-top:120px;padding-bottom:96px}
+.intro h1{font-family:var(--serif);font-weight:400;font-size:34px;font-size:clamp(25px,3.1vw,42px);line-height:1.28;max-width:21em;letter-spacing:-.005em}
+:root:not([data-lang="en"]) .intro h1{font-size:30px;font-size:clamp(22px,2.6vw,36px);line-height:1.5;max-width:19em;letter-spacing:.01em}
+.intro p{margin-top:28px;color:var(--mute);max-width:34em}
+.intro p a{color:var(--ink);border-bottom:1px solid var(--line)}
+
+/* section labels */
+.lab{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:12px;margin-bottom:40px;font-size:13px}
+.lab .c{color:var(--mute)}
+
+/* selected work: two columns, right one dropped */
+.tiles{display:grid;grid-template-columns:1fr 1fr;column-gap:48px}
+.col{display:flex;flex-direction:column;gap:88px}
+.col.r{padding-top:180px}
+.tile{display:block}
+.tile figure{background:var(--tile)}
+.tile img{width:100%;transition:opacity .25s}
+.tile:hover img{opacity:.88}
+.tile.tall figure{aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tile.tall img{width:100%;height:100%;object-fit:contain}
+.cap{display:flex;justify-content:space-between;gap:20px;margin-top:14px;align-items:baseline}
+.cap .tt{font-family:var(--serif);font-size:19px;line-height:1.35}
+:root:not([data-lang="en"]) .cap .tt{font-size:17px}
+.cap .mt{font-size:13px;color:var(--mute);text-align:right;white-space:nowrap}
+.sel{padding-bottom:140px}
+
+/* all work heading */
+.allh{padding-bottom:56px}
+.allh .sh{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.2;border-top:1px solid var(--ink);padding-top:28px}
+.allh p{margin-top:14px;color:var(--mute);font-size:14px;max-width:40em}
+
+/* project cards, grouped by section */
+.cat{padding-bottom:72px}
+.cards{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch;outline:0;padding-bottom:2px}
+.cards::-webkit-scrollbar{display:none}
+.card{display:block;flex:0 0 calc((100% - 84px) / 3.35);scroll-snap-align:start;min-width:0}
+.card figure{background:var(--tile);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:7%;overflow:hidden}
+.card img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .35s}
+.card:hover img{transform:scale(1.02)}
+.card .cap{flex-direction:column;gap:4px;align-items:flex-start}
+.rnav{display:inline-flex;gap:6px;margin-left:16px;vertical-align:middle}
+.rnav button{font:inherit;font-size:15px;line-height:1;width:34px;height:30px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;border-radius:2px}
+.rnav button:hover:not(:disabled){border-color:var(--ink)}
+.rnav button:disabled{opacity:.3;cursor:default}
+.fit .rnav{visibility:hidden}
+.cat .lab,.fash .lab{align-items:center}
+.card .cap .mt{text-align:left;white-space:normal}
+.fash .aw{font-size:13px;color:var(--mute);margin:-36px 0 56px;padding-left:12px;border-left:2px solid var(--ink)}
+
+/* all work */
+.all{padding-bottom:140px}
+.ag{display:grid;grid-template-columns:3fr 9fr;gap:24px;padding:22px 0 26px;border-top:1px solid var(--line)}
+.ag h3{font-size:13px;color:var(--mute);padding-top:4px}
+.ag li{display:flex;justify-content:space-between;gap:24px;padding:7px 0;align-items:baseline}
+.ag li+li{border-top:1px solid var(--line)}
+.an{font-family:var(--serif);font-size:18px;line-height:1.4}
+:root:not([data-lang="en"]) .an{font-size:16px}
+.an a{border-bottom:1px solid var(--ink)}
+.an a:hover{border-bottom-color:transparent}
+.ad{font-size:13px;color:var(--mute);text-align:right}
+.all .more{margin-top:28px;color:var(--mute);font-size:13px;max-width:40em}
+
+/* fashion */
+.fash{padding-bottom:140px}
+.fash .fi{font-family:var(--serif);font-size:22px;line-height:1.45;max-width:28em;margin-bottom:56px}
+:root:not([data-lang="en"]) .fash .fi{font-size:19px;line-height:1.7}
+.fz .col.r{padding-top:0}
+.fash .more{margin-top:40px;color:var(--mute);font-size:13px;max-width:40em}
+
+/* about */
+.about{padding-bottom:140px}
+.ab{display:grid;grid-template-columns:5fr 1fr 6fr;align-items:start}
+.ab figure{grid-column:1}
+.ab .tx{grid-column:3}
+.ab .lead{font-family:var(--serif);font-size:24px;line-height:1.45}
+:root:not([data-lang="en"]) .ab .lead{font-size:20px;line-height:1.7}
+.ab .lead+.lead{margin-top:18px}
+.cred{margin-top:40px;font-size:14px}
+.cred li{display:grid;grid-template-columns:7em 1fr;gap:16px;padding:9px 0;border-top:1px solid var(--line)}
+.cred .k{color:var(--mute)}
+.sub{margin-top:72px}
+.sub h3{font-size:13px;color:var(--mute);margin-bottom:10px}
+.svc li{display:grid;grid-template-columns:12em 1fr;gap:16px;padding:10px 0;border-top:1px solid var(--line);font-size:14px}
+.svc .n{font-family:var(--serif);font-size:17px;line-height:1.4}
+.svc .d{color:var(--mute)}
+.steps{counter-reset:s;font-size:14px}
+.steps li{display:grid;grid-template-columns:2.4em 1fr;padding:10px 0;border-top:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s);color:var(--mute)}
+.note{margin-top:18px;font-size:13px;color:var(--mute)}
+
+/* contact */
+.contact{padding-bottom:64px}
+.ct{display:grid;grid-template-columns:6fr 6fr;gap:24px;align-items:end}
+.ct .mail{font-family:var(--serif);font-size:44px;font-size:clamp(26px,3.6vw,52px);line-height:1.15;word-break:break-all}
+.ct .mail a{border-bottom:1px solid var(--line)}
+.ct ul{display:flex;flex-direction:column;font-size:15px}
+.ct li{display:grid;grid-template-columns:7em 1fr;gap:16px;padding:9px 0;border-top:1px solid var(--line)}
+.ct .k{color:var(--mute)}
+:root[data-lang="en"] .ct .c-wa{order:-1}
+.foot{display:flex;justify-content:space-between;gap:20px;margin-top:120px;padding-top:14px;padding-bottom:28px;border-top:1px solid var(--line);font-size:12px;color:var(--mute)}
+
+/* project view */
+.proj{padding-top:28px;padding-bottom:120px}
+.back{font-size:13px;color:var(--mute)}
+.back:hover{color:var(--ink)}
+.ph{display:grid;grid-template-columns:5fr 1fr 6fr;padding:56px 0 64px}
+.ph h2{grid-column:1;font-family:var(--serif);font-size:34px;font-size:clamp(26px,3vw,40px);line-height:1.2}
+:root:not([data-lang="en"]) .ph h2{font-size:28px;font-size:clamp(22px,2.4vw,32px);line-height:1.45}
+.pd{grid-column:3;font-size:15px}
+.pd p{max-width:34em}
+.facts{margin-top:22px;font-size:13px;color:var(--mute)}
+.facts li{padding:6px 0;border-top:1px solid var(--line)}
+.pages{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;row-gap:56px}
+.pg{width:100%}
+.pg.tall{width:48%}
+.pg img{width:100%;background:var(--tile)}
+.pg figcaption{margin-top:10px;font-size:13px;color:var(--mute)}
+.pn{margin-top:48px;font-size:13px;color:var(--mute)}
+/* project gallery: swipe on phones, arrows, keys and thumbnails on desktop */
+.gal{position:relative}
+.gt{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.gt::-webkit-scrollbar{display:none}
+.gt:focus-visible{outline-offset:6px}
+.gs{flex:0 0 100%;min-width:0;margin:0;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;align-items:center;justify-content:center;height:76vh;height:min(76vh,860px)}
+.gs img{width:auto;max-width:100%;max-height:calc(100% - 36px);object-fit:contain;background:var(--tile)}
+.gs figcaption{margin-top:12px;min-height:20px;font-size:13px;color:var(--mute);text-align:center}
+.gbar{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--mute)}
+.gc b{font-weight:400;color:var(--ink)}
+.gnav{display:flex;gap:6px}
+.gnav button{font:inherit;font-size:17px;line-height:1;color:var(--ink);background:none;border:1px solid var(--line);width:44px;height:36px;cursor:pointer}
+.gnav button:hover:not(:disabled){border-color:var(--ink)}
+.gnav button:disabled{color:var(--line);cursor:default}
+.gth{display:flex;gap:10px;margin-top:16px;overflow-x:auto;scrollbar-width:none;padding:2px}
+.gth::-webkit-scrollbar{display:none}
+.gth button{flex:0 0 auto;padding:0;border:0;background:none;cursor:pointer;opacity:.42;transition:opacity .2s}
+.gth button[aria-current="true"],.gth button:hover{opacity:1}
+.gth button[aria-current="true"]{box-shadow:0 0 0 1px var(--ink)}
+.gth img{height:64px;width:auto;max-width:none;background:var(--tile)}
+[hidden]{display:none!important}
+
+@media (max-width:1100px){
+  .card{flex-basis:calc((100% - 56px) / 2.35)}
+  .brand{flex-direction:column;align-items:flex-start;gap:4px}
+  .brand .tag{font-size:11px;padding-left:0;border-left:0}
+}
+@media (max-width:820px){
+  :root{--gut:18px}
+  .mast{height:56px;gap:14px}
+  .mast{height:auto;flex-wrap:wrap;column-gap:14px;row-gap:8px;padding-top:12px;padding-bottom:10px}
+  .brand{flex-direction:column;align-items:flex-start;gap:4px}
+  .brand img{height:20px}
+  .brand .tag{font-size:11px;padding-left:0;border-left:0}
+  .lang{margin-left:auto;align-self:flex-start}
+  .nav{order:3;width:100%;margin-left:0}
+  [id]{scroll-margin-top:104px}
+  .nav{gap:16px;font-size:13px}
+  .intro{padding-top:56px;padding-bottom:56px}
+  .intro h1{font-size:25px}
+  :root:not([data-lang="en"]) .intro h1{font-size:22px}
+  .tiles{grid-template-columns:1fr;row-gap:48px}
+  .col{display:contents}
+  .cap{flex-direction:column;gap:2px}
+  .cap .mt{text-align:left;white-space:normal}
+  .sel,.all,.fash,.about,.cat{padding-bottom:88px}
+  .allh{padding-bottom:40px}
+  .allh .sh{font-size:26px}
+  .cards{gap:14px;margin-right:calc(-1 * var(--gut));padding-right:var(--gut);scroll-padding-left:0}
+  .card{flex-basis:76%}
+  .rnav{display:none}
+  .cat{padding-bottom:52px}
+  .fash .aw{margin:-20px 0 36px}
+  .fash .fi{margin-bottom:36px}
+  .fz .col.r{padding-top:0}
+  .ag{grid-template-columns:1fr;gap:6px}
+  .ag li{flex-direction:column;gap:0}
+  .ad{text-align:left}
+  .ab{grid-template-columns:1fr}
+  .ab figure,.ab .tx{grid-column:1}
+  .ab figure{max-width:340px;margin-bottom:36px}
+  .svc li{grid-template-columns:1fr;gap:2px}
+  .ct{grid-template-columns:1fr;gap:28px}
+  .ct .mail{font-size:26px}
+  .ph{grid-template-columns:1fr;padding:32px 0 36px;gap:18px}
+  .ph h2,.pd{grid-column:1}
+  .pages{row-gap:28px}
+  .pg.tall{width:100%}
+  .gt{align-items:flex-start}
+  .gs{height:auto;justify-content:flex-start}
+  .gs img{width:100%;max-height:none}
+  .gth{display:none}
+  .gnav button{width:40px;height:34px}
+  .foot{flex-direction:column;gap:4px;margin-top:72px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gt,.cards{scroll-behavior:auto}.tile img,.card img{transition:none}}
+
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+<header class="top"><div class="wrap mast">
+  <a class="brand" href="#/" data-go=""><img class="logo-dark" src="assets/logo.png" width="139" height="24" alt="Foldlight Studio"><img class="logo-light" src="assets/logo-light.png" width="139" height="24" alt="Foldlight Studio"><span class="tag"><span class="l-zh">画册 · 课件 · 图纸</span><span class="l-en">Catalogues · Slides · Drawings</span></span></a>
+  <nav class="nav" aria-label="Main">
+    <a href="#selected" data-jump="selected"><span class="l-zh">精选</span><span class="l-en">Selected</span></a>
+    <a href="#all" data-jump="all"><span class="l-zh">全部作品</span><span class="l-en">All work</span></a>
+    <a href="#fashion" data-jump="fashion"><span class="l-zh">服装</span><span class="l-en">Fashion</span></a>
+    <a href="#about" data-jump="about"><span class="l-zh">关于</span><span class="l-en">About</span></a>
+    <a href="#contact" data-jump="contact"><span class="l-zh">联系</span><span class="l-en">Contact</span></a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language / 语言"><button type="button" data-set-lang="zh" lang="zh-CN">中</button><span aria-hidden="true">/</span><button type="button" data-set-lang="en" lang="en">EN</button></div>
+</div></header>
+
+<main>
+<div class="view home" data-view="">
+
+  <section class="wrap intro">
+    <h1><span class="l-zh">我给工厂、工程公司和学校做产品画册、说明书、技术图纸和汇报 PPT，中英双语，从排版做到交付。</span><span class="l-en">I design product catalogues, manuals, technical drawings and presentation decks for manufacturers, engineering firms and schools, in English and Chinese, from layout to final files.</span></h1>
+    <p><span class="l-zh">服装设计出身，在爱尔兰读书、工作十年，到现在交付了 200 多个项目。有活可以直接<a href="#contact" data-jump="contact">联系我</a>。</span><span class="l-en">I trained in fashion design and spent ten years studying and working in Ireland. I've delivered more than 200 projects so far. <a href="#contact" data-jump="contact">Get in touch</a> if you have something in mind.</span></p>
+  </section>
+
+  <section class="wrap sel" id="selected">
+    <div class="lab"><span><span class="l-zh">精选</span><span class="l-en">Selected</span></span><span class="c"><span class="l-zh">点开看内页</span><span class="l-en">Open a project to see the inside pages</span></span></div>
+    <div class="tiles"><div class="col l">
+      <a class="tile" style="order:0" href="#/p/catalogue" data-go="p/catalogue">
+        <figure><img src="img/w/cat-1.jpg" width="1600" height="900" alt="运动瑜伽服英文产品目录" data-alt-en="Activewear catalogue in English" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">运动瑜伽服英文产品目录</span><span class="l-en">Activewear catalogue in English</span></span></span><span class="mt"><span><span class="l-zh">产品画册</span><span class="l-en">Catalogue</span></span></span></span>
+      </a>
+      <a class="tile" style="order:2" href="#/p/booth" data-go="p/booth">
+        <figure><img src="img/w/booth-1.jpg" width="1600" height="1200" alt="展台与标识" data-alt-en="Booth and signage" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">展台与标识</span><span class="l-en">Booth and signage</span></span></span><span class="mt"><span><span class="l-zh">展会与空间</span><span class="l-en">Exhibition and space</span></span></span></span>
+      </a>
+      <a class="tile tall" style="order:4" href="#/p/sonic-state" data-go="p/sonic-state">
+        <figure><img src="img/w/sonic-lookbook-group.jpg" width="938" height="1406" alt="Sonic State 毕业系列" data-alt-en="Sonic State, graduate collection" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">Sonic State 毕业系列</span><span class="l-en">Sonic State, graduate collection</span></span></span><span class="mt"><span><span class="l-zh">服装设计</span><span class="l-en">Fashion design</span></span></span></span>
+      </a></div><div class="col r">
+      <a class="tile" style="order:1" href="#/p/pharma-report" data-go="p/pharma-report">
+        <figure><img src="img/w/pharma-01.jpg" width="1600" height="900" alt="区域市场整合汇报" data-alt-en="Regional market integration report" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">区域市场整合汇报</span><span class="l-en">Regional market integration report</span></span></span><span class="mt"><span><span class="l-zh">汇报 PPT</span><span class="l-en">Report deck</span></span></span></span>
+      </a>
+      <a class="tile" style="order:3" href="#/p/billion-baby" data-go="p/billion-baby">
+        <figure><img src="img/w/bb-product.jpg" width="1600" height="900" alt="Billion Baby 首个系列与品牌 logo" data-alt-en="Billion Baby: first drop &amp; logo" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">Billion Baby 首个系列与品牌 logo</span><span class="l-en">Billion Baby: first drop &amp; logo</span></span></span><span class="mt"><span><span class="l-zh">品牌与服装开发</span><span class="l-en">Brand and apparel development</span></span></span></span>
+      </a>
+      <a class="tile" style="order:5" href="#/p/pcb" data-go="p/pcb">
+        <figure><img src="img/w/pcb-iso.jpg" width="1800" height="1072" alt="传感器扩展板原理图和 PCB" data-alt-en="Sensor board schematic and PCB" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">传感器扩展板原理图和 PCB</span><span class="l-en">Sensor board schematic and PCB</span></span></span><span class="mt"><span><span class="l-zh">电子设计</span><span class="l-en">Electronics</span></span></span></span>
+      </a></div></div>
+  </section>
+
+  <section class="wrap allh" id="all">
+    <h2 class="sh"><span class="l-zh">全部作品</span><span class="l-en">All work</span></h2>
+    <p><span class="l-zh">21 个项目，按类型分组。交付过的项目有 200 多个，客户名称不公开，想看同类样例可以问我。</span><span class="l-en">21 projects, grouped by type, out of more than 200 delivered. Client names aren't published; ask me if you'd like more samples of a particular kind.</span></p>
+  </section>
+
+  <section class="wrap cat" id="print" data-row>
+    <div class="lab"><span><span><span class="l-zh">画册与印刷</span><span class="l-en">Print</span></span></span><span class="c"><span><span class="l-zh">6 个项目</span><span class="l-en">6 projects</span></span><span class="rnav"><button type="button" class="rp" aria-label="Previous / 上一组" disabled>&#8592;</button><button type="button" class="rn" aria-label="Next / 下一组">&#8594;</button></span></span></div>
+    <div class="cards" tabindex="0">
+      <a class="card" href="#/p/catalogue" data-go="p/catalogue">
+        <figure><img src="img/w/cat-1.jpg" width="1600" height="900" alt="运动瑜伽服英文产品目录" data-alt-en="Activewear catalogue in English" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">运动瑜伽服英文产品目录</span><span class="l-en">Activewear catalogue in English</span></span></span><span class="mt"><span><span class="l-zh">产品画册 · 6 张</span><span class="l-en">Catalogue · 6 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/reptile-catalogue" data-go="p/reptile-catalogue">
+        <figure><img src="img/w/rep-p02.jpg" width="1158" height="1514" alt="爬宠用品英文产品目录" data-alt-en="Reptile supplies catalogue" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">爬宠用品英文产品目录</span><span class="l-en">Reptile supplies catalogue</span></span></span><span class="mt"><span><span class="l-zh">产品画册 · 4 张</span><span class="l-en">Catalogue · 4 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/trifold" data-go="p/trifold">
+        <figure><img src="img/w/tri-1.jpg" width="1600" height="1179" alt="三折页和餐厅菜单" data-alt-en="Tri-fold and restaurant menu" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">三折页和餐厅菜单</span><span class="l-en">Tri-fold and restaurant menu</span></span></span><span class="mt"><span><span class="l-zh">印刷品 · 5 张</span><span class="l-en">Print · 5 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/research-report" data-go="p/research-report">
+        <figure><img src="img/w/rep145-01.jpg" width="1600" height="1132" alt="服装主题英文研究报告" data-alt-en="Fashion research report in English" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">服装主题英文研究报告</span><span class="l-en">Fashion research report in English</span></span></span><span class="mt"><span><span class="l-zh">报告排版 · 8 张</span><span class="l-en">Report layout · 8 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/booth" data-go="p/booth">
+        <figure><img src="img/w/booth-1.jpg" width="1600" height="1200" alt="展台与标识" data-alt-en="Booth and signage" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">展台与标识</span><span class="l-en">Booth and signage</span></span></span><span class="mt"><span><span class="l-zh">展会与空间 · 5 张</span><span class="l-en">Exhibition and space · 5 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/tech-docs" data-go="p/tech-docs">
+        <figure><img src="img/w/manual-1.jpg" width="773" height="1091" alt="说明书和试验报告英译" data-alt-en="Manual and test report translation" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">说明书和试验报告英译</span><span class="l-en">Manual and test report translation</span></span></span><span class="mt"><span><span class="l-zh">技术文件 · 4 张</span><span class="l-en">Technical documents · 4 images</span></span></span></span>
+      </a></div>
+  </section>
+  <section class="wrap cat" id="slides" data-row>
+    <div class="lab"><span><span><span class="l-zh">汇报与课件</span><span class="l-en">Slides</span></span></span><span class="c"><span><span class="l-zh">6 个项目</span><span class="l-en">6 projects</span></span><span class="rnav"><button type="button" class="rp" aria-label="Previous / 上一组" disabled>&#8592;</button><button type="button" class="rn" aria-label="Next / 下一组">&#8594;</button></span></span></div>
+    <div class="cards" tabindex="0">
+      <a class="card" href="#/p/edu-decks" data-go="p/edu-decks">
+        <figure><img src="img/w/edu-158.jpg" width="1600" height="900" alt="学校课件和课程汇报" data-alt-en="School lessons and programme reports" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">学校课件和课程汇报</span><span class="l-en">School lessons and programme reports</span></span></span><span class="mt"><span><span class="l-zh">教学课件 · 10 张</span><span class="l-en">Teaching · 10 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/bank-report" data-go="p/bank-report">
+        <figure><img src="img/w/bank-01.jpg" width="1600" height="900" alt="银行网点服务与营销汇报" data-alt-en="Bank branch service and sales report" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">银行网点服务与营销汇报</span><span class="l-en">Bank branch service and sales report</span></span></span><span class="mt"><span><span class="l-zh">汇报 PPT · 9 张</span><span class="l-en">Report deck · 9 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/pharma-report" data-go="p/pharma-report">
+        <figure><img src="img/w/pharma-01.jpg" width="1600" height="900" alt="区域市场整合汇报" data-alt-en="Regional market integration report" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">区域市场整合汇报</span><span class="l-en">Regional market integration report</span></span></span><span class="mt"><span><span class="l-zh">汇报 PPT · 8 张</span><span class="l-en">Report deck · 8 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/data-deck" data-go="p/data-deck">
+        <figure><img src="img/w/data-01.jpg" width="1600" height="901" alt="销售数据分析 PPT" data-alt-en="Sales data analysis deck" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">销售数据分析 PPT</span><span class="l-en">Sales data analysis deck</span></span></span><span class="mt"><span><span class="l-zh">数据汇报 · 6 张</span><span class="l-en">Data deck · 6 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/medical-deck" data-go="p/medical-deck">
+        <figure><img src="img/w/med-01.jpg" width="1600" height="901" alt="医学科普 PPT" data-alt-en="Medical explainer deck" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">医学科普 PPT</span><span class="l-en">Medical explainer deck</span></span></span><span class="mt"><span><span class="l-zh">科普 PPT · 7 张</span><span class="l-en">Explainer deck · 7 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/courseware" data-go="p/courseware">
+        <figure><img src="img/w/avi-01.jpg" width="1600" height="901" alt="航空英语课件" data-alt-en="Aviation English lesson" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">航空英语课件</span><span class="l-en">Aviation English lesson</span></span></span><span class="mt"><span><span class="l-zh">英文课件 · 8 张</span><span class="l-en">Courseware · 8 images</span></span></span></span>
+      </a></div>
+  </section>
+  <section class="wrap cat" id="drawings" data-row>
+    <div class="lab"><span><span><span class="l-zh">图纸与图表</span><span class="l-en">Drawings and diagrams</span></span></span><span class="c"><span><span class="l-zh">6 个项目</span><span class="l-en">6 projects</span></span><span class="rnav"><button type="button" class="rp" aria-label="Previous / 上一组" disabled>&#8592;</button><button type="button" class="rn" aria-label="Next / 下一组">&#8594;</button></span></span></div>
+    <div class="cards" tabindex="0">
+      <a class="card" href="#/p/pcb" data-go="p/pcb">
+        <figure><img src="img/w/pcb-iso.jpg" width="1800" height="1072" alt="传感器扩展板原理图和 PCB" data-alt-en="Sensor board schematic and PCB" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">传感器扩展板原理图和 PCB</span><span class="l-en">Sensor board schematic and PCB</span></span></span><span class="mt"><span><span class="l-zh">电子设计 · 6 张</span><span class="l-en">Electronics · 6 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/control-set" data-go="p/control-set">
+        <figure><img src="img/w/ctl-01.jpg" width="2000" height="1414" alt="控制系统整套电气图" data-alt-en="Control system drawing set" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">控制系统整套电气图</span><span class="l-en">Control system drawing set</span></span></span><span class="mt"><span><span class="l-zh">电气图纸 · 7 张</span><span class="l-en">Electrical drawings · 7 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/sketch-cad" data-go="p/sketch-cad">
+        <figure><img src="img/w/cad-sketch.jpg" width="1280" height="1707" alt="手绘草图转 CAD" data-alt-en="Hand sketch to CAD" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">手绘草图转 CAD</span><span class="l-en">Hand sketch to CAD</span></span></span><span class="mt"><span><span class="l-zh">电气图纸 · 5 张</span><span class="l-en">Electrical drawings · 5 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/process" data-go="p/process">
+        <figure><img src="img/w/dwg-water.jpg" width="1600" height="1131" alt="工艺流程图和 P&amp;ID" data-alt-en="Process flow diagrams and P&amp;IDs" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">工艺流程图和 P&amp;ID</span><span class="l-en">Process flow diagrams and P&amp;IDs</span></span></span><span class="mt"><span><span class="l-zh">工艺图纸 · 6 张</span><span class="l-en">Process drawings · 6 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/electrical" data-go="p/electrical">
+        <figure><img src="img/w/dwg-cabinet.jpg" width="2000" height="720" alt="电柜原理图和布置图" data-alt-en="Cabinet schematics and layouts" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">电柜原理图和布置图</span><span class="l-en">Cabinet schematics and layouts</span></span></span><span class="mt"><span><span class="l-zh">电气图纸 · 7 张</span><span class="l-en">Electrical drawings · 7 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/infographics" data-go="p/infographics">
+        <figure><img src="img/w/info-146.jpg" width="1600" height="1276" alt="信息图和示意图" data-alt-en="Infographics and diagrams" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">信息图和示意图</span><span class="l-en">Infographics and diagrams</span></span></span><span class="mt"><span><span class="l-zh">图表 · 13 张</span><span class="l-en">Diagrams · 13 images</span></span></span></span>
+      </a></div>
+  </section>
+
+  <section class="wrap fash" id="fashion" data-row>
+    <div class="lab"><span><span class="l-zh">服装</span><span class="l-en">Fashion</span></span><span class="c"><span class="l-zh">我的本行</span><span class="l-en">Where I started</span><span class="rnav"><button type="button" class="rp" aria-label="Previous / 上一组" disabled>&#8592;</button><button type="button" class="rn" aria-label="Next / 下一组">&#8594;</button></span></span></div>
+    <p class="fi"><span class="l-zh">我是学服装设计出身的。毕业系列从概念、面料实验到 3D 建模和成衣，都是自己完成的。</span><span class="l-en">I trained as a fashion designer. I took my graduate collection from concept and fabric tests through 3D modelling to finished garments myself.</span></p>
+    <p class="aw"><span class="l-zh">2022 年都柏林城市大学青年设计师比赛 第一名</span><span class="l-en">First place, Dublin City University young designer competition, 2022</span></p>
+    <div class="cards" tabindex="0">
+      <a class="card" href="#/p/sonic-state" data-go="p/sonic-state">
+        <figure><img src="img/w/sonic-lookbook-group.jpg" width="938" height="1406" alt="Sonic State 毕业系列" data-alt-en="Sonic State, graduate collection" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">Sonic State 毕业系列</span><span class="l-en">Sonic State, graduate collection</span></span></span><span class="mt"><span><span class="l-zh">服装设计 · 6 张</span><span class="l-en">Fashion design · 6 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/billion-baby" data-go="p/billion-baby">
+        <figure><img src="img/w/bb-product.jpg" width="1600" height="900" alt="Billion Baby 首个系列与品牌 logo" data-alt-en="Billion Baby: first drop &amp; logo" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">Billion Baby 首个系列与品牌 logo</span><span class="l-en">Billion Baby: first drop &amp; logo</span></span></span><span class="mt"><span><span class="l-zh">品牌与服装开发 · 8 张</span><span class="l-en">Brand and apparel development · 8 images</span></span></span></span>
+      </a>
+      <a class="card" href="#/p/tech-packs" data-go="p/tech-packs">
+        <figure><img src="img/w/vyra-1.jpg" width="1200" height="1500" alt="运动服 tech pack 和打样" data-alt-en="Activewear tech packs and sampling" loading="lazy" decoding="async"></figure>
+        <span class="cap"><span class="tt"><span><span class="l-zh">运动服 tech pack 和打样</span><span class="l-en">Activewear tech packs and sampling</span></span></span><span class="mt"><span><span class="l-zh">服装开发 · 6 张</span><span class="l-en">Apparel development · 6 images</span></span></span></span>
+      </a></div>
+    <p class="more"><span class="l-zh">服装开发文件也能做：tech pack、BOM 和 POM、图案定位、打样意见。</span><span class="l-en">I also prepare apparel development files: tech packs, BOM and POM, print placement and sample comments.</span></p>
+  </section>
+
+  <section class="wrap about" id="about">
+    <div class="lab"><span><span class="l-zh">关于</span><span class="l-en">About</span></span><span class="c"></span></div>
+    <div class="ab">
+      <figure><img src="img/about.jpg" width="1050" height="1400" alt="本人照片" data-alt-en="Portrait" loading="lazy" decoding="async"></figure>
+      <div class="tx">
+        <p class="lead"><span class="l-zh">排版、写英文、画图、做网站，都是我自己来，你不用在几家之间来回对接。</span><span class="l-en">I do the layout, write the English, draw the diagrams and build the website myself, so you don't have to coordinate several suppliers.</span></p>
+        <p class="lead"><span class="l-zh">技术资料我会先看懂再动手。资料量大的活，我写小工具批量处理。</span><span class="l-en">I make sure I understand the technical content before I start designing, and when there's a lot of material I write small tools to process it in batches.</span></p>
+        <ul class="cred">
+          <li><span class="k"><span class="l-zh">学历</span><span class="l-en">Education</span></span><span><span class="l-zh">都柏林 Griffith College，服装设计荣誉学士</span><span class="l-en">Honours BA in Fashion Design, Griffith College Dublin</span></span></li>
+          <li><span class="k"><span class="l-zh">获奖</span><span class="l-en">Award</span></span><span><span class="l-zh">2022 年都柏林城市大学青年设计师比赛第一名</span><span class="l-en">First place, Dublin City University young designer competition, 2022</span></span></li>
+          <li><span class="k"><span class="l-zh">语言</span><span class="l-en">Languages</span></span><span><span class="l-zh">在爱尔兰十年，雅思 8.5。跟你用中文沟通，交出去的是地道英文。</span><span class="l-en">Ten years in Ireland, IELTS 8.5. We can talk in Chinese, and the English you get back reads naturally.</span></span></li>
+          <li><span class="k"><span class="l-zh">项目</span><span class="l-en">Projects</span></span><span><span class="l-zh">200 多个设计和文件项目</span><span class="l-en">200+ design and document projects</span></span></li>
+        </ul>
+
+        <div class="sub">
+          <h3><span class="l-zh">我做的事</span><span class="l-en">What I do</span></h3>
+          <ul class="svc">
+            <li><span class="n"><span class="l-zh">画册与印刷</span><span class="l-en">Print</span></span><span class="d"><span class="l-zh">产品画册、折页、色卡、说明书排版、展台效果图和横幅。交 PDF 和可编辑源文件。</span><span class="l-en">Product catalogues, brochures, colour cards, manual layout, booth renderings and banners. PDF plus editable source files.</span></span></li>
+            <li><span class="n"><span class="l-zh">汇报与课件</span><span class="l-en">Slides</span></span><span class="d"><span class="l-zh">公司介绍、项目汇报、数据分析 PPT，英文教学课件，可以套你们的模板。</span><span class="l-en">Company profiles, project reports, data decks and English teaching materials, in your own template if you have one.</span></span></li>
+            <li><span class="n"><span class="l-zh">图纸与流程图</span><span class="l-en">Drawings</span></span><span class="d"><span class="l-zh">电气原理图、接线图、P&amp;ID、车间布局、流程图。可以照着照片、草图或旧图重画，出英文标注。</span><span class="l-en">Electrical schematics, wiring diagrams, P&amp;IDs, layouts and flowcharts, redrawn from photos, sketches or old drawings, with English labels.</span></span></li>
+            <li><span class="n"><span class="l-zh">翻译与文件转换</span><span class="l-en">Translation</span></span><span class="d"><span class="l-zh">技术文件和论文中译英；扫描 PDF 转成可编辑的 Word、PPT 或 Excel。</span><span class="l-en">Chinese to English for technical documents and papers. Scanned PDFs turned into editable Word, PowerPoint or Excel.</span></span></li>
+            <li><span class="n"><span class="l-zh">网站与小工具</span><span class="l-en">Web and tools</span></span><span class="d"><span class="l-zh">企业官网、产品展示站，从设计到上线；用 Python 批量处理图片、表格和文件。</span><span class="l-en">Company and product websites from design to launch, and Python scripts that batch-process images, spreadsheets and files.</span></span></li>
+          </ul>
+        </div>
+
+        <div class="sub">
+          <h3><span class="l-zh">怎么合作</span><span class="l-en">How we work</span></h3>
+          <ol class="steps">
+            <li><span><span class="l-zh">你发资料和要求，说明用途：印刷、发邮件、展会、汇报还是上线。</span><span class="l-en">You send your files and brief, and tell me what it's for: print, email, a trade show, a presentation or the web.</span></span></li>
+            <li><span><span class="l-zh">我确认工作内容和交付时间，缺的资料一次列给你；确认后付 50% 定金开工。</span><span class="l-en">I confirm the scope and delivery date and list anything missing in one go. Work starts once the 50% deposit is paid.</span></span></li>
+            <li><span><span class="l-zh">先出样稿，大约完成三成，带水印，用来定风格和方向。</span><span class="l-en">You get a first proof at about 30% complete, watermarked, to settle the style and direction.</span></span></li>
+            <li><span><span class="l-zh">样稿阶段可调整方向；样稿确认后含 2 轮修改，错字和参数修正不计次数，超出另计。</span><span class="l-en">The direction can still change at the proof stage. Once the proof is approved, 2 rounds of revisions are included. Typos and data corrections don't count as a round. Anything beyond that is quoted separately.</span></span></li>
+            <li><span><span class="l-zh">交终稿；你确认后付尾款，付清后交可编辑源文件。</span><span class="l-en">I deliver the final files. After you approve them and pay the balance, you receive the editable source files.</span></span></li>
+          </ol>
+          <p class="note"><span class="l-zh">不含产品拍摄、印刷和寄送、图纸的工程审核和签字盖章，以及需另外购买的商用字体和图片授权。</span><span class="l-en">Not included: product photography, printing and shipping, engineering review, signing or stamping of drawings, and any commercial font or image licences that need to be bought.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap contact" id="contact">
+    <div class="lab"><span><span class="l-zh">联系</span><span class="l-en">Contact</span></span><span class="c"></span></div>
+    <div class="ct">
+      <p class="mail"><a href="mailto:ainstuconnect@gmail.com">ainstuconnect@gmail.com</a></p>
+      <ul>
+        <li><span class="k"><span class="l-zh">微信</span><span class="l-en">WeChat</span></span><span>ainstuz</span></li>
+        <li class="c-wa"><span class="k">WhatsApp</span><a href="https://wa.me/8613350278787" target="_blank" rel="noopener">+86 133 5027 8787</a></li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+  <article class="view proj" id="p-catalogue" data-view="p/catalogue" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">运动瑜伽服英文产品目录</span><span class="l-en">Activewear catalogue in English</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">给做 OEM、ODM 和贴牌的针织工厂做的一整本英文目录：封面、公司介绍、产品页到联系页，共 32 页。</span><span class="l-en">A complete English catalogue for a knitwear factory that offers OEM, ODM and private label: cover, company profile, product pages and contact page, 32 pages in all.</span></p>
+          <ul class="facts"><li><span class="l-zh">产品画册</span><span class="l-en">Catalogue</span></li><li><span><span class="l-zh">32 页，PDF + 可编辑 PPT</span><span class="l-en">32 pages, PDF plus editable PowerPoint</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/cat-1.jpg" width="1600" height="900" alt="封面" data-alt-en="Cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">封面</span><span class="l-en">Cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/cat-p03.jpg" width="1600" height="899" alt="章节页" data-alt-en="Section opener" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">章节页</span><span class="l-en">Section opener</span></span></figcaption></figure><figure class="gs"><img src="img/w/cat-p05.jpg" width="1600" height="899" alt="产品页" data-alt-en="Product page" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">产品页</span><span class="l-en">Product page</span></span></figcaption></figure><figure class="gs"><img src="img/w/cat-p09.jpg" width="1600" height="899" alt="产品页" data-alt-en="Product page" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">产品页</span><span class="l-en">Product page</span></span></figcaption></figure><figure class="gs"><img src="img/w/cat-p19.jpg" width="1600" height="899" alt="产品页" data-alt-en="Product page" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">产品页</span><span class="l-en">Product page</span></span></figcaption></figure><figure class="gs"><img src="img/w/cat-p31.jpg" width="1600" height="899" alt="合作流程" data-alt-en="Service process" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">合作流程</span><span class="l-en">Service process</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 6</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 6" aria-current="true"><img src="img/t/cat-1.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 6"><img src="img/t/cat-p03.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 6"><img src="img/t/cat-p05.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 6"><img src="img/t/cat-p09.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 6"><img src="img/t/cat-p19.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 6"><img src="img/t/cat-p31.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-reptile-catalogue" data-view="p/reptile-catalogue" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">爬宠用品英文产品目录</span><span class="l-en">Reptile supplies catalogue</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">给爬宠饲养箱厂家做的英文目录，32 页：目录、六个产品大类，每类有产品图、卖点和尺寸表。</span><span class="l-en">A 32-page English catalogue for a terrarium maker: contents, six product categories, and for each one product photos, selling points and size tables.</span></p>
+          <ul class="facts"><li><span class="l-zh">产品画册</span><span class="l-en">Catalogue</span></li><li><span><span class="l-zh">32 页，A4 竖版</span><span class="l-en">32 pages, A4 portrait</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/rep-p02.jpg" width="1158" height="1514" alt="目录页" data-alt-en="Contents" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">目录页</span><span class="l-en">Contents</span></span></figcaption></figure><figure class="gs"><img src="img/w/rep-p03.jpg" width="1158" height="1514" alt="产品页和尺寸表" data-alt-en="Product page with size table" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">产品页和尺寸表</span><span class="l-en">Product page with size table</span></span></figcaption></figure><figure class="gs"><img src="img/w/rep-p14.jpg" width="1158" height="1514" alt="产品页" data-alt-en="Product page" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">产品页</span><span class="l-en">Product page</span></span></figcaption></figure><figure class="gs"><img src="img/w/rep-p20.jpg" width="1158" height="1514" alt="产品页" data-alt-en="Product page" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">产品页</span><span class="l-en">Product page</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 4</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 4" aria-current="true"><img src="img/t/rep-p02.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 4"><img src="img/t/rep-p03.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 4"><img src="img/t/rep-p14.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 4"><img src="img/t/rep-p20.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-trifold" data-view="p/trifold" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">三折页和餐厅菜单</span><span class="l-en">Tri-fold and restaurant menu</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">爬宠用品的中英双语三折页，外面放品牌和联系方式，里面按垫材、饲养箱、灯具分区；另一件是一家中餐馆的两页菜单，照原菜单内容重新排版，荷兰语和中文对照。</span><span class="l-en">A bilingual tri-fold for reptile supplies, with brand and contact details outside and the products grouped into substrates, terrariums and lighting inside. Also a two-page menu for a Chinese restaurant, re-set from the original in Dutch and Chinese.</span></p>
+          <ul class="facts"><li><span class="l-zh">印刷品</span><span class="l-en">Print</span></li><li><span><span class="l-zh">三折页：中英双语，正反两面</span><span class="l-en">Tri-fold: Chinese and English, both sides</span></span></li><li><span><span class="l-zh">菜单：A4 两页，荷中双语</span><span class="l-en">Menu: two A4 pages, Dutch and Chinese</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/tri-1.jpg" width="1600" height="1179" alt="三折页外面展开" data-alt-en="Tri-fold, outside spread" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">三折页外面展开</span><span class="l-en">Tri-fold, outside spread</span></span></figcaption></figure><figure class="gs"><img src="img/w/tri-3.jpg" width="1571" height="1158" alt="三折页里面展开" data-alt-en="Tri-fold, inside spread" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">三折页里面展开</span><span class="l-en">Tri-fold, inside spread</span></span></figcaption></figure><figure class="gs"><img src="img/w/tri-2.jpg" width="710" height="1057" alt="三折页正反两面" data-alt-en="Tri-fold, both sides" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">三折页正反两面</span><span class="l-en">Tri-fold, both sides</span></span></figcaption></figure><figure class="gs"><img src="img/w/menu-1.jpg" width="1132" height="1600" alt="菜单第 1 页" data-alt-en="Menu, page 1" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">菜单第 1 页</span><span class="l-en">Menu, page 1</span></span></figcaption></figure><figure class="gs"><img src="img/w/menu-2.jpg" width="1132" height="1600" alt="菜单第 2 页" data-alt-en="Menu, page 2" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">菜单第 2 页</span><span class="l-en">Menu, page 2</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 5</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 5" aria-current="true"><img src="img/t/tri-1.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 5"><img src="img/t/tri-3.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 5"><img src="img/t/tri-2.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 5"><img src="img/t/menu-1.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 5"><img src="img/t/menu-2.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-research-report" data-view="p/research-report" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">服装主题英文研究报告</span><span class="l-en">Fashion research report in English</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">一份 27 页的 A3 横版英文研究报告，主题是日常穿着和服装消费。图片、正文、图注和引用格式统一编排。</span><span class="l-en">A 27-page A3 landscape research report in English on everyday dress and clothing consumption, with images, text, captions and references set in one consistent layout.</span></p>
+          <ul class="facts"><li><span class="l-zh">报告排版</span><span class="l-en">Report layout</span></li><li><span><span class="l-zh">27 页，A3 横版</span><span class="l-en">27 pages, A3 landscape</span></span></li><li><span><span class="l-zh">人物面部按原稿处理</span><span class="l-en">Faces are treated as in the original</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/rep145-01.jpg" width="1600" height="1132" alt="封面" data-alt-en="Cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">封面</span><span class="l-en">Cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/rep145-03.jpg" width="1600" height="1132" alt="主题一" data-alt-en="Theme 1" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">主题一</span><span class="l-en">Theme 1</span></span></figcaption></figure><figure class="gs"><img src="img/w/rep145-04.jpg" width="1600" height="1132" alt="主题二" data-alt-en="Theme 2" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">主题二</span><span class="l-en">Theme 2</span></span></figcaption></figure><figure class="gs"><img src="img/w/rep145-05.jpg" width="1600" height="1132" alt="主题三" data-alt-en="Theme 3" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">主题三</span><span class="l-en">Theme 3</span></span></figcaption></figure><figure class="gs"><img src="img/w/rep145-06.jpg" width="1600" height="1132" alt="第二部分" data-alt-en="Part 2" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">第二部分</span><span class="l-en">Part 2</span></span></figcaption></figure><figure class="gs"><img src="img/w/rep145-09.jpg" width="1600" height="1132" alt="对比分析" data-alt-en="Contrasts" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">对比分析</span><span class="l-en">Contrasts</span></span></figcaption></figure><figure class="gs"><img src="img/w/rep145-19.jpg" width="1600" height="1132" alt="外套总览" data-alt-en="Outerwear overview" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">外套总览</span><span class="l-en">Outerwear overview</span></span></figcaption></figure><figure class="gs"><img src="img/w/rep145-21.jpg" width="1600" height="1132" alt="补充材料" data-alt-en="Supplementary material" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">补充材料</span><span class="l-en">Supplementary material</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 8</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 8" aria-current="true"><img src="img/t/rep145-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 8"><img src="img/t/rep145-03.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 8"><img src="img/t/rep145-04.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 8"><img src="img/t/rep145-05.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 8"><img src="img/t/rep145-06.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 8"><img src="img/t/rep145-09.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="6" aria-label="7 / 8"><img src="img/t/rep145-19.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="7" aria-label="8 / 8"><img src="img/t/rep145-21.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-booth" data-view="p/booth" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">展台与标识</span><span class="l-en">Booth and signage</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">机械企业 6×3 米展台效果图，按林业、工程、回收三条产品线分区，配产品渲染图和后墙画面；另有一个接待中心的前台背景墙和门口立牌，出效果图和制作尺寸。</span><span class="l-en">A 6 × 3 m booth for a machinery maker, zoned by three product lines (forestry, construction and recycling), with product renders and back-wall graphics. Also the reception wall and entrance signs for a guest service centre, with renderings and production sizes.</span></p>
+          <ul class="facts"><li><span class="l-zh">展会与空间</span><span class="l-en">Exhibition and space</span></li><li><span><span class="l-zh">效果图 + 制作文件</span><span class="l-en">Renderings and production files</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/booth-1.jpg" width="1600" height="1200" alt="展台效果图" data-alt-en="Booth rendering" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">展台效果图</span><span class="l-en">Booth rendering</span></span></figcaption></figure><figure class="gs"><img src="img/w/booth-2.jpg" width="1600" height="1200" alt="展台正面" data-alt-en="Booth, front view" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">展台正面</span><span class="l-en">Booth, front view</span></span></figcaption></figure><figure class="gs"><img src="img/w/booth-3.jpg" width="1200" height="1200" alt="产品渲染" data-alt-en="Product render" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">产品渲染</span><span class="l-en">Product render</span></span></figcaption></figure><figure class="gs"><img src="img/w/sign-1.jpg" width="1379" height="957" alt="前台背景墙" data-alt-en="Reception wall" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">前台背景墙</span><span class="l-en">Reception wall</span></span></figcaption></figure><figure class="gs"><img src="img/w/sign-2.jpg" width="1462" height="781" alt="门口立面" data-alt-en="Entrance elevation" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">门口立面</span><span class="l-en">Entrance elevation</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 5</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 5" aria-current="true"><img src="img/t/booth-1.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 5"><img src="img/t/booth-2.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 5"><img src="img/t/booth-3.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 5"><img src="img/t/sign-1.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 5"><img src="img/t/sign-2.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-tech-docs" data-view="p/tech-docs" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">说明书和试验报告英译</span><span class="l-en">Manual and test report translation</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">医疗器械使用说明书改版，重新排版并整理插图；另一份是电气设备交接试验报告，中译英，表格按原格式重排。</span><span class="l-en">A redesigned user manual for a medical device with a new layout and tidied illustrations, and an electrical equipment handover test report translated from Chinese to English with the tables rebuilt in the original format.</span></p>
+          <ul class="facts"><li><span class="l-zh">技术文件</span><span class="l-en">Technical documents</span></li><li><span><span class="l-zh">报告编号、项目和委托单位已遮挡</span><span class="l-en">Report number, project and client are masked</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/manual-1.jpg" width="773" height="1091" alt="说明书封面" data-alt-en="Manual cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">说明书封面</span><span class="l-en">Manual cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/trep-01.jpg" width="1131" height="1600" alt="试验报告封面" data-alt-en="Test report cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">试验报告封面</span><span class="l-en">Test report cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/trep-05.jpg" width="1131" height="1600" alt="试验记录表" data-alt-en="Test record table" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">试验记录表</span><span class="l-en">Test record table</span></span></figcaption></figure><figure class="gs"><img src="img/w/trep-09.jpg" width="1131" height="1600" alt="试验记录表" data-alt-en="Test record table" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">试验记录表</span><span class="l-en">Test record table</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 4</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 4" aria-current="true"><img src="img/t/manual-1.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 4"><img src="img/t/trep-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 4"><img src="img/t/trep-05.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 4"><img src="img/t/trep-09.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-edu-decks" data-view="p/edu-decks" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">学校课件和课程汇报</span><span class="l-en">School lessons and programme reports</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">三件给学校做的东西：一份 22 页带动画的课程建设汇报，把目标、落地和成果做成图解页；一份音乐欣赏课件，乐谱随演唱逐句变色；还有一个希沃白板上玩的西游记飞行棋。</span><span class="l-en">Three pieces for schools: a 22-slide animated report on building a course, with the aims, delivery and results drawn as diagrams; a music appreciation lesson where the score lights up line by line with the singing; and a Journey to the West board game played on an interactive whiteboard.</span></p>
+          <ul class="facts"><li><span class="l-zh">教学课件</span><span class="l-en">Teaching</span></li><li><span><span class="l-zh">汇报 22 页，动态 PPT</span><span class="l-en">Report: 22 animated slides</span></span></li><li><span><span class="l-zh">音乐课件这里只放 2 页</span><span class="l-en">Only 2 slides of the music lesson are shown</span></span></li><li><span><span class="l-zh">学校名称和标志已遮挡</span><span class="l-en">School names and logos are masked</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/edu-175-04.jpg" width="1600" height="901" alt="课程汇报：一门课的统整" data-alt-en="Course report: one course, joined up" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">课程汇报：一门课的统整</span><span class="l-en">Course report: one course, joined up</span></span></figcaption></figure><figure class="gs"><img src="img/w/edu-175-05.jpg" width="1600" height="901" alt="课程汇报：结构图" data-alt-en="Course report: structure" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">课程汇报：结构图</span><span class="l-en">Course report: structure</span></span></figcaption></figure><figure class="gs"><img src="img/w/edu-175-09.jpg" width="1600" height="901" alt="课程汇报：教研活动" data-alt-en="Course report: teacher workshops" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">课程汇报：教研活动</span><span class="l-en">Course report: teacher workshops</span></span></figcaption></figure><figure class="gs"><img src="img/w/edu-175-14.jpg" width="1600" height="901" alt="课程汇报：共建班级" data-alt-en="Course report: class partnership" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">课程汇报：共建班级</span><span class="l-en">Course report: class partnership</span></span></figcaption></figure><figure class="gs"><img src="img/w/edu-175-15.jpg" width="1600" height="901" alt="课程汇报：作品展示" data-alt-en="Course report: student work" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">课程汇报：作品展示</span><span class="l-en">Course report: student work</span></span></figcaption></figure><figure class="gs"><img src="img/w/edu-175-19.jpg" width="1600" height="901" alt="课程汇报：分工与进度" data-alt-en="Course report: roles and timeline" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">课程汇报：分工与进度</span><span class="l-en">Course report: roles and timeline</span></span></figcaption></figure><figure class="gs"><img src="img/w/edu-175-22.jpg" width="1600" height="901" alt="课程汇报：结尾页" data-alt-en="Course report: closing slide" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">课程汇报：结尾页</span><span class="l-en">Course report: closing slide</span></span></figcaption></figure><figure class="gs"><img src="img/w/edu-170-01.jpg" width="1600" height="900" alt="音乐课件：动态乐谱" data-alt-en="Music lesson: animated score" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">音乐课件：动态乐谱</span><span class="l-en">Music lesson: animated score</span></span></figcaption></figure><figure class="gs"><img src="img/w/edu-170-02.jpg" width="1600" height="900" alt="音乐课件：乐句分析" data-alt-en="Music lesson: phrase by phrase" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">音乐课件：乐句分析</span><span class="l-en">Music lesson: phrase by phrase</span></span></figcaption></figure><figure class="gs"><img src="img/w/edu-158.jpg" width="1600" height="900" alt="西游记飞行棋" data-alt-en="Journey to the West board game" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">西游记飞行棋</span><span class="l-en">Journey to the West board game</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 10</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 10" aria-current="true"><img src="img/t/edu-175-04.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 10"><img src="img/t/edu-175-05.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 10"><img src="img/t/edu-175-09.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 10"><img src="img/t/edu-175-14.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 10"><img src="img/t/edu-175-15.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 10"><img src="img/t/edu-175-19.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="6" aria-label="7 / 10"><img src="img/t/edu-175-22.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="7" aria-label="8 / 10"><img src="img/t/edu-170-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="8" aria-label="9 / 10"><img src="img/t/edu-170-02.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="9" aria-label="10 / 10"><img src="img/t/edu-158.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-bank-report" data-view="p/bank-report" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">银行网点服务与营销汇报</span><span class="l-en">Bank branch service and sales report</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">银行网点厅堂服务和营销的经验汇报，16 页：用真实案例讲服务规范、流程和成果，数据做成图表。后面附一份设备大修策划汇报的封面和目录。</span><span class="l-en">A 16-slide report on front-of-house service and sales at a bank branch, told through real cases, processes and results, with the numbers turned into charts. At the end, the cover of a separate equipment overhaul plan.</span></p>
+          <ul class="facts"><li><span class="l-zh">汇报 PPT</span><span class="l-en">Report deck</span></li><li><span><span class="l-zh">16 页</span><span class="l-en">16 slides</span></span></li><li><span><span class="l-zh">银行标志、支行名称和个人信息已遮挡</span><span class="l-en">Bank logo, branch name and personal details are masked</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/bank-01.jpg" width="1600" height="900" alt="封面" data-alt-en="Cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">封面</span><span class="l-en">Cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-03.jpg" width="1600" height="900" alt="服务规范化" data-alt-en="Service standards" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">服务规范化</span><span class="l-en">Service standards</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-04.jpg" width="1600" height="900" alt="案例：识别骗局" data-alt-en="Case: spotting a scam" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">案例：识别骗局</span><span class="l-en">Case: spotting a scam</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-07.jpg" width="1600" height="900" alt="服务精细化" data-alt-en="Service detail" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">服务精细化</span><span class="l-en">Service detail</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-10.jpg" width="1600" height="900" alt="服务价值化" data-alt-en="Service value" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">服务价值化</span><span class="l-en">Service value</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-12.jpg" width="1600" height="900" alt="服务价值化：案例" data-alt-en="Service value: cases" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">服务价值化：案例</span><span class="l-en">Service value: cases</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-14.jpg" width="1600" height="900" alt="结语：成绩" data-alt-en="Results" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">结语：成绩</span><span class="l-en">Results</span></span></figcaption></figure><figure class="gs"><img src="img/w/bank-15.jpg" width="1600" height="900" alt="结尾页" data-alt-en="Closing slide" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">结尾页</span><span class="l-en">Closing slide</span></span></figcaption></figure><figure class="gs"><img src="img/w/plan-1.jpg" width="644" height="762" alt="另一份：设备大修策划汇报" data-alt-en="Another deck: equipment overhaul plan" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">另一份：设备大修策划汇报</span><span class="l-en">Another deck: equipment overhaul plan</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 9</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 9" aria-current="true"><img src="img/t/bank-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 9"><img src="img/t/bank-03.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 9"><img src="img/t/bank-04.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 9"><img src="img/t/bank-07.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 9"><img src="img/t/bank-10.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 9"><img src="img/t/bank-12.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="6" aria-label="7 / 9"><img src="img/t/bank-14.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="7" aria-label="8 / 9"><img src="img/t/bank-15.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="8" aria-label="9 / 9"><img src="img/t/plan-1.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-pharma-report" data-view="p/pharma-report" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">区域市场整合汇报</span><span class="l-en">Regional market integration report</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">医药企业的区域市场整合汇报，17 页：三个区域的市场和团队规划，每页信息量大，用分栏和小标题理清层次。</span><span class="l-en">A 17-slide report for a pharmaceutical company on merging regional markets: market and team plans for three regions, with dense pages organised into columns and short headings.</span></p>
+          <ul class="facts"><li><span class="l-zh">汇报 PPT</span><span class="l-en">Report deck</span></li><li><span><span class="l-zh">17 页</span><span class="l-en">17 slides</span></span></li><li><span><span class="l-zh">公司名称和标志已遮挡</span><span class="l-en">Company name and logo are masked</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/pharma-01.jpg" width="1600" height="900" alt="封面" data-alt-en="Cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">封面</span><span class="l-en">Cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/pharma-02.jpg" width="1600" height="900" alt="目录" data-alt-en="Contents" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">目录</span><span class="l-en">Contents</span></span></figcaption></figure><figure class="gs"><img src="img/w/pharma-03.jpg" width="1600" height="900" alt="整体规划" data-alt-en="Overall plan" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">整体规划</span><span class="l-en">Overall plan</span></span></figcaption></figure><figure class="gs"><img src="img/w/pharma-05.jpg" width="1600" height="900" alt="区域规划" data-alt-en="Regional plan" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">区域规划</span><span class="l-en">Regional plan</span></span></figcaption></figure><figure class="gs"><img src="img/w/pharma-07.jpg" width="1600" height="900" alt="团队规划" data-alt-en="Team plan" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">团队规划</span><span class="l-en">Team plan</span></span></figcaption></figure><figure class="gs"><img src="img/w/pharma-09.jpg" width="1600" height="900" alt="区域规划" data-alt-en="Regional plan" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">区域规划</span><span class="l-en">Regional plan</span></span></figcaption></figure><figure class="gs"><img src="img/w/pharma-13.jpg" width="1600" height="900" alt="市场规划" data-alt-en="Market plan" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">市场规划</span><span class="l-en">Market plan</span></span></figcaption></figure><figure class="gs"><img src="img/w/pharma-16.jpg" width="1600" height="900" alt="总结" data-alt-en="Summary" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">总结</span><span class="l-en">Summary</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 8</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 8" aria-current="true"><img src="img/t/pharma-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 8"><img src="img/t/pharma-02.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 8"><img src="img/t/pharma-03.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 8"><img src="img/t/pharma-05.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 8"><img src="img/t/pharma-07.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 8"><img src="img/t/pharma-09.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="6" aria-label="7 / 8"><img src="img/t/pharma-13.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="7" aria-label="8 / 8"><img src="img/t/pharma-16.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-data-deck" data-view="p/data-deck" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">销售数据分析 PPT</span><span class="l-en">Sales data analysis deck</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">拿一份销售明细表做成 8 页分析：区域概览、分省对比、库存健康度、问题和建议，最后一页指出数据本身的问题。</span><span class="l-en">An eight-slide analysis built from a raw sales table: regional overview, province comparison, inventory health, issues and recommendations, and a final slide on problems in the data itself.</span></p>
+          <ul class="facts"><li><span class="l-zh">数据汇报</span><span class="l-en">Data deck</span></li><li><span><span class="l-zh">8 页，图表可编辑</span><span class="l-en">8 slides, editable charts</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/data-01.jpg" width="1600" height="901" alt="区域整体概览" data-alt-en="Regional overview" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">区域整体概览</span><span class="l-en">Regional overview</span></span></figcaption></figure><figure class="gs"><img src="img/w/data-02.jpg" width="1600" height="901" alt="分省对比" data-alt-en="Province comparison" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">分省对比</span><span class="l-en">Province comparison</span></span></figcaption></figure><figure class="gs"><img src="img/w/data-03.jpg" width="1600" height="901" alt="分省详解" data-alt-en="Province detail" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">分省详解</span><span class="l-en">Province detail</span></span></figcaption></figure><figure class="gs"><img src="img/w/data-06.jpg" width="1600" height="901" alt="库存健康度" data-alt-en="Inventory health" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">库存健康度</span><span class="l-en">Inventory health</span></span></figcaption></figure><figure class="gs"><img src="img/w/data-07.jpg" width="1600" height="901" alt="问题与建议" data-alt-en="Issues and recommendations" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">问题与建议</span><span class="l-en">Issues and recommendations</span></span></figcaption></figure><figure class="gs"><img src="img/w/data-08.jpg" width="1600" height="901" alt="数据本身的问题" data-alt-en="Problems in the data" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">数据本身的问题</span><span class="l-en">Problems in the data</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 6</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 6" aria-current="true"><img src="img/t/data-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 6"><img src="img/t/data-02.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 6"><img src="img/t/data-03.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 6"><img src="img/t/data-06.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 6"><img src="img/t/data-07.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 6"><img src="img/t/data-08.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-medical-deck" data-view="p/medical-deck" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">医学科普 PPT</span><span class="l-en">Medical explainer deck</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">把一篇讲糖代谢和肿瘤关系的科普内容做成 8 页 PPT，插画统一角色，机制图和检查清单都重新画。</span><span class="l-en">An eight-slide deck that explains how sugar metabolism relates to cancer, with one illustrated character throughout and the mechanism diagrams and screening checklist redrawn.</span></p>
+          <ul class="facts"><li><span class="l-zh">科普 PPT</span><span class="l-en">Explainer deck</span></li><li><span><span class="l-zh">8 页，可编辑 PPT</span><span class="l-en">8 slides, editable PowerPoint</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/med-01.jpg" width="1600" height="901" alt="封面" data-alt-en="Cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">封面</span><span class="l-en">Cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/med-02.jpg" width="1600" height="901" alt="现象" data-alt-en="The pattern" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">现象</span><span class="l-en">The pattern</span></span></figcaption></figure><figure class="gs"><img src="img/w/med-03.jpg" width="1600" height="901" alt="风险数据" data-alt-en="Risk figures" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">风险数据</span><span class="l-en">Risk figures</span></span></figcaption></figure><figure class="gs"><img src="img/w/med-04.jpg" width="1600" height="901" alt="三条核心机制" data-alt-en="Three mechanisms" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">三条核心机制</span><span class="l-en">Three mechanisms</span></span></figcaption></figure><figure class="gs"><img src="img/w/med-06.jpg" width="1600" height="901" alt="预防建议" data-alt-en="Prevention" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">预防建议</span><span class="l-en">Prevention</span></span></figcaption></figure><figure class="gs"><img src="img/w/med-07.jpg" width="1600" height="901" alt="筛查清单" data-alt-en="Screening checklist" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">筛查清单</span><span class="l-en">Screening checklist</span></span></figcaption></figure><figure class="gs"><img src="img/w/med-08.jpg" width="1600" height="901" alt="总结" data-alt-en="Summary" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">总结</span><span class="l-en">Summary</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 7</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 7" aria-current="true"><img src="img/t/med-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 7"><img src="img/t/med-02.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 7"><img src="img/t/med-03.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 7"><img src="img/t/med-04.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 7"><img src="img/t/med-06.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 7"><img src="img/t/med-07.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="6" aria-label="7 / 7"><img src="img/t/med-08.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-courseware" data-view="p/courseware" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">航空英语课件</span><span class="l-en">Aviation English lesson</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">全英文试听课课件，20 页，围绕 GNSS 干扰的情景练习：知识点、真实案例时间线、案例数据和陆空通话练习。</span><span class="l-en">A 20-slide trial lesson in English built around GNSS interference scenarios: concepts, real case timelines, case figures and radio-call practice.</span></p>
+          <ul class="facts"><li><span class="l-zh">英文课件</span><span class="l-en">Courseware</span></li><li><span><span class="l-zh">20 页，全英文</span><span class="l-en">20 slides, all in English</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/avi-01.jpg" width="1600" height="901" alt="封面" data-alt-en="Cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">封面</span><span class="l-en">Cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/avi-05.jpg" width="1600" height="901" alt="GNSS 能提供什么" data-alt-en="What GNSS gives the aircraft" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">GNSS 能提供什么</span><span class="l-en">What GNSS gives the aircraft</span></span></figcaption></figure><figure class="gs"><img src="img/w/avi-07.jpg" width="1600" height="901" alt="知识点关系图" data-alt-en="Concept map" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">知识点关系图</span><span class="l-en">Concept map</span></span></figcaption></figure><figure class="gs"><img src="img/w/avi-08.jpg" width="1600" height="901" alt="RNAV 和 RNP" data-alt-en="RNAV and RNP" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">RNAV 和 RNP</span><span class="l-en">RNAV and RNP</span></span></figcaption></figure><figure class="gs"><img src="img/w/avi-10.jpg" width="1600" height="901" alt="案例时间线" data-alt-en="Case timeline" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">案例时间线</span><span class="l-en">Case timeline</span></span></figcaption></figure><figure class="gs"><img src="img/w/avi-12.jpg" width="1600" height="901" alt="案例数据" data-alt-en="Case in numbers" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">案例数据</span><span class="l-en">Case in numbers</span></span></figcaption></figure><figure class="gs"><img src="img/w/avi-16.jpg" width="1600" height="901" alt="陆空通话示例" data-alt-en="R/T example" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">陆空通话示例</span><span class="l-en">R/T example</span></span></figcaption></figure><figure class="gs"><img src="img/w/avi-20.jpg" width="1600" height="901" alt="结尾页" data-alt-en="Closing slide" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">结尾页</span><span class="l-en">Closing slide</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 8</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 8" aria-current="true"><img src="img/t/avi-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 8"><img src="img/t/avi-05.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 8"><img src="img/t/avi-07.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 8"><img src="img/t/avi-08.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 8"><img src="img/t/avi-10.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 8"><img src="img/t/avi-12.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="6" aria-label="7 / 8"><img src="img/t/avi-16.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="7" aria-label="8 / 8"><img src="img/t/avi-20.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-pcb" data-view="p/pcb" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">传感器扩展板原理图和 PCB</span><span class="l-en">Sensor board schematic and PCB</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">用 KiCad 画的传感器扩展板：两页原理图、PCB 器件布局分区和 3D 预览；另附一块 18650 电源板的原理图预览。</span><span class="l-en">A sensor add-on board drawn in KiCad: a two-page schematic, PCB placement zones and 3D previews, plus a schematic preview of an 18650 power board.</span></p>
+          <ul class="facts"><li><span class="l-zh">电子设计</span><span class="l-en">Electronics</span></li><li><span><span class="l-zh">KiCad 源文件 + PDF</span><span class="l-en">KiCad source files plus PDF</span></span></li><li><span><span class="l-zh">布局阶段，未布线</span><span class="l-en">Placement stage, not routed</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/pcb-iso.jpg" width="1800" height="1072" alt="3D 预览" data-alt-en="3D preview" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">3D 预览</span><span class="l-en">3D preview</span></span></figcaption></figure><figure class="gs"><img src="img/w/pcb-top.jpg" width="1800" height="985" alt="3D 顶视图" data-alt-en="3D top view" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">3D 顶视图</span><span class="l-en">3D top view</span></span></figcaption></figure><figure class="gs"><img src="img/w/pcb-place.jpg" width="2000" height="1414" alt="器件布局分区" data-alt-en="Placement zones" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">器件布局分区</span><span class="l-en">Placement zones</span></span></figcaption></figure><figure class="gs"><img src="img/w/pcb-sch1.jpg" width="2000" height="1415" alt="原理图第 1 页" data-alt-en="Schematic, page 1" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">原理图第 1 页</span><span class="l-en">Schematic, page 1</span></span></figcaption></figure><figure class="gs"><img src="img/w/pcb-sch2.jpg" width="2000" height="1415" alt="原理图第 2 页" data-alt-en="Schematic, page 2" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">原理图第 2 页</span><span class="l-en">Schematic, page 2</span></span></figcaption></figure><figure class="gs"><img src="img/w/pcb-power.jpg" width="2000" height="1414" alt="电源板原理图" data-alt-en="Power board schematic" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">电源板原理图</span><span class="l-en">Power board schematic</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 6</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 6" aria-current="true"><img src="img/t/pcb-iso.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 6"><img src="img/t/pcb-top.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 6"><img src="img/t/pcb-place.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 6"><img src="img/t/pcb-sch1.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 6"><img src="img/t/pcb-sch2.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 6"><img src="img/t/pcb-power.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-control-set" data-view="p/control-set" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">控制系统整套电气图</span><span class="l-en">Control system drawing set</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">一套 60 张的控制系统电气图：图纸目录、配电、24V 控制、继电器输出和 RS-485 通讯接线。这里放的是节选。</span><span class="l-en">A 60-sheet electrical set for a control system: drawing list, power distribution, 24 V control, relay outputs and RS-485 wiring. These are excerpts.</span></p>
+          <ul class="facts"><li><span class="l-zh">电气图纸</span><span class="l-en">Electrical drawings</span></li><li><span><span class="l-zh">60 张，PDF + DWG</span><span class="l-en">60 sheets, PDF plus DWG</span></span></li><li><span><span class="l-zh">图纸不含工程审核和签章</span><span class="l-en">Drawings are not engineering-approved or stamped</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/ctl-01.jpg" width="2000" height="1414" alt="图纸目录" data-alt-en="Drawing list" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">图纸目录</span><span class="l-en">Drawing list</span></span></figcaption></figure><figure class="gs"><img src="img/w/ctl-02.jpg" width="2000" height="1414" alt="配电进线和保护" data-alt-en="Incoming supply and protection" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">配电进线和保护</span><span class="l-en">Incoming supply and protection</span></span></figcaption></figure><figure class="gs"><img src="img/w/ctl-03.jpg" width="2000" height="1414" alt="交流配电支路" data-alt-en="AC distribution" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">交流配电支路</span><span class="l-en">AC distribution</span></span></figcaption></figure><figure class="gs"><img src="img/w/ctl-05.jpg" width="2000" height="1414" alt="24V 控制和状态信号" data-alt-en="24 V control and status" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">24V 控制和状态信号</span><span class="l-en">24 V control and status</span></span></figcaption></figure><figure class="gs"><img src="img/w/ctl-12.jpg" width="2000" height="1414" alt="继电器输出" data-alt-en="Relay outputs" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">继电器输出</span><span class="l-en">Relay outputs</span></span></figcaption></figure><figure class="gs"><img src="img/w/ctl-28.jpg" width="2000" height="1414" alt="输出接线" data-alt-en="Output wiring" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">输出接线</span><span class="l-en">Output wiring</span></span></figcaption></figure><figure class="gs"><img src="img/w/ctl-34.jpg" width="2000" height="1414" alt="RS-485 通讯接线" data-alt-en="RS-485 wiring" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">RS-485 通讯接线</span><span class="l-en">RS-485 wiring</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 7</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 7" aria-current="true"><img src="img/t/ctl-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 7"><img src="img/t/ctl-02.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 7"><img src="img/t/ctl-03.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 7"><img src="img/t/ctl-05.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 7"><img src="img/t/ctl-12.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 7"><img src="img/t/ctl-28.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="6" aria-label="7 / 7"><img src="img/t/ctl-34.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-sketch-cad" data-view="p/sketch-cad" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">手绘草图转 CAD</span><span class="l-en">Hand sketch to CAD</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">客户拍了一张手绘草图，我画成 9 张标准的二次原理图，主变压器、电流电压回路和 PT 并列都分开出图。</span><span class="l-en">The client sent a photo of a hand sketch; I turned it into nine standard secondary circuit drawings, with the main transformers, current and voltage circuits and PT paralleling on separate sheets.</span></p>
+          <ul class="facts"><li><span class="l-zh">电气图纸</span><span class="l-en">Electrical drawings</span></li><li><span><span class="l-zh">9 张，DWG + PDF</span><span class="l-en">9 sheets, DWG plus PDF</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/cad-sketch.jpg" width="1280" height="1707" alt="客户的手绘草图" data-alt-en="The client&#x27;s sketch" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">客户的手绘草图</span><span class="l-en">The client's sketch</span></span></figcaption></figure><figure class="gs"><img src="img/w/cad-01.jpg" width="2000" height="1415" alt="1# 主变原理图" data-alt-en="Main transformer 1" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">1# 主变原理图</span><span class="l-en">Main transformer 1</span></span></figcaption></figure><figure class="gs"><img src="img/w/cad-03.jpg" width="2000" height="1415" alt="2# 主变电流电压" data-alt-en="Transformer 2 current and voltage" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">2# 主变电流电压</span><span class="l-en">Transformer 2 current and voltage</span></span></figcaption></figure><figure class="gs"><img src="img/w/cad-06.jpg" width="2000" height="1415" alt="PT 并列原理图" data-alt-en="PT paralleling" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">PT 并列原理图</span><span class="l-en">PT paralleling</span></span></figcaption></figure><figure class="gs"><img src="img/w/cad-08.jpg" width="2000" height="1415" alt="2# 主变原理图" data-alt-en="Main transformer 2" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">2# 主变原理图</span><span class="l-en">Main transformer 2</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 5</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 5" aria-current="true"><img src="img/t/cad-sketch.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 5"><img src="img/t/cad-01.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 5"><img src="img/t/cad-03.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 5"><img src="img/t/cad-06.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 5"><img src="img/t/cad-08.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-process" data-view="p/process" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">工艺流程图和 P&amp;ID</span><span class="l-en">Process flow diagrams and P&amp;IDs</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">照客户的草图和旧图重画：供水系统流程图、废水回用 P&amp;ID、另一个废水项目的 P&amp;ID、网络拓扑和工艺流程框图。</span><span class="l-en">Redrawn from the client's sketches and old drawings: a water supply flow diagram, a wastewater reuse P&amp;ID, P&amp;IDs for a second wastewater project, a network topology and a process block diagram.</span></p>
+          <ul class="facts"><li><span class="l-zh">工艺图纸</span><span class="l-en">Process drawings</span></li><li><span><span class="l-zh">PDF + DWG / DXF</span><span class="l-en">PDF plus DWG / DXF</span></span></li><li><span><span class="l-zh">公司和项目名称已遮挡</span><span class="l-en">Company and project names are masked</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/dwg-water.jpg" width="1600" height="1131" alt="供水系统流程图" data-alt-en="Water supply flow diagram" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">供水系统流程图</span><span class="l-en">Water supply flow diagram</span></span></figcaption></figure><figure class="gs"><img src="img/w/dwg-pid.jpg" width="1210" height="880" alt="废水回用 P&amp;ID" data-alt-en="Wastewater reuse P&amp;ID" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">废水回用 P&amp;ID</span><span class="l-en">Wastewater reuse P&amp;ID</span></span></figcaption></figure><figure class="gs"><img src="img/w/pid-a.jpg" width="2000" height="1415" alt="废水处理 P&amp;ID 01" data-alt-en="Wastewater P&amp;ID 01" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">废水处理 P&amp;ID 01</span><span class="l-en">Wastewater P&amp;ID 01</span></span></figcaption></figure><figure class="gs"><img src="img/w/pid-b.jpg" width="2000" height="1415" alt="废水处理 P&amp;ID 04" data-alt-en="Wastewater P&amp;ID 04" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">废水处理 P&amp;ID 04</span><span class="l-en">Wastewater P&amp;ID 04</span></span></figcaption></figure><figure class="gs"><img src="img/w/pid-topo.jpg" width="2000" height="1415" alt="控制网络拓扑" data-alt-en="Control network topology" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">控制网络拓扑</span><span class="l-en">Control network topology</span></span></figcaption></figure><figure class="gs"><img src="img/w/pid-flow.jpg" width="1964" height="2000" alt="工艺流程框图" data-alt-en="Process block diagram" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">工艺流程框图</span><span class="l-en">Process block diagram</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 6</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 6" aria-current="true"><img src="img/t/dwg-water.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 6"><img src="img/t/dwg-pid.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 6"><img src="img/t/pid-a.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 6"><img src="img/t/pid-b.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 6"><img src="img/t/pid-topo.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 6"><img src="img/t/pid-flow.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-electrical" data-view="p/electrical" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">电柜原理图和布置图</span><span class="l-en">Cabinet schematics and layouts</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">几套电柜图纸：医疗设备控制柜、雕刻机电柜、电机控制回路、电柜布置图，还有一张道岔监测主机的柜面示意。</span><span class="l-en">Several cabinet drawing sets: a medical equipment control cabinet, an engraving machine cabinet, motor control circuits, a cabinet layout, and a front view of a rail switch monitoring unit.</span></p>
+          <ul class="facts"><li><span class="l-zh">电气图纸</span><span class="l-en">Electrical drawings</span></li><li><span><span class="l-zh">DWG + PDF</span><span class="l-en">DWG plus PDF</span></span></li><li><span><span class="l-zh">图纸不含工程审核和签章</span><span class="l-en">Drawings are not engineering-approved or stamped</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/dwg-cabinet.jpg" width="2000" height="720" alt="医疗设备控制柜，8 张" data-alt-en="Medical equipment cabinet, 8 sheets" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">医疗设备控制柜，8 张</span><span class="l-en">Medical equipment cabinet, 8 sheets</span></span></figcaption></figure><figure class="gs"><img src="img/w/ele-cnc.jpg" width="1414" height="2000" alt="雕刻机电柜原理图" data-alt-en="Engraving machine cabinet" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">雕刻机电柜原理图</span><span class="l-en">Engraving machine cabinet</span></span></figcaption></figure><figure class="gs"><img src="img/w/ele-149a.jpg" width="2000" height="1415" alt="电机控制原理图" data-alt-en="Motor control circuit" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">电机控制原理图</span><span class="l-en">Motor control circuit</span></span></figcaption></figure><figure class="gs"><img src="img/w/ele-149b.jpg" width="2000" height="1415" alt="电机控制原理图" data-alt-en="Motor control circuit" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">电机控制原理图</span><span class="l-en">Motor control circuit</span></span></figcaption></figure><figure class="gs"><img src="img/w/ele-152.jpg" width="2000" height="1415" alt="电柜布置图" data-alt-en="Cabinet layout" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">电柜布置图</span><span class="l-en">Cabinet layout</span></span></figcaption></figure><figure class="gs"><img src="img/w/ele-129.jpg" width="2000" height="1415" alt="电柜原理图" data-alt-en="Cabinet schematic" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">电柜原理图</span><span class="l-en">Cabinet schematic</span></span></figcaption></figure><figure class="gs"><img src="img/w/ele-193.jpg" width="800" height="2000" alt="道岔监测主机柜面" data-alt-en="Rail switch monitor, front view" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">道岔监测主机柜面</span><span class="l-en">Rail switch monitor, front view</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 7</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 7" aria-current="true"><img src="img/t/dwg-cabinet.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 7"><img src="img/t/ele-cnc.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 7"><img src="img/t/ele-149a.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 7"><img src="img/t/ele-149b.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 7"><img src="img/t/ele-152.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 7"><img src="img/t/ele-129.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="6" aria-label="7 / 7"><img src="img/t/ele-193.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-infographics" data-view="p/infographics" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">信息图和示意图</span><span class="l-en">Infographics and diagrams</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">给论文、课题申报和课件画的图：模型图、路径图、时间线、循环图、采购泳道图、论文机制图、化学实验装置和钻井动画的一帧。</span><span class="l-en">Figures for papers, funding applications and lessons: models, roadmaps, timelines, cycles, a purchasing swimlane chart, a mechanism figure for a paper, chemistry apparatus and a frame from a drilling animation.</span></p>
+          <ul class="facts"><li><span class="l-zh">图表</span><span class="l-en">Diagrams</span></li><li><span><span class="l-zh">矢量源文件，可改字</span><span class="l-en">Vector source files with editable text</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/info-146.jpg" width="1600" height="1276" alt="产教融合模型图" data-alt-en="Industry–education model" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">产教融合模型图</span><span class="l-en">Industry–education model</span></span></figcaption></figure><figure class="gs"><img src="img/w/info-147.jpg" width="1129" height="1600" alt="团队建设路径图" data-alt-en="Team-building roadmap" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">团队建设路径图</span><span class="l-en">Team-building roadmap</span></span></figcaption></figure><figure class="gs"><img src="img/w/info-150a.jpg" width="1182" height="1063" alt="四融五合" data-alt-en="Four integrations" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">四融五合</span><span class="l-en">Four integrations</span></span></figcaption></figure><figure class="gs"><img src="img/w/info-150b.jpg" width="1182" height="780" alt="三层能力金字塔" data-alt-en="Three-level pyramid" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">三层能力金字塔</span><span class="l-en">Three-level pyramid</span></span></figcaption></figure><figure class="gs"><img src="img/w/info-150c.jpg" width="1600" height="640" alt="课程建设时间线" data-alt-en="Course timeline" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">课程建设时间线</span><span class="l-en">Course timeline</span></span></figcaption></figure><figure class="gs"><img src="img/w/info-150d.jpg" width="1111" height="969" alt="学研练创用循环" data-alt-en="Learning cycle" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">学研练创用循环</span><span class="l-en">Learning cycle</span></span></figcaption></figure><figure class="gs"><img src="img/w/info-150e.jpg" width="1600" height="321" alt="改革前后成绩对比" data-alt-en="Before and after scores" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">改革前后成绩对比</span><span class="l-en">Before and after scores</span></span></figcaption></figure><figure class="gs"><img src="img/w/info-143.jpg" width="1600" height="900" alt="四个篇章" data-alt-en="Four chapters" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">四个篇章</span><span class="l-en">Four chapters</span></span></figcaption></figure><figure class="gs"><img src="img/w/info-190.jpg" width="1273" height="1800" alt="采购全流程泳道图" data-alt-en="Purchasing swimlane chart" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">采购全流程泳道图</span><span class="l-en">Purchasing swimlane chart</span></span></figcaption></figure><figure class="gs"><img src="img/w/info-200.jpg" width="974" height="944" alt="论文机制图" data-alt-en="Mechanism figure for a paper" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">论文机制图</span><span class="l-en">Mechanism figure for a paper</span></span></figcaption></figure><figure class="gs"><img src="img/w/info-144a.jpg" width="1400" height="569" alt="化学实验装置" data-alt-en="Chemistry apparatus" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">化学实验装置</span><span class="l-en">Chemistry apparatus</span></span></figcaption></figure><figure class="gs"><img src="img/w/info-144b.jpg" width="1216" height="1400" alt="分液装置" data-alt-en="Separating apparatus" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">分液装置</span><span class="l-en">Separating apparatus</span></span></figcaption></figure><figure class="gs"><img src="img/w/info-169.jpg" width="1600" height="900" alt="钻井动画的一帧" data-alt-en="Frame from a drilling animation" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">钻井动画的一帧</span><span class="l-en">Frame from a drilling animation</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 13</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 13" aria-current="true"><img src="img/t/info-146.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 13"><img src="img/t/info-147.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 13"><img src="img/t/info-150a.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 13"><img src="img/t/info-150b.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 13"><img src="img/t/info-150c.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 13"><img src="img/t/info-150d.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="6" aria-label="7 / 13"><img src="img/t/info-150e.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="7" aria-label="8 / 13"><img src="img/t/info-143.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="8" aria-label="9 / 13"><img src="img/t/info-190.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="9" aria-label="10 / 13"><img src="img/t/info-200.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="10" aria-label="11 / 13"><img src="img/t/info-144a.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="11" aria-label="12 / 13"><img src="img/t/info-144b.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="12" aria-label="13 / 13"><img src="img/t/info-169.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="pn"><span><span class="l-zh">客户名称、logo、联系方式和型号已遮挡。</span><span class="l-en">Client names, logos, contact details and model numbers are masked.</span></span></p>
+    </div>
+  </article>
+  <article class="view proj" id="p-sonic-state" data-view="p/sonic-state" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">Sonic State 毕业系列</span><span class="l-en">Sonic State, graduate collection</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">我在都柏林的毕业系列。从声波的概念出发，做了雕塑感的轮廓和 3D 打印的胸部结构件，最后完成成衣和外景拍摄。</span><span class="l-en">My graduate collection in Dublin. It starts from the idea of sound waves and turns it into sculptural silhouettes with 3D-printed chest pieces, through to finished garments and an outdoor shoot.</span></p>
+          <ul class="facts"><li><span class="l-zh">服装设计</span><span class="l-en">Fashion design</span></li><li><span><span class="l-zh">概念、面料实验、3D 建模、成衣</span><span class="l-en">Concept, fabric tests, 3D modelling, finished garments</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/sonic-lookbook-group.jpg" width="938" height="1406" alt="Sonic State 毕业系列" data-alt-en="Sonic State, graduate collection" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure class="gs"><img src="img/w/sonic-lookbook-solo.jpg" width="1067" height="1600" alt="Sonic State 毕业系列" data-alt-en="Sonic State, graduate collection" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure class="gs"><img src="img/w/sonic-garment-front-back.jpg" width="1332" height="922" alt="成衣正反面" data-alt-en="Finished dress, back and front" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">成衣正反面</span><span class="l-en">Finished dress, back and front</span></span></figcaption></figure><figure class="gs"><img src="img/w/sonic-3d-modelling.jpg" width="1449" height="1086" alt="胸部结构件 3D 建模" data-alt-en="3D modelling of the chest piece" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">胸部结构件 3D 建模</span><span class="l-en">3D modelling of the chest piece</span></span></figcaption></figure><figure class="gs"><img src="img/w/sonic-process-collage.jpg" width="1332" height="564" alt="制作过程和细节" data-alt-en="Making and details" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">制作过程和细节</span><span class="l-en">Making and details</span></span></figcaption></figure><figure class="gs"><img src="img/w/sonic-showcase.jpg" width="1600" height="900" alt="作品集页面" data-alt-en="Portfolio page" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">作品集页面</span><span class="l-en">Portfolio page</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 6</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 6" aria-current="true"><img src="img/t/sonic-lookbook-group.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 6"><img src="img/t/sonic-lookbook-solo.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 6"><img src="img/t/sonic-garment-front-back.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 6"><img src="img/t/sonic-3d-modelling.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 6"><img src="img/t/sonic-process-collage.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 6"><img src="img/t/sonic-showcase.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      
+    </div>
+  </article>
+  <article class="view proj" id="p-billion-baby" data-view="p/billion-baby" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">Billion Baby 首个系列与品牌 logo</span><span class="l-en">Billion Baby: first drop &amp; logo</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">合作品牌 Billion Baby 的品牌 logo 和第一个系列都是我设计的：皇冠加 B 字的 logo、图案系统、烫钻定位、帽里印花、辅料细节和打样意见，并和工厂沟通图案落位。成品是黑、粉两色天鹅绒运动套装。</span><span class="l-en">I designed the logo and the first drop for Billion Baby, a brand I partnered with: the crown and B logo, the graphic system, rhinestone placement, hood lining print, trims and sample feedback, plus working with the factory on placement. The drop is velour tracksuits in black and pink.</span></p>
+          <ul class="facts"><li><span class="l-zh">品牌与服装开发</span><span class="l-en">Brand and apparel development</span></li><li><span><span class="l-zh">logo、图案、定位、辅料、打样</span><span class="l-en">Logo, graphics, placement, trims, sampling</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/bb-over.jpg" width="1600" height="900" alt="项目概况" data-alt-en="Project overview" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">项目概况</span><span class="l-en">Project overview</span></span></figcaption></figure><figure class="gs"><img src="img/w/bb-logo.jpg" width="1025" height="559" alt="品牌 logo 和字标" data-alt-en="Logo and wordmarks" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">品牌 logo 和字标</span><span class="l-en">Logo and wordmarks</span></span></figcaption></figure><figure class="gs"><img src="img/w/bb-artwork.jpg" width="1070" height="841" alt="背部图案尺寸稿" data-alt-en="Back artwork with dimensions" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">背部图案尺寸稿</span><span class="l-en">Back artwork with dimensions</span></span></figcaption></figure><figure class="gs"><img src="img/w/bb-graphic.jpg" width="1600" height="900" alt="图案系统" data-alt-en="Graphic system" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">图案系统</span><span class="l-en">Graphic system</span></span></figcaption></figure><figure class="gs"><img src="img/w/bb-rhinestone.jpg" width="1400" height="787" alt="烫钻定位稿" data-alt-en="Rhinestone placement" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">烫钻定位稿</span><span class="l-en">Rhinestone placement</span></span></figcaption></figure><figure class="gs"><img src="img/w/bb-lining.jpg" width="1186" height="789" alt="帽里印花两色" data-alt-en="Hood lining print, two colourways" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">帽里印花两色</span><span class="l-en">Hood lining print, two colourways</span></span></figcaption></figure><figure class="gs"><img src="img/w/bb-product.jpg" width="1600" height="900" alt="成品" data-alt-en="Final products" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">成品</span><span class="l-en">Final products</span></span></figcaption></figure><figure class="gs"><img src="img/w/bb-campaign.jpg" width="1600" height="900" alt="宣传图和细节" data-alt-en="Campaign and details" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">宣传图和细节</span><span class="l-en">Campaign and details</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 8</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 8" aria-current="true"><img src="img/t/bb-over.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 8"><img src="img/t/bb-logo.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 8"><img src="img/t/bb-artwork.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 8"><img src="img/t/bb-graphic.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 8"><img src="img/t/bb-rhinestone.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 8"><img src="img/t/bb-lining.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="6" aria-label="7 / 8"><img src="img/t/bb-product.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="7" aria-label="8 / 8"><img src="img/t/bb-campaign.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      
+    </div>
+  </article>
+  <article class="view proj" id="p-tech-packs" data-view="p/tech-packs" hidden>
+    <div class="wrap">
+      <a class="back" href="#/" data-go=""><span><span class="l-zh">← 返回作品</span><span class="l-en">← Back to work</span></span></a>
+      <header class="ph">
+        <h2><span><span class="l-zh">运动服 tech pack 和打样</span><span class="l-en">Activewear tech packs and sampling</span></span></h2>
+        <div class="pd">
+          <p><span class="l-zh">给一个运动服初创品牌做的四款 tech pack：款式图、尺寸表、BOM 和工艺说明；之后跟进版型和样衣，改领口、肩带位置和整体比例。</span><span class="l-en">Tech packs for four styles for an activewear startup, with flats, measurement charts, BOM and construction notes, followed by pattern work and sample fittings to correct the neckline, strap position and overall proportion.</span></p>
+          <ul class="facts"><li><span class="l-zh">服装开发</span><span class="l-en">Apparel development</span></li><li><span><span class="l-zh">4 款：背心、短裤、运动内衣、喇叭裤</span><span class="l-en">4 styles: tank, shorts, sports bra, flared leggings</span></span></li></ul>
+        </div>
+      </header>
+      <div class="gal" data-gal>
+        <div class="gt" tabindex="0" role="region" aria-label="Images / 作品图片"><figure class="gs"><img src="img/w/vyra-1.jpg" width="1200" height="1500" alt="案例封面" data-alt-en="Case study cover" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">案例封面</span><span class="l-en">Case study cover</span></span></figcaption></figure><figure class="gs"><img src="img/w/vyra-3.jpg" width="1260" height="1246" alt="款式图" data-alt-en="Flats" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">款式图</span><span class="l-en">Flats</span></span></figcaption></figure><figure class="gs"><img src="img/w/vyra-2.jpg" width="1200" height="1500" alt="工艺标注" data-alt-en="Construction callouts" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">工艺标注</span><span class="l-en">Construction callouts</span></span></figcaption></figure><figure class="gs"><img src="img/w/vyra-4.jpg" width="1600" height="900" alt="BOM 和尺寸表" data-alt-en="BOM and measurement table" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">BOM 和尺寸表</span><span class="l-en">BOM and measurement table</span></span></figcaption></figure><figure class="gs"><img src="img/w/vy-pattern.jpg" width="1600" height="900" alt="版型和裁片" data-alt-en="Pattern pieces" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">版型和裁片</span><span class="l-en">Pattern pieces</span></span></figcaption></figure><figure class="gs"><img src="img/w/vy-fit.jpg" width="1600" height="900" alt="样衣修改" data-alt-en="Sample fitting" loading="lazy" decoding="async"><figcaption><span><span class="l-zh">样衣修改</span><span class="l-en">Sample fitting</span></span></figcaption></figure></div>
+        <div class="gbar"><span class="gc"><b class="gi">1</b> / 6</span><span class="gnav"><button type="button" class="gp" aria-label="Previous / 上一张" disabled>&#8592;</button><button type="button" class="gn" aria-label="Next / 下一张">&#8594;</button></span></div><div class="gth"><button type="button" data-i="0" aria-label="1 / 6" aria-current="true"><img src="img/t/vyra-1.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="2 / 6"><img src="img/t/vyra-3.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="3 / 6"><img src="img/t/vyra-2.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="4 / 6"><img src="img/t/vyra-4.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="5 / 6"><img src="img/t/vy-pattern.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="6 / 6"><img src="img/t/vy-fit.jpg" alt="" loading="lazy" decoding="async"></button></div>
+      </div>
+      
+    </div>
+  </article>
+</main>
+
+<footer class="wrap"><div class="foot"><span>© <span data-studio><span class="l-zh">叠光工作室｜Foldlight Studio</span><span class="l-en">Foldlight Studio</span></span></span><span><span class="l-zh">作品图片带水印，请勿转载。</span><span class="l-en">Work images are watermarked. Please don't reuse them.</span></span></div></footer>
+
+<script>
+/* Studio name: change it here and everywhere on the page follows. */
+var STUDIO_NAME = 'Foldlight Studio';
+var STUDIO_NAME_ZH = '叠光工作室';
+
+(function(){
+  var root=document.documentElement;
+  [].forEach.call(document.querySelectorAll('[data-studio]'),function(el){
+    var zh=el.querySelector('.l-zh'),en=el.querySelector('.l-en');
+    if(en)en.textContent=STUDIO_NAME;
+    if(zh)zh.textContent=el.closest('.foot')?STUDIO_NAME_ZH+'｜'+STUDIO_NAME:STUDIO_NAME_ZH;
+  });
+  [].forEach.call(document.querySelectorAll('.brand img'),function(el){el.alt=STUDIO_NAME});
+
+  /* language */
+  var imgs=[].slice.call(document.querySelectorAll('img[data-alt-en]'));
+  imgs.forEach(function(i){i.setAttribute('data-alt-zh',i.getAttribute('alt'))});
+  var projTitle='';
+  function setTitle(){
+    var lang=root.getAttribute('data-lang')==='en'?'en':'zh';
+    var base=lang==='en'?STUDIO_NAME+' | Design, documents and translation':STUDIO_NAME_ZH+'｜'+STUDIO_NAME+' 作品';
+    document.title=projTitle?projTitle+' | '+(lang==='en'?STUDIO_NAME:STUDIO_NAME_ZH):base;
+  }
+  function applyLang(lang,save){
+    root.setAttribute('data-lang',lang);
+    root.lang=lang==='en'?'en':'zh-CN';
+    imgs.forEach(function(i){i.setAttribute('alt',i.getAttribute('data-alt-'+lang))});
+    [].forEach.call(document.querySelectorAll('[data-set-lang]'),function(b){
+      b.setAttribute('aria-pressed',b.getAttribute('data-set-lang')===lang?'true':'false');
+    });
+    if(save){try{localStorage.setItem('ac-lang',lang)}catch(e){}}
+    route(false);
+  }
+  [].forEach.call(document.querySelectorAll('[data-set-lang]'),function(b){
+    b.addEventListener('click',function(){applyLang(b.getAttribute('data-set-lang'),true)});
+  });
+
+
+  /* card rows on the home page */
+  [].forEach.call(document.querySelectorAll('[data-row]'),function(r){
+    var t=r.querySelector('.cards'),p=r.querySelector('.rp'),n=r.querySelector('.rn');
+    function upd(){var m=t.scrollWidth-t.clientWidth;p.disabled=t.scrollLeft<=2;n.disabled=t.scrollLeft>=m-2;r.classList.toggle('fit',m<=2)}
+    function go(d){t.scrollBy?t.scrollBy({left:d*t.clientWidth*0.9,behavior:'smooth'}):(t.scrollLeft+=d*t.clientWidth*0.9)}
+    p.addEventListener('click',function(){go(-1)});n.addEventListener('click',function(){go(1)});
+    t.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+  });
+
+  /* galleries */
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var gals=[].slice.call(document.querySelectorAll('[data-gal]')).map(function(el){
+    var t=el.querySelector('.gt'),n=t.children.length,gi=el.querySelector('.gi'),
+        gp=el.querySelector('.gp'),gn=el.querySelector('.gn'),strip=el.querySelector('.gth'),
+        th=strip?[].slice.call(strip.querySelectorAll('button')):[],cur=0,raf=0;
+    function mark(i){
+      if(i===cur&&gi&&gi.textContent==String(i+1))return;
+      cur=i;if(gi)gi.textContent=i+1;
+      if(gp)gp.disabled=i<=0;if(gn)gn.disabled=i>=n-1;
+      th.forEach(function(b,k){if(k===i)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current')});
+      var b=th[i];
+      if(b&&strip){var l=b.offsetLeft-strip.offsetLeft,r=l+b.offsetWidth;
+        if(l<strip.scrollLeft)strip.scrollLeft=l-4;else if(r>strip.scrollLeft+strip.clientWidth)strip.scrollLeft=r-strip.clientWidth+4}
+    }
+    function go(i,instant){
+      i=Math.max(0,Math.min(n-1,i));
+      t.scrollTo({left:i*t.clientWidth,behavior:(instant||reduce)?'auto':'smooth'});
+      mark(i);
+    }
+    t.addEventListener('scroll',function(){
+      if(raf)return;
+      raf=requestAnimationFrame(function(){raf=0;if(t.clientWidth)mark(Math.round(t.scrollLeft/t.clientWidth))});
+    },{passive:true});
+    if(gp)gp.addEventListener('click',function(){go(cur-1)});
+    if(gn)gn.addEventListener('click',function(){go(cur+1)});
+    th.forEach(function(b,k){b.addEventListener('click',function(){go(k)})});
+    return {el:el,go:go,step:function(d){go(cur+d)},reset:function(){cur=-1;go(0,true)},keep:function(){if(t.clientWidth)t.scrollLeft=cur*t.clientWidth}};
+  });
+  function activeGal(){
+    for(var k=0;k<gals.length;k++){var v=gals[k].el.closest('.view');if(v&&!v.hidden)return gals[k]}
+    return null;
+  }
+  document.addEventListener('keydown',function(ev){
+    if(ev.key!=='ArrowLeft'&&ev.key!=='ArrowRight')return;
+    if(ev.altKey||ev.ctrlKey||ev.metaKey)return;
+    var tg=ev.target&&ev.target.tagName;if(tg==='INPUT'||tg==='TEXTAREA'||tg==='SELECT')return;
+    var g=activeGal();if(!g)return;
+    ev.preventDefault();g.step(ev.key==='ArrowLeft'?-1:1);
+  });
+  window.addEventListener('resize',function(){var g=activeGal();if(g)g.keep()});
+
+  /* views: home (one long page) and one view per project */
+  var views=[].slice.call(document.querySelectorAll('.view'));
+  var shown=null;
+  function show(name){
+    var hit=null;
+    views.forEach(function(v){var on=v.getAttribute('data-view')===name;v.hidden=!on;if(on)hit=v});
+    if(!hit){views.forEach(function(v){v.hidden=v.getAttribute('data-view')!==''});hit=views[0];name=''}
+    if(name&&name!==shown)gals.forEach(function(g){if(hit.contains(g.el))g.reset()});
+    shown=name;
+    var h=hit.querySelector('h2');
+    projTitle=name&&h?(h.querySelector(root.getAttribute('data-lang')==='en'?'.l-en':'.l-zh')||h).textContent:'';
+    setTitle();
+    return name;
+  }
+  function route(scroll){
+    var hash=location.hash||'';
+    if(hash.indexOf('#/p/')===0){
+      show(hash.slice(2));
+      if(scroll)window.scrollTo(0,0);
+    }else{
+      show('');
+      var id=hash.replace(/^#\/?/,'');
+      if(scroll&&id){var t=document.getElementById(id);if(t)t.scrollIntoView()}
+      else if(scroll)window.scrollTo(0,0);
+    }
+  }
+  /* links inside a project page that point to a home section */
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest&&ev.target.closest('[data-jump]');
+    if(!a)return;
+    ev.preventDefault();
+    var id=a.getAttribute('data-jump');
+    show('');
+    try{history.pushState(null,'','#'+id)}catch(e){location.hash=id}
+    var t=document.getElementById(id);if(t)t.scrollIntoView();
+  });
+  window.addEventListener('hashchange',function(){route(true)});
+  applyLang(root.getAttribute('data-lang')==='en'?'en':'zh',false);
+  route(true);
+})();
+
+</script>
+</body>
+</html>
