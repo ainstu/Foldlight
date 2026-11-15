@@ -262,6 +262,76 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gt,.cards{scroll-behavior:auto}.tile img,.card img{transition:none}}
 
 </style>
+<style>
+/* v18: bands, numbered section heads, hover and reveal */
+.band{--band:var(--bg);background:var(--band);box-shadow:0 0 0 100vmax var(--band);clip-path:inset(0 -100vmax)}
+.b2{--band:#e9e7e0;--tile:#f6f5f1}
+.b3{--band:#1c1c1b;--bg:#1c1c1b;--ink:#eeebe5;--mute:#a29e96;--line:#3d3c39;--tile:#292927;color:var(--ink)}
+.b3 :focus-visible{outline-color:var(--ink)}
+.sel{padding-top:24px}
+.allh{padding-top:104px;padding-bottom:48px}
+.cat#drawings{padding-bottom:120px}
+.fash{padding-top:104px;padding-bottom:120px}
+.about{padding-top:120px;padding-bottom:120px}
+.contact{padding-top:40px;padding-bottom:64px}
+.shd{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:baseline;column-gap:20px;border-top:1px solid var(--ink);padding-top:16px;margin-bottom:52px}
+.shd .no{font-size:13px;letter-spacing:.08em;color:var(--mute);font-variant-numeric:tabular-nums}
+.shd .st{font-family:var(--serif);font-weight:400;font-size:40px;font-size:clamp(30px,3.4vw,50px);line-height:1.1;letter-spacing:-.005em}
+:root:not([data-lang="en"]) .shd .st{font-family:"Noto Serif SC",var(--serif);font-weight:500;font-size:34px;font-size:clamp(26px,2.8vw,40px);letter-spacing:.04em}
+.shd .c{font-size:13px;color:var(--mute);text-align:right;display:flex;align-items:center;justify-content:flex-end;gap:0}
+.cat .lab{border-top-color:var(--line);margin-bottom:10px}
+.cat .lab>span:first-child{font-family:var(--serif);font-size:20px}
+:root:not([data-lang="en"]) .cat .lab>span:first-child{font-family:"Noto Serif SC",var(--serif);font-size:17px;font-weight:500}
+.gd{font-size:14px;color:var(--mute);max-width:44em;margin-bottom:26px}
+.allh p{margin-top:0}
+.b3 .fash .aw,.fash .aw{border-left-color:#c9a45c}
+.about .ab{background:#ebe9e3;padding:56px;border-radius:3px}
+.about .ab .cred li,.about .ab .svc li,.about .ab .steps li{border-top-color:#d6d2c9}
+.top{transition:box-shadow .25s}
+.top.sc{box-shadow:0 1px 0 var(--line)}
+.nav a{position:relative;padding:4px 0;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav a[aria-current="true"]::after{transform:scaleX(1)}
+/* cards and tiles */
+.card,.tile{-webkit-tap-highlight-color:transparent}
+.card figure,.tile figure{position:relative;overflow:hidden;transition:transform .18s ease}
+.card:active figure,.tile:active figure{transform:scale(.985)}
+.tile img{transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .35s}
+.card img{transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .35s}
+.card figure .alt,.tile figure .alt{position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;opacity:0;background:var(--tile);box-shadow:none;pointer-events:none}
+.card figure .alt{padding:7%}
+.cap .tt{position:relative}
+.cap .tt::after{content:"\2192";display:inline-block;margin-left:.35em;opacity:0;transform:translateX(-6px);transition:opacity .25s,transform .25s}
+.cap .tt>span{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .35s}
+@media (hover:hover){
+  .tile:hover img{opacity:1;transform:scale(1.025)}
+  .card:hover img{transform:scale(1.04)}
+  .card:hover .tt::after,.tile:hover .tt::after{opacity:1;transform:none}
+  .card:hover .tt>span,.tile:hover .tt>span{background-size:100% 1px}
+  .card figure.has-alt:hover .alt,.tile figure.has-alt:hover .alt{opacity:1}
+  .card figure.has-alt:hover img:not(.alt){opacity:0}
+  .tile figure.has-alt:hover img:not(.alt){opacity:0}
+}
+/* reveal on scroll */
+.rv-on .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv-on .rv.in{opacity:1;transform:none}
+@media (max-width:820px){
+  .sel{padding-top:8px}
+  .allh,.fash{padding-top:72px}
+  .about{padding-top:80px;padding-bottom:80px}
+  .cat#drawings,.fash{padding-bottom:80px}
+  .shd{grid-template-columns:auto minmax(0,1fr);row-gap:6px;margin-bottom:32px}
+  .shd .c{grid-column:1/-1;justify-content:flex-start;text-align:left}
+  .shd .st{font-size:30px}
+  :root:not([data-lang="en"]) .shd .st{font-size:26px}
+  .gd{font-size:13px;margin-bottom:18px}
+  .about .ab{padding:28px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+  .rv-on .rv{opacity:1;transform:none;transition:none}
+  .card img,.tile img,.card figure,.tile figure,.nav a::after,.cap .tt::after,.cap .tt>span{transition:none}
+}
+</style>
 <style>body{margin:0}</style>
 </head>
 <body>
@@ -281,19 +351,19 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
 <div class="view home" data-view="">
 
   <section class="wrap intro">
-    <h1><span class="l-zh">我给工厂、工程公司和学校做产品画册、说明书、技术图纸和汇报 PPT，中英双语，从排版做到交付。</span><span class="l-en">I design product catalogues, manuals, technical drawings and presentation decks for manufacturers, engineering firms and schools, in English and Chinese, from layout to final files.</span></h1>
+    <h1><span class="l-zh">我给工厂、工程公司和学校做产品画册、说明书、技术图纸和汇报 PPT，中英双语，从排版做到交付</span><span class="l-en">I design product catalogues, manuals, technical drawings and presentation decks for manufacturers, engineering firms and schools, in English and Chinese, from layout to final files</span></h1>
     <p><span class="l-zh">服装设计出身，在爱尔兰读书、工作十年，到现在交付了 200 多个项目。有活可以直接<a href="#contact" data-jump="contact">联系我</a>。</span><span class="l-en">I trained in fashion design and spent ten years studying and working in Ireland. I've delivered more than 200 projects so far. <a href="#contact" data-jump="contact">Get in touch</a> if you have something in mind.</span></p>
   </section>
 
-  <section class="wrap sel" id="selected">
-    <div class="lab"><span><span class="l-zh">精选</span><span class="l-en">Selected</span></span><span class="c"><span class="l-zh">点开看内页</span><span class="l-en">Open a project to see the inside pages</span></span></div>
+  <section class="wrap sel band b1" id="selected">
+    <div class="shd rv"><span class="no">01</span><h2 class="st"><span class="l-zh">精选</span><span class="l-en">Selected</span></h2><span class="c"><span class="l-zh">点开看内页</span><span class="l-en">Open a project to see the inside pages</span></span></div>
     <div class="tiles"><div class="col l">
       <a class="tile" style="order:0" href="#/p/catalogue" data-go="p/catalogue">
         <figure><img src="img/c/cat-1.jpg?v=1115" width="1200" height="675" alt="运动瑜伽服英文产品目录" data-alt-en="Activewear catalogue in English" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">运动瑜伽服英文产品目录</span><span class="l-en">Activewear catalogue in English</span></span></span><span class="mt"><span><span class="l-zh">产品画册</span><span class="l-en">Catalogue</span></span></span></span>
       </a>
       <a class="tile" style="order:2" href="#/p/booth" data-go="p/booth">
-        <figure><img src="img/w/booth-2.jpg" width="1600" height="1200" alt="展台与标识" data-alt-en="Booth and signage" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/booth-2.jpg?v=1115c" width="1600" height="1200" alt="展台与标识" data-alt-en="Booth and signage" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">展台与标识</span><span class="l-en">Booth and signage</span></span></span><span class="mt"><span><span class="l-zh">展会与空间</span><span class="l-en">Exhibition and space</span></span></span></span>
       </a>
       <a class="tile tall" style="order:4" href="#/p/sonic-state" data-go="p/sonic-state">
@@ -301,45 +371,46 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         <span class="cap"><span class="tt"><span><span class="l-zh">Sonic State 毕业系列</span><span class="l-en">Sonic State, graduate collection</span></span></span><span class="mt"><span><span class="l-zh">服装设计</span><span class="l-en">Fashion design</span></span></span></span>
       </a></div><div class="col r">
       <a class="tile" style="order:1" href="#/p/pharma-report" data-go="p/pharma-report">
-        <figure><img src="img/w/pharma-01.jpg?v=1115b" width="1600" height="900" alt="区域市场整合汇报" data-alt-en="Regional market integration report" decoding="async"></figure>
+        <figure><img src="img/c/pharma-01.jpg?v=1115c" width="1600" height="900" alt="区域市场整合汇报" data-alt-en="Regional market integration report" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">区域市场整合汇报</span><span class="l-en">Regional market integration report</span></span></span><span class="mt"><span><span class="l-zh">汇报 PPT</span><span class="l-en">Report deck</span></span></span></span>
       </a>
       <a class="tile" style="order:3" href="#/p/billion-baby" data-go="p/billion-baby">
-        <figure><img src="img/w/bb-product.jpg" width="1600" height="900" alt="Billion Baby 首个系列与品牌 logo" data-alt-en="Billion Baby: first drop &amp; logo" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/bb-product.jpg?v=1115c" width="1600" height="900" alt="Billion Baby 首个系列与品牌 logo" data-alt-en="Billion Baby: first drop &amp; logo" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">Billion Baby 首个系列与品牌 logo</span><span class="l-en">Billion Baby: first drop &amp; logo</span></span></span><span class="mt"><span><span class="l-zh">品牌与服装开发</span><span class="l-en">Brand and apparel development</span></span></span></span>
       </a>
       <a class="tile" style="order:5" href="#/p/pcb" data-go="p/pcb">
-        <figure><img src="img/w/pcb-iso.jpg" width="1800" height="1072" alt="传感器扩展板原理图和 PCB" data-alt-en="Sensor board schematic and PCB" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/pcb-iso.jpg?v=1115c" width="1800" height="1072" alt="传感器扩展板原理图和 PCB" data-alt-en="Sensor board schematic and PCB" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">传感器扩展板原理图和 PCB</span><span class="l-en">Sensor board schematic and PCB</span></span></span><span class="mt"><span><span class="l-zh">电子设计</span><span class="l-en">Electronics</span></span></span></span>
       </a></div></div>
   </section>
 
-  <section class="wrap allh" id="all">
-    <h2 class="sh"><span class="l-zh">全部作品</span><span class="l-en">All work</span></h2>
+  <section class="wrap allh band b2" id="all">
+    <div class="shd rv"><span class="no">02</span><h2 class="st"><span class="l-zh">全部作品</span><span class="l-en">All work</span></h2><span class="c"></span></div>
     <p><span class="l-zh">21 个项目，按类型分组。交付过的项目有 200 多个，客户名称不公开，想看同类样例可以问我。</span><span class="l-en">21 projects, grouped by type, out of more than 200 delivered. Client names aren't published; ask me if you'd like more samples of a particular kind.</span></p>
   </section>
 
-  <section class="wrap cat" id="print" data-row>
+  <section class="wrap cat band b2" id="print" data-row>
     <div class="lab"><span><span><span class="l-zh">画册与印刷</span><span class="l-en">Print</span></span></span><span class="c"><span><span class="l-zh">6 个项目</span><span class="l-en">6 projects</span></span><span class="rnav"><button type="button" class="rp" aria-label="Previous / 上一组" disabled>&#8592;</button><button type="button" class="rn" aria-label="Next / 下一组">&#8594;</button></span></span></div>
+    <p class="gd"><span class="l-zh">产品目录、折页、报告排版和展台，交印刷用 PDF 和可编辑源文件。</span><span class="l-en">Catalogues, brochures, report layouts and booths, delivered as print-ready PDFs with editable source files.</span></p>
     <div class="cards" tabindex="0">
       <a class="card" href="#/p/catalogue" data-go="p/catalogue">
         <figure><img src="img/c/cat-1.jpg?v=1115" width="1200" height="675" alt="运动瑜伽服英文产品目录" data-alt-en="Activewear catalogue in English" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">运动瑜伽服英文产品目录</span><span class="l-en">Activewear catalogue in English</span></span></span><span class="mt"><span><span class="l-zh">产品画册 · 6 张</span><span class="l-en">Catalogue · 6 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/reptile-catalogue" data-go="p/reptile-catalogue">
-        <figure><img src="img/w/rep-p02.jpg" width="1158" height="1514" alt="爬宠用品英文产品目录" data-alt-en="Reptile supplies catalogue" decoding="async"></figure>
+        <figure><img src="img/c/rep-p02.jpg?v=1115c" width="1158" height="1514" alt="爬宠用品英文产品目录" data-alt-en="Reptile supplies catalogue" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">爬宠用品英文产品目录</span><span class="l-en">Reptile supplies catalogue</span></span></span><span class="mt"><span><span class="l-zh">产品画册 · 4 张</span><span class="l-en">Catalogue · 4 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/trifold" data-go="p/trifold">
-        <figure><img src="img/w/tri-1.jpg" width="1600" height="1179" alt="三折页和餐厅菜单" data-alt-en="Tri-fold and restaurant menu" decoding="async"></figure>
+        <figure><img src="img/c/tri-1.jpg?v=1115c" width="1600" height="1179" alt="三折页和餐厅菜单" data-alt-en="Tri-fold and restaurant menu" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">三折页和餐厅菜单</span><span class="l-en">Tri-fold and restaurant menu</span></span></span><span class="mt"><span><span class="l-zh">印刷品 · 5 张</span><span class="l-en">Print · 5 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/research-report" data-go="p/research-report">
-        <figure><img src="img/w/rep145-01.jpg" width="1600" height="1132" alt="服装主题英文研究报告" data-alt-en="Fashion research report in English" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/rep145-01.jpg?v=1115c" width="1600" height="1132" alt="服装主题英文研究报告" data-alt-en="Fashion research report in English" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">服装主题英文研究报告</span><span class="l-en">Fashion research report in English</span></span></span><span class="mt"><span><span class="l-zh">报告排版 · 8 张</span><span class="l-en">Report layout · 8 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/booth" data-go="p/booth">
-        <figure><img src="img/w/booth-2.jpg" width="1600" height="1200" alt="展台与标识" data-alt-en="Booth and signage" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/booth-2.jpg?v=1115c" width="1600" height="1200" alt="展台与标识" data-alt-en="Booth and signage" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">展台与标识</span><span class="l-en">Booth and signage</span></span></span><span class="mt"><span><span class="l-zh">展会与空间 · 4 张</span><span class="l-en">Exhibition and space · 4 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/tech-docs" data-go="p/tech-docs">
@@ -347,23 +418,24 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         <span class="cap"><span class="tt"><span><span class="l-zh">说明书和试验报告英译</span><span class="l-en">Manual and test report translation</span></span></span><span class="mt"><span><span class="l-zh">技术文件 · 4 张</span><span class="l-en">Technical documents · 4 images</span></span></span></span>
       </a></div>
   </section>
-  <section class="wrap cat" id="slides" data-row>
+  <section class="wrap cat band b2" id="slides" data-row>
     <div class="lab"><span><span><span class="l-zh">汇报与课件</span><span class="l-en">Slides</span></span></span><span class="c"><span><span class="l-zh">6 个项目</span><span class="l-en">6 projects</span></span><span class="rnav"><button type="button" class="rp" aria-label="Previous / 上一组" disabled>&#8592;</button><button type="button" class="rn" aria-label="Next / 下一组">&#8594;</button></span></span></div>
+    <p class="gd"><span class="l-zh">工作汇报、数据分析和教学课件，有模板就按你们的模板做。</span><span class="l-en">Reports, data decks and teaching slides, in your own template if you have one.</span></p>
     <div class="cards" tabindex="0">
       <a class="card" href="#/p/edu-decks" data-go="p/edu-decks">
-        <figure><img src="img/w/edu-158.jpg" width="1600" height="900" alt="学校课件和课程汇报" data-alt-en="School lessons and programme reports" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/edu-158.jpg?v=1115c" width="1600" height="900" alt="学校课件和课程汇报" data-alt-en="School lessons and programme reports" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">学校课件和课程汇报</span><span class="l-en">School lessons and programme reports</span></span></span><span class="mt"><span><span class="l-zh">教学课件 · 10 张</span><span class="l-en">Teaching · 10 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/bank-report" data-go="p/bank-report">
-        <figure><img src="img/w/bank-01.jpg" width="1600" height="900" alt="银行网点服务与营销汇报" data-alt-en="Bank branch service and sales report" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/bank-01.jpg?v=1115c" width="1600" height="900" alt="银行网点服务与营销汇报" data-alt-en="Bank branch service and sales report" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">银行网点服务与营销汇报</span><span class="l-en">Bank branch service and sales report</span></span></span><span class="mt"><span><span class="l-zh">汇报 PPT · 9 张</span><span class="l-en">Report deck · 9 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/pharma-report" data-go="p/pharma-report">
-        <figure><img src="img/w/pharma-01.jpg?v=1115b" width="1600" height="900" alt="区域市场整合汇报" data-alt-en="Regional market integration report" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/pharma-01.jpg?v=1115c" width="1600" height="900" alt="区域市场整合汇报" data-alt-en="Regional market integration report" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">区域市场整合汇报</span><span class="l-en">Regional market integration report</span></span></span><span class="mt"><span><span class="l-zh">汇报 PPT · 8 张</span><span class="l-en">Report deck · 8 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/data-deck" data-go="p/data-deck">
-        <figure><img src="img/w/data-01.jpg" width="1600" height="901" alt="销售数据分析 PPT" data-alt-en="Sales data analysis deck" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/data-01.jpg?v=1115c" width="1600" height="901" alt="销售数据分析 PPT" data-alt-en="Sales data analysis deck" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">销售数据分析 PPT</span><span class="l-en">Sales data analysis deck</span></span></span><span class="mt"><span><span class="l-zh">数据汇报 · 6 张</span><span class="l-en">Data deck · 6 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/medical-deck" data-go="p/medical-deck">
@@ -371,15 +443,16 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         <span class="cap"><span class="tt"><span><span class="l-zh">医学科普 PPT</span><span class="l-en">Medical explainer deck</span></span></span><span class="mt"><span><span class="l-zh">科普 PPT · 7 张</span><span class="l-en">Explainer deck · 7 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/courseware" data-go="p/courseware">
-        <figure><img src="img/w/avi-01.jpg" width="1600" height="901" alt="航空英语课件" data-alt-en="Aviation English lesson" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/avi-01.jpg?v=1115c" width="1600" height="901" alt="航空英语课件" data-alt-en="Aviation English lesson" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">航空英语课件</span><span class="l-en">Aviation English lesson</span></span></span><span class="mt"><span><span class="l-zh">英文课件 · 8 张</span><span class="l-en">Courseware · 8 images</span></span></span></span>
       </a></div>
   </section>
-  <section class="wrap cat" id="drawings" data-row>
+  <section class="wrap cat band b2" id="drawings" data-row>
     <div class="lab"><span><span><span class="l-zh">图纸与图表</span><span class="l-en">Drawings and diagrams</span></span></span><span class="c"><span><span class="l-zh">6 个项目</span><span class="l-en">6 projects</span></span><span class="rnav"><button type="button" class="rp" aria-label="Previous / 上一组" disabled>&#8592;</button><button type="button" class="rn" aria-label="Next / 下一组">&#8594;</button></span></span></div>
+    <p class="gd"><span class="l-zh">照着照片、草图或旧图重画电气图、流程图和信息图，可出英文标注。</span><span class="l-en">Electrical drawings, process diagrams and infographics redrawn from photos, sketches or old files, with English labels.</span></p>
     <div class="cards" tabindex="0">
       <a class="card" href="#/p/pcb" data-go="p/pcb">
-        <figure><img src="img/w/pcb-iso.jpg" width="1800" height="1072" alt="传感器扩展板原理图和 PCB" data-alt-en="Sensor board schematic and PCB" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/pcb-iso.jpg?v=1115c" width="1800" height="1072" alt="传感器扩展板原理图和 PCB" data-alt-en="Sensor board schematic and PCB" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">传感器扩展板原理图和 PCB</span><span class="l-en">Sensor board schematic and PCB</span></span></span><span class="mt"><span><span class="l-zh">电子设计 · 6 张</span><span class="l-en">Electronics · 6 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/control-set" data-go="p/control-set">
@@ -387,25 +460,25 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         <span class="cap"><span class="tt"><span><span class="l-zh">控制系统整套电气图</span><span class="l-en">Control system drawing set</span></span></span><span class="mt"><span><span class="l-zh">电气图纸 · 7 张</span><span class="l-en">Electrical drawings · 7 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/sketch-cad" data-go="p/sketch-cad">
-        <figure><img src="img/w/cad-sketch.jpg" width="1280" height="1707" alt="手绘草图转 CAD" data-alt-en="Hand sketch to CAD" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/cad-sketch.jpg?v=1115c" width="1280" height="1707" alt="手绘草图转 CAD" data-alt-en="Hand sketch to CAD" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">手绘草图转 CAD</span><span class="l-en">Hand sketch to CAD</span></span></span><span class="mt"><span><span class="l-zh">电气图纸 · 5 张</span><span class="l-en">Electrical drawings · 5 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/process" data-go="p/process">
-        <figure><img src="img/w/dwg-water.jpg" width="1600" height="1131" alt="工艺流程图和 P&amp;ID" data-alt-en="Process flow diagrams and P&amp;IDs" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/dwg-water.jpg?v=1115c" width="1600" height="1131" alt="工艺流程图和 P&amp;ID" data-alt-en="Process flow diagrams and P&amp;IDs" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">工艺流程图和 P&amp;ID</span><span class="l-en">Process flow diagrams and P&amp;IDs</span></span></span><span class="mt"><span><span class="l-zh">工艺图纸 · 6 张</span><span class="l-en">Process drawings · 6 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/electrical" data-go="p/electrical">
-        <figure><img src="img/w/dwg-cabinet.jpg" width="2000" height="720" alt="电柜原理图和布置图" data-alt-en="Cabinet schematics and layouts" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/dwg-cabinet.jpg?v=1115c" width="2000" height="720" alt="电柜原理图和布置图" data-alt-en="Cabinet schematics and layouts" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">电柜原理图和布置图</span><span class="l-en">Cabinet schematics and layouts</span></span></span><span class="mt"><span><span class="l-zh">电气图纸 · 7 张</span><span class="l-en">Electrical drawings · 7 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/infographics" data-go="p/infographics">
-        <figure><img src="img/w/info-146.jpg" width="1600" height="1276" alt="信息图和示意图" data-alt-en="Infographics and diagrams" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/info-146.jpg?v=1115c" width="1600" height="1276" alt="信息图和示意图" data-alt-en="Infographics and diagrams" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">信息图和示意图</span><span class="l-en">Infographics and diagrams</span></span></span><span class="mt"><span><span class="l-zh">图表 · 13 张</span><span class="l-en">Diagrams · 13 images</span></span></span></span>
       </a></div>
   </section>
 
-  <section class="wrap fash" id="fashion" data-row>
-    <div class="lab"><span><span class="l-zh">服装</span><span class="l-en">Fashion</span></span><span class="c"><span class="l-zh">我的本行</span><span class="l-en">Where I started</span><span class="rnav"><button type="button" class="rp" aria-label="Previous / 上一组" disabled>&#8592;</button><button type="button" class="rn" aria-label="Next / 下一组">&#8594;</button></span></span></div>
+  <section class="wrap fash band b3" id="fashion" data-row>
+    <div class="shd rv"><span class="no">03</span><h2 class="st"><span class="l-zh">服装</span><span class="l-en">Fashion</span></h2><span class="c"><span class="l-zh">我的本行</span><span class="l-en">Where I started</span><span class="rnav"><button type="button" class="rp" aria-label="Previous / 上一组" disabled>&#8592;</button><button type="button" class="rn" aria-label="Next / 下一组">&#8594;</button></span></span></div>
     <p class="fi"><span class="l-zh">我是学服装设计出身的。毕业系列从概念、面料实验到 3D 建模和成衣，都是自己完成的。</span><span class="l-en">I trained as a fashion designer. I took my graduate collection from concept and fabric tests through 3D modelling to finished garments myself.</span></p>
     <p class="aw"><span class="l-zh">2022 年都柏林城市大学青年设计师比赛 第一名</span><span class="l-en">First place, Dublin City University young designer competition, 2022</span></p>
     <div class="cards" tabindex="0">
@@ -414,7 +487,7 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
         <span class="cap"><span class="tt"><span><span class="l-zh">Sonic State 毕业系列</span><span class="l-en">Sonic State, graduate collection</span></span></span><span class="mt"><span><span class="l-zh">服装设计 · 6 张</span><span class="l-en">Fashion design · 6 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/billion-baby" data-go="p/billion-baby">
-        <figure><img src="img/w/bb-product.jpg" width="1600" height="900" alt="Billion Baby 首个系列与品牌 logo" data-alt-en="Billion Baby: first drop &amp; logo" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/c/bb-product.jpg?v=1115c" width="1600" height="900" alt="Billion Baby 首个系列与品牌 logo" data-alt-en="Billion Baby: first drop &amp; logo" loading="lazy" decoding="async"></figure>
         <span class="cap"><span class="tt"><span><span class="l-zh">Billion Baby 首个系列与品牌 logo</span><span class="l-en">Billion Baby: first drop &amp; logo</span></span></span><span class="mt"><span><span class="l-zh">品牌与服装开发 · 8 张</span><span class="l-en">Brand and apparel development · 8 images</span></span></span></span>
       </a>
       <a class="card" href="#/p/tech-packs" data-go="p/tech-packs">
@@ -424,8 +497,8 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
     <p class="more"><span class="l-zh">服装开发文件也能做：tech pack、BOM 和 POM、图案定位、打样意见。</span><span class="l-en">I also prepare apparel development files: tech packs, BOM and POM, print placement and sample comments.</span></p>
   </section>
 
-  <section class="wrap about" id="about">
-    <div class="lab"><span><span class="l-zh">关于</span><span class="l-en">About</span></span><span class="c"></span></div>
+  <section class="wrap about band b4" id="about">
+    <div class="shd rv"><span class="no">04</span><h2 class="st"><span class="l-zh">关于</span><span class="l-en">About</span></h2><span class="c"></span></div>
     <div class="ab">
       <figure><img src="img/about.jpg" width="1050" height="1400" alt="本人照片" data-alt-en="Portrait" loading="lazy" decoding="async"></figure>
       <div class="tx">
@@ -464,8 +537,8 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
     </div>
   </section>
 
-  <section class="wrap contact" id="contact">
-    <div class="lab"><span><span class="l-zh">联系</span><span class="l-en">Contact</span></span><span class="c"></span></div>
+  <section class="wrap contact band b5" id="contact">
+    <div class="shd rv"><span class="no">05</span><h2 class="st"><span class="l-zh">联系</span><span class="l-en">Contact</span></h2><span class="c"></span></div>
     <div class="ct">
       <p class="mail"><a href="mailto:ainstuconnect@gmail.com">ainstuconnect@gmail.com</a></p>
       <ul>
@@ -967,6 +1040,61 @@ var STUDIO_NAME_ZH = '叠光工作室';
   route(true);
 })();
 
+</script>
+<script>
+/* v18: section in view, smooth jumps, second-image preview, reveal */
+(function(){
+  var root=document.documentElement,reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var top=document.querySelector('.top'),home=document.querySelector('.view.home');
+  var ids=['selected','all','fashion','about','contact'];
+  var links={};[].forEach.call(document.querySelectorAll('.nav a[data-jump]'),function(a){links[a.getAttribute('data-jump')]=a});
+  var raf=0;
+  function spy(){
+    raf=0;
+    if(top)top.classList.toggle('sc',window.scrollY>8);
+    var cur='';
+    if(home&&!home.hidden){
+      var off=(top?top.offsetHeight:70)+60;
+      ids.forEach(function(id){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top-off<=0)cur=id});
+      if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)cur='contact';
+    }
+    ids.forEach(function(id){var a=links[id];if(!a)return;if(id===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});
+  }
+  function ask(){if(!raf)raf=requestAnimationFrame(spy)}
+  window.addEventListener('scroll',ask,{passive:true});window.addEventListener('resize',ask);window.addEventListener('hashchange',function(){setTimeout(spy,60)});
+  spy();
+  /* smooth scroll for in-page jumps (runs before the older handler) */
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest&&ev.target.closest('[data-jump]');if(!a||!home||home.hidden)return;
+    var t=document.getElementById(a.getAttribute('data-jump'));if(!t)return;
+    ev.preventDefault();ev.stopImmediatePropagation();
+    try{history.pushState(null,'','#'+t.id)}catch(e){}
+    t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  },true);
+  /* second image on hover */
+  var fine=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if(fine)[].forEach.call(document.querySelectorAll('.home a.card,.home a.tile'),function(a){
+    var id=(a.getAttribute('data-go')||'').replace(/^p\//,'');
+    var v=document.querySelector('[data-view="p/'+id+'"]');if(!v)return;
+    var im=v.querySelectorAll('.gs img');if(im.length<2)return;
+    var src=im[1].getAttribute('src'),fig=a.querySelector('figure'),done=false;
+    a.addEventListener('mouseenter',function(){
+      if(done)return;done=true;
+      var x=new Image();x.className='alt';x.alt='';x.setAttribute('aria-hidden','true');x.decoding='async';
+      x.onload=function(){fig.appendChild(x);requestAnimationFrame(function(){x.style.transition='opacity .35s';fig.classList.add('has-alt')})};
+      x.src=src;
+    });
+  });
+  /* reveal */
+  if(!reduce&&'IntersectionObserver' in window){
+    var els=[].slice.call(document.querySelectorAll('.home .shd,.home .tile,.home .cat .lab,.home .gd,.home .cards,.home .fash .fi,.home .fash .aw,.home .ab,.home .ct,.home .allh p'));
+    els.forEach(function(e){e.classList.add('rv')});
+    root.classList.add('rv-on');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:0.05});
+    els.forEach(function(e){io.observe(e)});
+    setTimeout(function(){els.forEach(function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)e.classList.add('in')})},50);
+  }
+})();
 </script>
 </body>
 </html>
