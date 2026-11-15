@@ -192,7 +192,7 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
 .gt{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
 .gt::-webkit-scrollbar{display:none}
 .gt:focus-visible{outline-offset:6px}
-.gs{flex:0 0 100%;min-width:0;margin:0;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;align-items:center;justify-content:center;height:76vh;height:min(76vh,860px)}
+.gs{flex:0 0 100%;min-width:0;margin:0;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;align-items:center;justify-content:center;height:76vh;height:max(360px,min(calc(100vh - 240px),860px))}
 .gs img{width:auto;max-width:100%;max-height:calc(100% - 36px);object-fit:contain;background:var(--tile)}
 .gs figcaption{margin-top:12px;min-height:20px;font-size:13px;color:var(--mute);text-align:center}
 .gbar{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--mute)}
@@ -884,7 +884,7 @@ var STUDIO_NAME_ZH = '叠光工作室';
     function upd(){var m=t.scrollWidth-t.clientWidth;p.disabled=t.scrollLeft<=2;n.disabled=t.scrollLeft>=m-2;r.classList.toggle('fit',m<=2)}
     function go(d){t.scrollBy?t.scrollBy({left:d*t.clientWidth*0.9,behavior:'smooth'}):(t.scrollLeft+=d*t.clientWidth*0.9)}
     p.addEventListener('click',function(){go(-1)});n.addEventListener('click',function(){go(1)});
-    t.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+    t.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);if(window.ResizeObserver)new ResizeObserver(upd).observe(t);upd();
   });
 
   /* galleries */
