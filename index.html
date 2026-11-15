@@ -6,6 +6,8 @@
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <title>叠光工作室｜Foldlight Studio 作品</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#f5f4f0">
 <meta name="description" content="Catalogues, manuals, technical drawings, slides and translation in Chinese and English. 中英双语画册、说明书、技术图纸、PPT 和翻译。">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
@@ -30,12 +32,8 @@
   --bg:#f5f4f0;--ink:#151515;--mute:#6e6b65;--line:#d9d6cf;--tile:#e9e7e1;
   --serif:"Bodoni Moda","Noto Serif SC","Songti SC",serif;
   --sans:"Inter","Noto Sans SC","PingFang SC",system-ui,sans-serif;
-  --gut:40px;color-scheme:light;
+  --gut:40px;color-scheme:light only;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#121211;--ink:#ebe8e2;--mute:#9b978f;--line:#2d2c29;--tile:#1c1c1a;color-scheme:dark;
-}}
-:root[data-theme="dark"]{--bg:#121211;--ink:#ebe8e2;--mute:#9b978f;--line:#2d2c29;--tile:#1c1c1a;color-scheme:dark}
 :root[data-lang="en"] .l-zh,:root:not([data-lang="en"]) .l-en{display:none!important}
 
 *{box-sizing:border-box}
@@ -49,8 +47,6 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
 .wrap{max-width:1440px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gut);
   padding-left:max(var(--gut),env(safe-area-inset-left));padding-right:max(var(--gut),env(safe-area-inset-right))}
 .logo-light{display:none}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo-dark{display:none}:root:not([data-theme="light"]) .logo-light{display:block}}
-:root[data-theme="dark"] .logo-dark{display:none}:root[data-theme="dark"] .logo-light{display:block}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
 /* header */
