@@ -288,6 +288,67 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
 .jl-i{color:var(--mute,#777);font-size:13px;line-height:1.7;word-break:break-word}
 @media (max-width:700px){.jl li{grid-template-columns:1fr 40px;gap:4px 12px}.jl-i{grid-column:1/-1}}
 .case{margin-top:56px;padding-top:20px;border-top:1px solid var(--line)}.case h3{font-size:13px;color:var(--mute);margin-bottom:10px}.case dl>div{display:grid;grid-template-columns:10em 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--line);font-size:15px}.case dt{color:var(--mute);font-size:13px;padding-top:2px}.case dd{max-width:42em}@media(max-width:720px){.case dl>div{grid-template-columns:1fr;gap:4px}}
+
+/* about: full-width blocks */
+.abx{margin-top:24px}
+.abx .sub{margin-top:88px}
+.abx .sub>h3,.abx .sh h3{font-size:13px;color:var(--mute);margin-bottom:18px}
+.sh{display:flex;justify-content:space-between;align-items:baseline}
+.wnav{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mute)}
+.wnav button{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:none;color:var(--ink);cursor:pointer;font-size:15px}
+.wnav button:hover{border-color:var(--ink)}
+/* wechat carousel */
+.wxs{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 18px;scrollbar-width:none}
+.wxs::-webkit-scrollbar{display:none}
+.wx{flex:0 0 300px;scroll-snap-align:start;margin:0;display:flex;flex-direction:column;height:440px;border-radius:22px;overflow:hidden;background:#ededed;border:1px solid #d9d9d9;box-shadow:0 12px 30px rgba(0,0,0,.08);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif;color:#111}
+.wh{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;height:50px;padding:16px 14px 0;background:#ededed;border-bottom:1px solid #d6d6d6}
+.wh i{font-style:normal;font-size:24px;width:24px;line-height:1}
+.wh i:last-child{text-align:right;font-size:16px}
+.wh b{font-size:16px;font-weight:600}
+.wn{filter:blur(4px);user-select:none}
+.wbd{flex:1;padding:14px 12px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.wt{align-self:center;margin:0;font-size:12px;color:#999}
+.wm{display:flex;align-items:flex-start;gap:9px;max-width:100%}
+.wm.me{flex-direction:row-reverse;align-self:flex-end}
+.wav{flex:0 0 38px;width:38px;height:38px;border-radius:5px;overflow:hidden;display:block}
+.wav svg{width:100%;height:100%;display:block}
+.wav.me{background:#1c1c1b;color:#f5f4f0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px}
+.wb{position:relative;margin:0;background:#fff;font-size:15px;line-height:1.45;padding:8px 11px;border-radius:5px;max-width:200px;word-break:break-word}
+.wb::before{content:"";position:absolute;left:-4px;top:13px;width:9px;height:9px;background:inherit;transform:rotate(45deg)}
+.me .wb{background:#95ec69}
+.me .wb::before{left:auto;right:-4px}
+.wf{display:flex;gap:10px;align-items:center;background:#fff;border-radius:5px;padding:10px 11px;width:196px;font-size:13px;line-height:1.35}
+.wfn{flex:1;word-break:break-all}
+.wfi{flex:0 0 32px;height:38px;border-radius:3px;background:#e64340;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px}
+.wcap{flex:0 0 auto;padding:10px 14px;background:#f7f7f7;border-top:1px solid #dedede;font-size:12px;color:#888;text-align:center}
+/* services */
+.svg{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.svc2{position:relative;padding:28px 28px 32px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.svc2+.svc2{padding-left:28px}
+.svc2:nth-child(3n+1){padding-left:0}
+.svc2:not(:nth-child(3n)){border-right:1px solid var(--line)}
+.svi{font-size:12px;color:var(--mute);letter-spacing:.08em}
+.svc2 h4{font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.2}
+.svp{font-size:15px;line-height:1.6}
+.svt{display:flex;flex-wrap:wrap;gap:6px}
+.svt li{font-size:12px;padding:3px 9px;border:1px solid var(--line);border-radius:999px;color:var(--mute)}
+.svf{font-size:13px;color:var(--mute);line-height:1.6;margin-top:auto}
+.svf .k{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.svn{font-family:var(--serif);font-size:15px}
+/* flowchart */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:28px;counter-reset:none;margin-top:6px}
+.fw{position:relative;border:1px solid var(--line);border-radius:10px;padding:18px 16px 20px;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
+.fw:not(:last-child)::after{content:"";position:absolute;top:34px;right:-24px;width:20px;height:1px;background:var(--ink)}
+.fw:not(:last-child)::before{content:"";position:absolute;top:30px;right:-25px;border:4px solid transparent;border-left:7px solid var(--ink);border-right:0}
+.fwn{width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:13px}
+.fw h4{font-family:var(--serif);font-size:20px;font-weight:400}
+.fw p{font-size:13px;line-height:1.6;color:var(--mute)}
+.fwt{margin-top:auto;align-self:flex-start;font-size:12px;padding:3px 9px;border-radius:999px;background:var(--ink);color:var(--bg)}
+.fw.loop .fwt{background:none;color:var(--ink);border:1px dashed var(--ink)}
+.flow+.lead-time{margin-top:28px}
+@media (max-width:980px){.svg{grid-template-columns:1fr 1fr}.svc2,.svc2+.svc2{padding:24px 20px 26px 0;border-right:0}.svc2:nth-child(2n){padding-left:20px;border-left:1px solid var(--line)}.flow{grid-template-columns:1fr;gap:22px}.fw:not(:last-child)::after{top:auto;bottom:-18px;left:30px;right:auto;width:1px;height:14px}.fw:not(:last-child)::before{top:auto;bottom:-22px;left:26px;right:auto;border:4px solid transparent;border-top:7px solid var(--ink);border-bottom:0}}
+@media (max-width:640px){.svg{grid-template-columns:1fr}.svc2,.svc2+.svc2,.svc2:nth-child(2n){padding:22px 0;border-left:0}.wx{flex-basis:84%}}
+.intro .cta{display:inline-block;margin:0 4px;padding:3px 14px 4px;border-radius:999px;background:var(--ink);color:var(--bg);text-decoration:none;border:0;font-weight:500;white-space:nowrap}.intro .cta:hover{opacity:.85}
 </style>
 <style>
 /* v18: bands, numbered section heads, hover and reveal */
@@ -427,17 +488,17 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
 
   <section class="wrap intro">
     <h1><span class="l-zh">我做中英双语的产品画册、说明书、技术图纸、科研绘图和汇报 PPT，从排版做到交付</span><span class="l-en">I design catalogues, manuals, technical drawings, research figures and decks in English and Chinese, from layout to final files</span></h1>
-    <p><span class="l-zh">服装设计出身，在爱尔兰读书、工作十年，到现在交付了 180 多个项目，客户有工厂、工程公司、学校和科研团队。有活可以直接<a href="#contact" data-jump="contact">联系我</a>。</span><span class="l-en">I trained in fashion design and spent ten years studying and working in Ireland. I've delivered more than 180 projects so far, for manufacturers, engineering firms, schools and research teams. <a href="#contact" data-jump="contact">Get in touch</a> if you have something in mind.</span></p>
+    <p><span class="l-zh">服装设计出身，在爱尔兰读书、工作十年，到现在交付了 180 多个项目，客户有工厂、工程公司、学校和科研团队。有活可以直接<a class="cta" href="#contact" data-jump="contact">联系我 →</a>。</span><span class="l-en">I trained in fashion design and spent ten years studying and working in Ireland. I've delivered more than 180 projects so far, for manufacturers, engineering firms, schools and research teams. <a class="cta" href="#contact" data-jump="contact">Get in touch →</a> if you have something in mind.</span></p>
     <div class="reelw" data-row>
     <div class="cards reel" tabindex="0" aria-label="作品 / Work">
-      <a class="rl" href="#/p/medical-figures" data-go="p/medical-figures"><img src="img/c/med-1.jpg?v=1116" width="1522" height="1200" alt="医学科研图：技术路线图、研究内容图和组图" data-alt-en="Medical research figures: roadmaps, work-package diagrams and figure panels" decoding="async"><span class="rc"><span class="l-zh">医学科研图：技术路线图、研究内容图和组图</span><span class="l-en">Medical research figures: roadmaps, work-package diagrams and figure panels</span></span></a>
-      <a class="rl" href="#/p/fuelcell-frameworks" data-go="p/fuelcell-frameworks"><img src="img/c/fc-1.jpg?v=1116" width="1600" height="901" alt="燃料电池课题研究框图" data-alt-en="Fuel cell research framework diagrams" decoding="async"><span class="rc"><span class="l-zh">燃料电池课题研究框图</span><span class="l-en">Fuel cell research framework diagrams</span></span></a>
-      <a class="rl" href="#/p/chem-pid" data-go="p/chem-pid"><img src="img/c/cpid-107a.jpg?v=1116" width="1600" height="1130" alt="化工装置 P&amp;ID" data-alt-en="Chemical plant P&amp;IDs" decoding="async"><span class="rc"><span class="l-zh">化工装置 P&amp;ID</span><span class="l-en">Chemical plant P&amp;IDs</span></span></a>
-      <a class="rl" href="#/p/construction-schedules" data-go="p/construction-schedules"><img src="img/c/sched-46.jpg?v=1116" width="1600" height="858" alt="施工进度计划和平面图" data-alt-en="Construction schedules and site plans" decoding="async"><span class="rc"><span class="l-zh">施工进度计划和平面图</span><span class="l-en">Construction schedules and site plans</span></span></a>
-      <a class="rl" href="#/p/eng-decks" data-go="p/eng-decks"><img src="img/c/eng-167d.jpg?v=1116" width="1386" height="780" alt="工程项目汇报 PPT" data-alt-en="Engineering project decks" decoding="async"><span class="rc"><span class="l-zh">工程项目汇报 PPT</span><span class="l-en">Engineering project decks</span></span></a>
-      <a class="rl" href="#/p/data-charts" data-go="p/data-charts"><img src="img/c/chart-3d-1.jpg?v=1116" width="1600" height="899" alt="立体数据图和数据看板" data-alt-en="3D charts and data dashboard" decoding="async"><span class="rc"><span class="l-zh">立体数据图和数据看板</span><span class="l-en">3D charts and data dashboard</span></span></a>
-      <a class="rl" href="#/p/process" data-go="p/process"><img src="img/c/pid-04.jpg?v=1116" width="2000" height="856" alt="工艺流程图和 P&amp;ID" data-alt-en="Process flow diagrams and P&amp;IDs" decoding="async"><span class="rc"><span class="l-zh">工艺流程图和 P&amp;ID</span><span class="l-en">Process flow diagrams and P&amp;IDs</span></span></a>
-      <a class="rl" href="#/p/reptile-catalogue" data-go="p/reptile-catalogue"><img src="img/c/rep-p02.jpg?v=1116" width="918" height="1200" alt="爬宠用品英文产品目录" data-alt-en="Reptile supplies catalogue" decoding="async"><span class="rc"><span class="l-zh">爬宠用品英文产品目录</span><span class="l-en">Reptile supplies catalogue</span></span></a>
+      <a class="rl" href="#/p/board-game" data-go="p/board-game"><img src="img/c/game-1.jpg?v=1116" width="1600" height="900" alt="课堂互动棋盘游戏" data-alt-en="Classroom board game" decoding="async"><span class="rc"><span class="l-zh">课堂互动棋盘游戏</span><span class="l-en">Classroom board game</span></span></a>
+      <a class="rl" href="#/p/power-plan" data-go="p/power-plan"><img src="img/c/pwr-ba.jpg?v=1116" width="1600" height="606" alt="厂房动力平面图深化" data-alt-en="Factory power layout development" decoding="async"><span class="rc"><span class="l-zh">厂房动力平面图深化</span><span class="l-en">Factory power layout development</span></span></a>
+      <a class="rl" href="#/p/data-charts" data-go="p/data-charts"><img src="img/c/chart-dash.jpg?v=1116" width="1600" height="899" alt="立体数据图和数据看板" data-alt-en="3D charts and data dashboard" decoding="async"><span class="rc"><span class="l-zh">立体数据图和数据看板</span><span class="l-en">3D charts and data dashboard</span></span></a>
+      <a class="rl" href="#/p/infographics" data-go="p/infographics"><img src="img/c/info-146.jpg?v=1116" width="1200" height="957" alt="信息图和示意图" data-alt-en="Infographics and diagrams" decoding="async"><span class="rc"><span class="l-zh">信息图和示意图</span><span class="l-en">Infographics and diagrams</span></span></a>
+      <a class="rl" href="#/p/drama-teaching" data-go="p/drama-teaching"><img src="img/c/drama-1.jpg?v=1116" width="1600" height="900" alt="教学创新大赛课件" data-alt-en="Teaching innovation competition deck" decoding="async"><span class="rc"><span class="l-zh">教学创新大赛课件</span><span class="l-en">Teaching innovation competition deck</span></span></a>
+      <a class="rl" href="#/p/sketch-cad" data-go="p/sketch-cad"><img src="img/c/ba-cad.jpg?v=1116" width="1600" height="815" alt="手绘草图转 CAD" data-alt-en="Hand sketch to CAD" decoding="async"><span class="rc"><span class="l-zh">手绘草图转 CAD</span><span class="l-en">Hand sketch to CAD</span></span></a>
+      <a class="rl" href="#/p/math-courseware" data-go="p/math-courseware"><img src="img/c/math-1.jpg?v=1116" width="1600" height="899" alt="高中数学课件" data-alt-en="High school maths lessons" decoding="async"><span class="rc"><span class="l-zh">高中数学课件</span><span class="l-en">High school maths lessons</span></span></a>
+      <a class="rl" href="#/p/english-lessons" data-go="p/english-lessons"><img src="img/c/eng-04.jpg?v=1116" width="1600" height="899" alt="英语课件和英文演讲 PPT" data-alt-en="English lessons and speech decks" decoding="async"><span class="rc"><span class="l-zh">英语课件和英文演讲 PPT</span><span class="l-en">English lessons and speech decks</span></span></a>
     </div>
     <div class="rbar"><span class="rh"><span class="l-zh">左右滑动看更多，点开看内页</span><span class="l-en">Swipe for more, open one to see the inside pages</span></span><span class="rnav"><button type="button" class="rp" aria-label="Previous / 上一组" disabled>&#8592;</button><button type="button" class="rn" aria-label="Next / 下一组">&#8594;</button></span></div>
     </div>
@@ -738,47 +799,86 @@ h1,h2,h3,p{margin:0;font-weight:inherit}
           <li><span class="k"><span class="l-zh">项目</span><span class="l-en">Projects</span></span><span><span class="l-zh">180 多个设计和文件项目，完整清单见作品页底部</span><span class="l-en">180+ design and document projects; the full job log is at the end of the work section</span></span></li>
         </ul>
 
-        <div class="sub said">
-          <h3><span class="l-zh">客户原话</span><span class="l-en">What clients said</span></h3>
-          <div class="chat" role="group" aria-label="客户聊天记录 / Client chats">
-            <div class="ct" aria-hidden="true"><i>&#8249;</i><b><span class="l-zh">客户聊天记录</span><span class="l-en">Client chats</span></b><i>&middot;&middot;&middot;</i></div>
-            <div class="cbd">
-            <p class="cnote"><span class="l-zh">根据聊天记录重排，客户信息已隐去</span><span class="l-en">Rearranged from chat records, client details hidden. Translated from Chinese.</span></p>
-            <figure class="cm"><span class="av" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.2-4 4.4-6 8-6s6.8 2 8 6z"/></svg></span><div class="cmb"><figcaption class="who"><span class="l-zh">动画项目客户</span><span class="l-en">Animation client</span></figcaption><blockquote><p class="bb"><span class="l-zh">太专业了</span><span class="l-en">So professional.</span></p></blockquote></div></figure>
-            <figure class="cm"><span class="av" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.2-4 4.4-6 8-6s6.8 2 8 6z"/></svg></span><div class="cmb"><figcaption class="who"><span class="l-zh">展台设计客户</span><span class="l-en">Booth design client</span></figcaption><blockquote><p class="bb"><span class="l-zh">这效果可以</span><span class="l-en">This looks good.</span></p><p class="bb"><span class="l-zh">终稿满意</span><span class="l-en">Happy with the final.</span></p></blockquote></div></figure>
-            <figure class="cm"><span class="av" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.2-4 4.4-6 8-6s6.8 2 8 6z"/></svg></span><div class="cmb"><figcaption class="who"><span class="l-zh">工艺流程图客户</span><span class="l-en">Process diagram client</span></figcaption><blockquote><p class="bb"><span class="l-zh">终稿满意，发源文件</span><span class="l-en">Happy with the final, please send the source files.</span></p></blockquote></div></figure>
-            <figure class="cm"><span class="av" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.2-4 4.4-6 8-6s6.8 2 8 6z"/></svg></span><div class="cmb"><figcaption class="who"><span class="l-zh">拖车公厕水电图客户</span><span class="l-en">Trailer toilet drawings client</span></figcaption><blockquote><p class="bb"><span class="l-zh">没问题啦，生成吧</span><span class="l-en">All good, go ahead and finalise it.</span></p></blockquote></div></figure>
-            <figure class="cm"><span class="av" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.2-4 4.4-6 8-6s6.8 2 8 6z"/></svg></span><div class="cmb"><figcaption class="who"><span class="l-zh">变电所二次回路图客户</span><span class="l-en">Substation circuit drawings client</span></figcaption><blockquote><p class="bb"><span class="l-zh">就这样可以了</span><span class="l-en">That works as it is.</span></p></blockquote></div></figure>
-            </div>
-            <div class="cin" aria-hidden="true"><span class="ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#222" stroke-width="1.8" stroke-linecap="round"><path d="M9 9a4 4 0 0 1 0 6"/><path d="M12 6.5a7.5 7.5 0 0 1 0 11"/><circle cx="6.5" cy="12" r=".6" fill="#222"/></svg></span><span class="fd"></span><span class="ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#222" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="10" r=".6" fill="#222"/><circle cx="15" cy="10" r=".6" fill="#222"/><path d="M8.5 14.5c1.8 2 5.2 2 7 0"/></svg></span><span class="ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#222" stroke-width="1.8" stroke-linecap="round"><path d="M12 7v10M7 12h10"/></svg></span></div>
-          </div>
         
-          <p class="note"><span class="l-zh">回头客：一位做传感器板的客户先后下了 3 单（原理图、原理图修改、PCB 器件摆放）；汇报 PPT 和宣传折页也有老客户回来再下单。</span><span class="l-en">Repeat clients: one sensor board client has come back for three jobs (schematic, schematic revision, PCB placement), and report-deck and brochure clients have returned with new orders.</span></p>
+      </div>
+    </div>
+    <div class="abx">
+      <div class="sub said">
+        <div class="sh"><h3><span class="l-zh">客户原话</span><span class="l-en">What clients said</span></h3>
+          <div class="wnav"><span class="wcount"><b>1</b> / 7</span><button type="button" class="wp" aria-label="上一个 / Previous">&#8592;</button><button type="button" class="wn2" aria-label="下一个 / Next">&#8594;</button></div></div>
+        <div class="wxs" tabindex="0" role="region" aria-label="客户聊天记录 / Client chats">
+          <figure class="wx" aria-label="动画项目 / Animation job">
+            <div class="wh" aria-hidden="true"><i>&#8249;</i><b><span class="wn">张**</span></b><i>&middot;&middot;&middot;</i></div>
+            <div class="wbd"><div class="wm me"><span class="wf"><span class="wfn"><span class="l-zh">动画终稿.mp4</span><span class="l-en">Final animation.mp4</span></span><span class="wfi" aria-hidden="true">PDF</span></span><span class="wav me" aria-hidden="true"><b>F</b></span></div><div class="wm"><span class="wav" aria-hidden="true"><svg viewBox="-1 -1 7 7" fill="#6c757d"><rect x="-1" y="-1" width="7" height="7" fill="#f3f1ec"/><rect x="2" y="0" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/></svg></span><p class="wb"><span class="l-zh">太专业了</span><span class="l-en">So professional.</span></p></div></div>
+            <figcaption class="wcap"><span class="l-zh">动画项目</span><span class="l-en">Animation job</span></figcaption>
+          </figure><figure class="wx" aria-label="展台设计 / Booth design">
+            <div class="wh" aria-hidden="true"><i>&#8249;</i><b><span class="wn">李**</span></b><i>&middot;&middot;&middot;</i></div>
+            <div class="wbd"><div class="wm me"><span class="wf"><span class="wfn"><span class="l-zh">展台效果图_样稿.jpg</span><span class="l-en">Booth rendering, proof.jpg</span></span><span class="wfi" aria-hidden="true">PDF</span></span><span class="wav me" aria-hidden="true"><b>F</b></span></div><div class="wm"><span class="wav" aria-hidden="true"><svg viewBox="-1 -1 7 7" fill="#3d9970"><rect x="-1" y="-1" width="7" height="7" fill="#f3f1ec"/><rect x="0" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/></svg></span><p class="wb"><span class="l-zh">这效果可以</span><span class="l-en">This looks good.</span></p></div><p class="wt"><span class="l-zh">两天后</span><span class="l-en">Two days later</span></p><div class="wm me"><span class="wf"><span class="wfn"><span class="l-zh">展台效果图_终稿.zip</span><span class="l-en">Booth rendering, final.zip</span></span><span class="wfi" aria-hidden="true">PDF</span></span><span class="wav me" aria-hidden="true"><b>F</b></span></div><div class="wm"><span class="wav" aria-hidden="true"><svg viewBox="-1 -1 7 7" fill="#3d9970"><rect x="-1" y="-1" width="7" height="7" fill="#f3f1ec"/><rect x="0" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/></svg></span><p class="wb"><span class="l-zh">终稿满意</span><span class="l-en">Happy with the final.</span></p></div></div>
+            <figcaption class="wcap"><span class="l-zh">展台设计</span><span class="l-en">Booth design</span></figcaption>
+          </figure><figure class="wx" aria-label="工艺流程图 / Process diagram">
+            <div class="wh" aria-hidden="true"><i>&#8249;</i><b><span class="wn">王**</span></b><i>&middot;&middot;&middot;</i></div>
+            <div class="wbd"><div class="wm me"><span class="wf"><span class="wfn"><span class="l-zh">工艺流程图_终稿.pdf</span><span class="l-en">Process diagram, final.pdf</span></span><span class="wfi" aria-hidden="true">PDF</span></span><span class="wav me" aria-hidden="true"><b>F</b></span></div><div class="wm"><span class="wav" aria-hidden="true"><svg viewBox="-1 -1 7 7" fill="#e07a5f"><rect x="-1" y="-1" width="7" height="7" fill="#f3f1ec"/><rect x="0" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/></svg></span><p class="wb"><span class="l-zh">终稿满意，发源文件</span><span class="l-en">Happy with the final, please send the source files.</span></p></div></div>
+            <figcaption class="wcap"><span class="l-zh">工艺流程图</span><span class="l-en">Process diagram</span></figcaption>
+          </figure><figure class="wx" aria-label="拖车公厕水电图 / Trailer toilet drawings">
+            <div class="wh" aria-hidden="true"><i>&#8249;</i><b><span class="wn">陈**</span></b><i>&middot;&middot;&middot;</i></div>
+            <div class="wbd"><div class="wm me"><span class="wf"><span class="wfn"><span class="l-zh">水电图_R06_样稿.pdf</span><span class="l-en">Water and power drawings R06, proof.pdf</span></span><span class="wfi" aria-hidden="true">PDF</span></span><span class="wav me" aria-hidden="true"><b>F</b></span></div><div class="wm"><span class="wav" aria-hidden="true"><svg viewBox="-1 -1 7 7" fill="#3d9970"><rect x="-1" y="-1" width="7" height="7" fill="#f3f1ec"/><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/></svg></span><p class="wb"><span class="l-zh">没问题啦，生成吧</span><span class="l-en">All good, go ahead and finalise it.</span></p></div><div class="wm me"><p class="wb"><span class="l-zh">好的，麻烦确认一下卡片，稍后给您发文件</span><span class="l-en">Great, please confirm the card and I'll send the files shortly.</span></p><span class="wav me" aria-hidden="true"><b>F</b></span></div></div>
+            <figcaption class="wcap"><span class="l-zh">拖车公厕水电图</span><span class="l-en">Trailer toilet drawings</span></figcaption>
+          </figure><figure class="wx" aria-label="变电所二次回路图 / Substation circuit drawings">
+            <div class="wh" aria-hidden="true"><i>&#8249;</i><b><span class="wn">杨**</span></b><i>&middot;&middot;&middot;</i></div>
+            <div class="wbd"><div class="wm me"><p class="wb"><span class="l-zh">第 8、9 张红绿灯回路，手绘里没画 DL 接点，要补上还是按手绘画？</span><span class="l-en">Sheets 8 and 9: the sketch has no DL contact in the indicator-lamp circuit. Add one, or follow the sketch?</span></p><span class="wav me" aria-hidden="true"><b>F</b></span></div><div class="wm"><span class="wav" aria-hidden="true"><svg viewBox="-1 -1 7 7" fill="#3d9970"><rect x="-1" y="-1" width="7" height="7" fill="#f3f1ec"/><rect x="0" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/></svg></span><p class="wb"><span class="l-zh">就这样可以了</span><span class="l-en">That works as it is.</span></p></div></div>
+            <figcaption class="wcap"><span class="l-zh">变电所二次回路图</span><span class="l-en">Substation circuit drawings</span></figcaption>
+          </figure><figure class="wx" aria-label="试验报告英译 / Test report translation">
+            <div class="wh" aria-hidden="true"><i>&#8249;</i><b><span class="wn">刘**</span></b><i>&middot;&middot;&middot;</i></div>
+            <div class="wbd"><div class="wm me"><span class="wf"><span class="wfn"><span class="l-zh">试验报告_英文样稿_10份.zip</span><span class="l-en">Test reports, English proofs (10).zip</span></span><span class="wfi" aria-hidden="true">PDF</span></span><span class="wav me" aria-hidden="true"><b>F</b></span></div><div class="wm me"><p class="wb"><span class="l-zh">原件里有三处笔误，想跟您确认一下怎么处理</span><span class="l-en">There are three slips in the originals. How would you like them handled?</span></p><span class="wav me" aria-hidden="true"><b>F</b></span></div><div class="wm"><span class="wav" aria-hidden="true"><svg viewBox="-1 -1 7 7" fill="#3d9970"><rect x="-1" y="-1" width="7" height="7" fill="#f3f1ec"/><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/></svg></span><p class="wb"><span class="l-zh">按正常写法处理就行了</span><span class="l-en">Just write them the normal way.</span></p></div><div class="wm"><span class="wav" aria-hidden="true"><svg viewBox="-1 -1 7 7" fill="#3d9970"><rect x="-1" y="-1" width="7" height="7" fill="#f3f1ec"/><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/></svg></span><p class="wb"><span class="l-zh">12 份放一起给我</span><span class="l-en">Send all 12 together.</span></p></div><div class="wm"><span class="wav" aria-hidden="true"><svg viewBox="-1 -1 7 7" fill="#3d9970"><rect x="-1" y="-1" width="7" height="7" fill="#f3f1ec"/><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/></svg></span><p class="wb"><span class="l-zh">谢谢</span><span class="l-en">Thanks.</span></p></div></div>
+            <figcaption class="wcap"><span class="l-zh">试验报告英译</span><span class="l-en">Test report translation</span></figcaption>
+          </figure><figure class="wx" aria-label="说明书排版 / Manual layout">
+            <div class="wh" aria-hidden="true"><i>&#8249;</i><b><span class="wn">周**</span></b><i>&middot;&middot;&middot;</i></div>
+            <div class="wbd"><div class="wm me"><span class="wf"><span class="wfn"><span class="l-zh">说明书_样稿.pdf</span><span class="l-en">Manual, proof.pdf</span></span><span class="wfi" aria-hidden="true">PDF</span></span><span class="wav me" aria-hidden="true"><b>F</b></span></div><div class="wm"><span class="wav" aria-hidden="true"><svg viewBox="-1 -1 7 7" fill="#e07a5f"><rect x="-1" y="-1" width="7" height="7" fill="#f3f1ec"/><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/></svg></span><p class="wb"><span class="l-zh">这两处也请删除</span><span class="l-en">Please delete these two bits too.</span></p></div><div class="wm"><span class="wav" aria-hidden="true"><svg viewBox="-1 -1 7 7" fill="#e07a5f"><rect x="-1" y="-1" width="7" height="7" fill="#f3f1ec"/><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/></svg></span><p class="wb"><span class="l-zh">其他没问题，谢谢</span><span class="l-en">Everything else is fine, thanks.</span></p></div></div>
+            <figcaption class="wcap"><span class="l-zh">说明书排版</span><span class="l-en">Manual layout</span></figcaption>
+          </figure>
         </div>
-
-        <div class="sub">
-          <h3><span class="l-zh">我做的事</span><span class="l-en">What I do</span></h3>
-          <ul class="svc">
-            <li><span class="n"><span class="l-zh">画册与印刷</span><span class="l-en">Print</span></span><span class="d"><span class="l-zh">产品画册、折页、色卡、说明书排版、展台效果图和横幅。交 PDF 和可编辑源文件。</span><span class="l-en">Product catalogues, brochures, colour cards, manual layout, booth renderings and banners. PDF plus editable source files.</span></span></li>
-            <li><span class="n"><span class="l-zh">汇报与课件</span><span class="l-en">Slides</span></span><span class="d"><span class="l-zh">公司介绍、项目汇报、数据分析 PPT，英文教学课件，可以套你们的模板。</span><span class="l-en">Company profiles, project reports, data decks and English teaching materials, in your own template if you have one.</span></span></li>
-            <li><span class="n"><span class="l-zh">图纸与流程图</span><span class="l-en">Drawings</span></span><span class="d"><span class="l-zh">电气原理图、接线图、P&amp;ID、车间布局、流程图。可以照着照片、草图或旧图重画，出英文标注。</span><span class="l-en">Electrical schematics, wiring diagrams, P&amp;IDs, layouts and flowcharts, redrawn from photos, sketches or old drawings, with English labels.</span></span></li>
-            <li><span class="n"><span class="l-zh">翻译与文件转换</span><span class="l-en">Translation</span></span><span class="d"><span class="l-zh">技术文件和论文中译英；扫描 PDF 转成可编辑的 Word、PPT 或 Excel。</span><span class="l-en">Chinese to English for technical documents and papers. Scanned PDFs turned into editable Word, PowerPoint or Excel.</span></span></li>
-            <li><span class="n"><span class="l-zh">网站与小工具</span><span class="l-en">Web and tools</span></span><span class="d"><span class="l-zh">企业官网、产品展示站，从设计到上线；用 Python 批量处理图片、表格和文件。</span><span class="l-en">Company and product websites from design to launch, and Python scripts that batch-process images, spreadsheets and files.</span></span></li>
-          </ul>
-        </div>
-
-        <div class="sub">
-          <h3><span class="l-zh">怎么合作</span><span class="l-en">How we work</span></h3>
-          <ol class="steps">
-            <li><span><span class="l-zh">你发资料和要求，说明用途：印刷、发邮件、展会、汇报还是上线。</span><span class="l-en">You send your files and brief, and tell me what it's for: print, email, a trade show, a presentation or the web.</span></span></li>
-            <li><span><span class="l-zh">我确认工作内容和交付时间，缺的资料一次列给你；确认后付 50% 定金开工。</span><span class="l-en">I confirm the scope and delivery date and list anything missing in one go. Work starts once the 50% deposit is paid.</span></span></li>
-            <li><span><span class="l-zh">先出样稿，大约完成三成，带水印，用来定风格和方向。</span><span class="l-en">You get a first proof at about 30% complete, watermarked, to settle the style and direction.</span></span></li>
-            <li><span><span class="l-zh">样稿阶段可以调整风格和方向；样稿确认后，在确认的工作范围内修改到满意为止。新增内容或推翻已确认的方向另行报价。</span><span class="l-en">The style and direction can still change at the proof stage. Once the proof is approved, revisions within the agreed scope are included until you're happy. New content, or a change to the approved direction, is quoted separately.</span></span></li>
-            <li><span><span class="l-zh">交终稿；你确认后付尾款，付清后交可编辑源文件。</span><span class="l-en">I deliver the final files. After you approve them and pay the balance, you receive the editable source files.</span></span></li>
-          </ol>
-          <p class="lead-time"><span class="l-zh">交付周期一般 2 到 3 天，复杂项目一周以内。</span><span class="l-en">Turnaround is usually 2 to 3 days; complex projects take up to a week.</span></p>
-          <p class="note"><span class="l-zh">不含产品拍摄、印刷和寄送、图纸的工程审核和签字盖章，以及需另外购买的商用字体和图片授权。</span><span class="l-en">Not included: product photography, printing and shipping, engineering review, signing or stamping of drawings, and any commercial font or image licences that need to be bought.</span></p>
-        </div>
+        <p class="note"><span class="l-zh">根据真实聊天记录重排，一屏一位客户；客户名称已打码，头像为随机生成。</span><span class="l-en">Rebuilt from real chat records, one client per screen. Names are masked and avatars are randomly generated. Translated from Chinese.</span></p>
+        <p class="note"><span class="l-zh">回头客：一位做传感器板的客户先后下了 3 单（原理图、原理图修改、PCB 器件摆放）；汇报 PPT 和宣传折页也有老客户回来再下单。</span><span class="l-en">Repeat clients: one sensor board client has come back for three jobs (schematic, schematic revision, PCB placement), and report-deck and brochure clients have returned with new orders.</span></p>
+      </div>
+      <div class="sub">
+        <h3><span class="l-zh">我做的事</span><span class="l-en">What I do</span></h3>
+        <ul class="svg"><li class="svc2"><span class="svi">01</span>
+              <h4><span class="l-zh">画册与印刷</span><span class="l-en">Print</span></h4>
+              <p class="svp"><span class="l-zh">把产品资料做成拿得出手的画册和目录。</span><span class="l-en">Product information turned into catalogues people keep.</span></p>
+              <ul class="svt"><li><span class="l-zh">产品画册</span><span class="l-en">Catalogues</span></li><li><span class="l-zh">英文目录</span><span class="l-en">English catalogues</span></li><li><span class="l-zh">折页</span><span class="l-en">Leaflets</span></li><li><span class="l-zh">说明书</span><span class="l-en">Manuals</span></li><li><span class="l-zh">色卡</span><span class="l-en">Colour cards</span></li><li><span class="l-zh">展台和标识</span><span class="l-en">Booths and signage</span></li></ul>
+              <p class="svf"><span class="k"><span class="l-zh">交付</span><span class="l-en">You get</span></span><span class="l-zh">PDF 印刷文件 + InDesign / AI 源文件</span><span class="l-en">Print PDF plus InDesign or Illustrator source</span></p>
+              <span class="svn"><span class="l-zh">已交付 21 单</span><span class="l-en">21 jobs delivered</span></span></li><li class="svc2"><span class="svi">02</span>
+              <h4><span class="l-zh">汇报与课件</span><span class="l-en">Slides</span></h4>
+              <p class="svp"><span class="l-zh">把材料理成一条线，再做成好讲的 PPT。</span><span class="l-en">Material sorted into one storyline, then slides that are easy to present.</span></p>
+              <ul class="svt"><li><span class="l-zh">工作汇报</span><span class="l-en">Work reviews</span></li><li><span class="l-zh">经营分析</span><span class="l-en">Business reviews</span></li><li><span class="l-zh">项目策划</span><span class="l-en">Project plans</span></li><li><span class="l-zh">公开课</span><span class="l-en">Demonstration lessons</span></li><li><span class="l-zh">英语 / 数学课件</span><span class="l-en">English and maths courseware</span></li></ul>
+              <p class="svf"><span class="k"><span class="l-zh">交付</span><span class="l-en">You get</span></span><span class="l-zh">可编辑 PPTX，可以套用你们的模板</span><span class="l-en">Editable PPTX, in your own template if you have one</span></p>
+              <span class="svn"><span class="l-zh">已交付 37 单</span><span class="l-en">37 jobs delivered</span></span></li><li class="svc2"><span class="svi">03</span>
+              <h4><span class="l-zh">工程图纸</span><span class="l-en">Drawings</span></h4>
+              <p class="svp"><span class="l-zh">照片、草图或旧图，重画成规范的工程图。</span><span class="l-en">Photos, sketches or old drawings redrawn to standard.</span></p>
+              <ul class="svt"><li><span class="l-zh">电气原理图</span><span class="l-en">Schematics</span></li><li><span class="l-zh">接线图</span><span class="l-en">Wiring diagrams</span></li><li><span class="l-zh">P&amp;ID</span><span class="l-en">P&amp;IDs</span></li><li><span class="l-zh">车间布局</span><span class="l-en">Layouts</span></li><li><span class="l-zh">进度计划</span><span class="l-en">Schedules</span></li><li><span class="l-zh">流程图</span><span class="l-en">Flowcharts</span></li></ul>
+              <p class="svf"><span class="k"><span class="l-zh">交付</span><span class="l-en">You get</span></span><span class="l-zh">DWG / DXF / Visio + PDF，可出英文标注</span><span class="l-en">DWG, DXF or Visio plus PDF, with English labels</span></p>
+              <span class="svn"><span class="l-zh">已交付 66 单</span><span class="l-en">66 jobs delivered</span></span></li><li class="svc2"><span class="svi">04</span>
+              <h4><span class="l-zh">科研绘图</span><span class="l-en">Research figures</span></h4>
+              <p class="svp"><span class="l-zh">论文和基金申报用的图，按投稿规格出。</span><span class="l-en">Figures for papers and grant applications, at submission spec.</span></p>
+              <ul class="svt"><li><span class="l-zh">技术路线图</span><span class="l-en">Research roadmaps</span></li><li><span class="l-zh">机制图</span><span class="l-en">Mechanism diagrams</span></li><li><span class="l-zh">组图排版</span><span class="l-en">Figure panels</span></li><li><span class="l-zh">数据图</span><span class="l-en">Data charts</span></li></ul>
+              <p class="svf"><span class="k"><span class="l-zh">交付</span><span class="l-en">You get</span></span><span class="l-zh">可编辑 PPTX + 600 dpi PNG / TIF / PDF</span><span class="l-en">Editable PPTX plus 600 dpi PNG, TIF or PDF</span></p>
+              <span class="svn"><span class="l-zh">已交付 13 单</span><span class="l-en">13 jobs delivered</span></span></li><li class="svc2"><span class="svi">05</span>
+              <h4><span class="l-zh">翻译与文档</span><span class="l-en">Translation and documents</span></h4>
+              <p class="svp"><span class="l-zh">中英互译，版式按原件还原，扫描件也能转成可编辑。</span><span class="l-en">Chinese–English translation with the original layout kept; scans made editable.</span></p>
+              <ul class="svt"><li><span class="l-zh">论文翻译</span><span class="l-en">Papers</span></li><li><span class="l-zh">试验报告</span><span class="l-en">Test reports</span></li><li><span class="l-zh">PDF 转 Word / Excel</span><span class="l-en">PDF to Word or Excel</span></li><li><span class="l-zh">长文档排版</span><span class="l-en">Long documents</span></li><li><span class="l-zh">校对</span><span class="l-en">Proofreading</span></li></ul>
+              <p class="svf"><span class="k"><span class="l-zh">交付</span><span class="l-en">You get</span></span><span class="l-zh">DOCX / XLSX / PPTX / InDesign</span><span class="l-en">DOCX, XLSX, PPTX or InDesign</span></p>
+              <span class="svn"><span class="l-zh">已交付 38 单</span><span class="l-en">38 jobs delivered</span></span></li><li class="svc2"><span class="svi">06</span>
+              <h4><span class="l-zh">网站与小工具</span><span class="l-en">Web and tools</span></h4>
+              <p class="svp"><span class="l-zh">从设计到上线一个人做完，这个网站就是。</span><span class="l-en">Designed and launched by one person; this site is an example.</span></p>
+              <ul class="svt"><li><span class="l-zh">企业官网</span><span class="l-en">Company sites</span></li><li><span class="l-zh">产品展示站</span><span class="l-en">Product sites</span></li><li><span class="l-zh">Python 批处理</span><span class="l-en">Python batch tools</span></li></ul>
+              <p class="svf"><span class="k"><span class="l-zh">交付</span><span class="l-en">You get</span></span><span class="l-zh">上线网站 + 源代码</span><span class="l-en">A live site plus source code</span></p>
+              <span class="svn"><span class="l-zh">这个网站就是我做的</span><span class="l-en">This website is my own work</span></span></li></ul>
+      </div>
+      <div class="sub">
+        <h3><span class="l-zh">怎么合作</span><span class="l-en">How we work</span></h3>
+        <ol class="flow"><li class="fw"><span class="fwn">1</span><h4><span class="l-zh">发资料</span><span class="l-en">Brief</span></h4><p><span class="l-zh">你发资料和要求，说明用途：印刷、邮件、展会、汇报还是上线。</span><span class="l-en">Send your files and brief, and say what it's for: print, email, a trade show, a presentation or the web.</span></p></li><li class="fw"><span class="fwn">2</span><h4><span class="l-zh">确认范围</span><span class="l-en">Scope</span></h4><p><span class="l-zh">我确认工作内容和交付时间，缺的资料一次列给你。</span><span class="l-en">I confirm the scope and date, and list anything missing in one go.</span></p><span class="fwt"><span class="l-zh">付 50% 定金开工</span><span class="l-en">50% deposit to start</span></span></li><li class="fw loop"><span class="fwn">3</span><h4><span class="l-zh">样稿</span><span class="l-en">Proof</span></h4><p><span class="l-zh">先出约三成的样稿，带水印，用来定风格和方向。</span><span class="l-en">A watermarked proof at about 30%, to settle style and direction.</span></p><span class="fwt"><span class="l-zh">可调整风格方向</span><span class="l-en">Style can still change</span></span></li><li class="fw"><span class="fwn">4</span><h4><span class="l-zh">修改</span><span class="l-en">Revisions</span></h4><p><span class="l-zh">样稿确认后，在确认的范围内改到满意为止。</span><span class="l-en">After the proof is approved, revisions within scope until you're happy.</span></p><span class="fwt"><span class="l-zh">超出范围另行报价</span><span class="l-en">Out of scope: quoted separately</span></span></li><li class="fw"><span class="fwn">5</span><h4><span class="l-zh">交付</span><span class="l-en">Delivery</span></h4><p><span class="l-zh">交终稿；确认并付尾款后，交可编辑源文件。</span><span class="l-en">Final files; once approved and paid, the editable source files.</span></p><span class="fwt"><span class="l-zh">付尾款 → 源文件</span><span class="l-en">Balance paid → source files</span></span></li></ol>
+        <p class="lead-time"><span class="l-zh">交付周期一般 2 到 3 天，复杂项目一周以内。</span><span class="l-en">Turnaround is usually 2 to 3 days; complex projects take up to a week.</span></p>
+        <p class="note"><span class="l-zh">不含产品拍摄、印刷和寄送、图纸的工程审核和签字盖章，以及需另外购买的商用字体和图片授权。</span><span class="l-en">Not included: product photography, printing and shipping, engineering review, signing or stamping of drawings, and any commercial font or image licences that need to be bought.</span></p>
       </div>
     </div>
   </section>
@@ -1895,6 +1995,15 @@ var STUDIO_NAME_ZH = '叠光工作室';
   var ct=document.getElementById('contact');
   if(ct&&'IntersectionObserver' in window)new IntersectionObserver(function(es){es.forEach(function(e){f.classList.toggle('off',e.isIntersecting);if(e.isIntersecting)set(false)})},{threshold:.15}).observe(ct);
 })();
+</script>
+<script>
+(function(){var w=document.querySelector('.wxs');if(!w)return;var c=document.querySelector('.wcount b'),it=w.querySelectorAll('.wx');
+function idx(){var x=w.scrollLeft,b=0,d=1e9;it.forEach(function(e,i){var dd=Math.abs(e.offsetLeft-w.offsetLeft-x);if(dd<d){d=dd;b=i}});return b}
+function go(n){n=Math.max(0,Math.min(it.length-1,n));w.scrollTo({left:it[n].offsetLeft-w.offsetLeft,behavior:'smooth'})}
+w.addEventListener('scroll',function(){c.textContent=idx()+1},{passive:true});
+document.querySelector('.wp').addEventListener('click',function(){go(idx()-1)});
+document.querySelector('.wn2').addEventListener('click',function(){go(idx()+1)});
+w.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();e.stopPropagation();go(idx()+(e.key==='ArrowLeft'?-1:1))}});})();
 </script>
 </body>
 </html>
